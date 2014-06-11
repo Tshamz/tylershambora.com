@@ -1,0 +1,21 @@
+#contact .flex-container {
+  @include flex-justify-content(space-between);
+}
+
+#contact #contact-form {
+  max-width: 61rem;
+}
+
+#contact p {
+  font: 1.15rem/1.4 $Font-DIN-Regular;
+}
+
+#contact .name-entry,
+#contact .email-entry {
+  @include flex-basis(48%);
+}
+
+#contact #contact-form {
+  margin: 0 auto;
+  padding: 0 7.5%;
+}

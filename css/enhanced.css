@@ -249,7 +249,7 @@ p {
 }
 
 #guts {
-  margin-top: 0;
+  padding-top: 0;
   overflow-y: scroll !important;
   position: relative;
 }
@@ -266,12 +266,12 @@ p {
   padding: 0 2.5rem;
 }
 
-.content-presenter .marquee-image {
-  margin-bottom: 2rem;
+.content-presenter h2 {
+  margin-bottom: 1rem;
 }
 
-.content-presenter header {
-  margin-bottom: 0.5rem;
+.content-presenter .marquee-image {
+  margin: 1.5rem 0 2rem;
 }
 
 .content-presenter .artifact-image,
@@ -301,6 +301,10 @@ p {
 
 .content-presenter .banner-image.right {
   float: right;
+}
+
+#about.non-gallery {
+  display: inline-block;
 }
 
 #about .about-image-container {
@@ -390,10 +394,11 @@ p {
 }
 @media only screen and (min-width: 56.15rem) {
   /*
-  1. Push all the #about body copy over to the right
+  1. Floats #about .about-words to the right so words don't wrap under image
   */
-  #about .about-image-container {
-    margin-bottom: 5.75rem;
+  #about .about-words {
+    width: 67.5%;
+    float: right;
   }
 }
 @media only screen and (min-width: 60rem) {

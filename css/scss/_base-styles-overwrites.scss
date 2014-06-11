@@ -1,0 +1,10 @@
+h2 {
+  font: 4.25rem/1 $Font-DIN-Heavy;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-rendering: optimizeLegibility;
+}

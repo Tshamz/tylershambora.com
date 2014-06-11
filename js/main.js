@@ -4,44 +4,7 @@ $(document).ready(function() {
   Modernizr Feature Test
 ==========================================================================*/
 
-var unsupportedFeatures = [];
-var fullFeatureNameMap = {
-  'js': 'JavaScript',
-  'flexbox': 'CSS Flex-Box',
-  'flexboxlegacy': 'Legacy CSS Flex-Box',
-  'hashchange': 'Hashchange Event',
-  'backgroundsize': 'CSS Background-Size',
-  'borderradius': 'CSS Border-Radius',
-  'boxshadow': 'CSS Box-Shadow',
-  'opacity': 'CSS Opacity',
-  'cssanimations': 'CSS Animations',
-  'csstransforms': 'CSS Transforms',
-  'csstransitions': 'CSS Transitions',
-  'fontface': '@font-face',
-  'sessiomstorage': 'JavaScript Session Storage',
-  'boxsizing': 'CSS Box-Sizing',
-  'mediaqueries': '@media Queries',
-  'lastchild': 'CSS :last-child Selector'
-};
-var classNames = $('html').attr('class').split(/\s+/);
-$.each(classNames, function(index, value) {
-  if (value.substring(0,3) === 'no-') {
-    unsupportedFeatures.push(fullFeatureNameMap[value.substring(3)]);
-  }
-  if (unsupportedFeatures.length > 0) {
-    var unsupportedFeaturesMegaString = '';
-    $.each(unsupportedFeatures, function(index, value) {
-      unsupportedFeaturesMegaString = unsupportedFeaturesMegaString + '<li>' + value + '</li>';
-    });
-    $('#unsupported-features').append(unsupportedFeaturesMegaString);
-    // Prevent the heavy images from being loading every time the page is visited
-    $('.chrome-link').html('<img src="img/icons/chrome.jpg" />');
-    $('.firefox-link').html('<img src="img/icons/firefox.jpg" />');
-    $('.safari-link').html('<img src="img/icons/safari.jpg" />');
-    $('.opera-link').html('<img src="img/icons/opera.jpg" />');
-    $('#browsehappy').show();
-  }
-});
+  yepnope({load: '/js/modernizr-test.min.js'});
 
 /*==========================================================================
   VARIABLES
