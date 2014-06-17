@@ -1,0 +1,145 @@
+@media only screen and (min-width: 52rem) {
+  /*
+  1. Updates #about h2 and #about p font-size
+  2. Shows .portfolio-item(s) title
+  */
+  #about h2 {
+    font-size: 4rem;
+  }
+
+  #about p {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (min-width: 56.15rem) {
+  /*
+  1. Floats #about .about-words to the right so words don't wrap under image
+  */
+  #about .about-words {
+    width: 67.5%;
+    float: right;
+  }
+}
+
+@media only screen and (min-width: 60rem) {
+  /*
+  1. Increases size of #main-header #primary-nav
+  2. Increases .about-copy font-size
+  3. Shows .portfolio-item sub-titles
+  */
+  #portfolio .portfolio-item h3 {
+    font: 200 1.5rem/1.35 $Font-Source-Sans-Pro;
+  }
+  #portfolio .portfolio-item em {
+    display: block;
+    padding-bottom: 10%;
+  }
+}
+
+@media only screen and (min-width: 65rem) {
+  /*
+  1. Increases font-sizes for .portfolio-item(s) titles
+  */
+
+}
+
+@media only screen and (min-width: 68rem) {
+  /*
+  1. Increases font-size of #about title
+  */
+  #about h2 {
+    font-size: 4.5rem;
+  }
+  #about p {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 75rem) {
+  /*
+  1. Switches single page .content.gallery to the .content.gallery slider
+  2. Sets width of resume .artifact-image
+  */
+  .content.gallery {
+    height: 32rem;
+  }
+
+  .gallery-control {
+    background-image: url(../img/gallery-control.png);
+    cursor: pointer;
+    height: 41px;
+    opacity: 1.0;
+    position: absolute;
+    top: 3.5rem;
+    width: 41px;
+    z-index: 99;
+    @include transition(opacity 400ms ease-in-out);
+  }
+
+  .next {
+    right: 0.625rem;
+  }
+
+  .previous {
+    left: 0.625rem;
+    @include transform(rotate(180deg));
+  }
+
+  .is-disabled {
+    opacity: 0.3;
+    @include transition(opacity 400ms ease-in-out);
+  }
+
+  .content-presenter li {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+
+  .content-presenter .content-block {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .content-presenter .content-block-inner {
+    margin: 1.5rem auto 0;
+    max-width: 80rem;
+    padding: 0 6rem;
+    width: 100%;
+  }
+
+  .content-presenter .marquee-image {
+    margin: 0;
+  }
+
+  .content-presenter .marquee-description {
+    display: inline-block;
+    float: left;
+    margin-right: 4%;
+    width: 34%;
+  }
+
+  .content-presenter .marquee figure {
+    display: inline-block;
+    float: right;
+    width: 60%;
+  }
+
+  .content-presenter .description-body {
+    text-align: left;
+  }
+
+  .content-presenter .artifact .left {
+    margin: 0 0 0 10%;
+  }
+
+  .content-presenter .artifact .right {
+    margin: 0 10% 0 0;
+  }
+
+  #resume .content-presenter .artifact-image.right {
+    width: 330px;
+  }
+}

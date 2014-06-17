@@ -1,0 +1,95 @@
+#main-header {
+  height: 10rem;
+  position: relative;
+  > nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 3rem;
+    @include flex-box;
+    @include flex-align-items(center);
+    @include flex-flow(row nowrap);
+    @include flex-justify-content(space-between);
+  }
+  .nav-item {
+    border-top: none;
+    border-bottom: 5px solid #FFF;
+    font-family: $Font-DIN-Light;;
+    font-size: 1.15rem;
+    line-height: 2;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    padding: 0.625rem 0 1.875rem;
+    @include transition(border-bottom 200ms ease-in-out);
+    @media only screen and (min-width: 60rem) {
+      font-size: 1.35rem;
+    }
+    a {
+      color: inherit;
+    }
+    &:not(.logo) {
+      display: block !important;  /* Have to use !important because jQuery inline styles */
+    }
+    &:not(.logo).is-active {
+      background-color: transparent;
+      border-bottom: 5px solid $Color-Light-Blue;
+      color: $Color-Light-Grey;
+    }
+    &:not(.logo) a {
+      padding-left: 0;
+    }
+    &:not(.logo):hover {
+      background-color: transparent;
+      border-bottom: 5px solid $Color-Light-Blue;
+      color: $Color-Light-Grey;
+    }
+  }
+  .logo {
+    border-bottom: none;
+    margin-top: 0;
+    padding-bottom: 0.75rem;
+    padding-left: 0;
+    &:hover .color-fader {
+      @include animation(super-rainbow 10s infinite linear);
+    }
+  }
+  .logo-image {
+    border-radius: 51%;
+    height: 54px;
+    width: 54px;
+    @media only screen and (min-width: 60rem) {
+      height: 73px;
+      width: 73px;
+    }
+    img {  /* Image must be +1px than container so background colors don't bleed */
+      width: 55px;
+      @include transition(width 300ms ease-in-out);
+      @media only screen and (min-width: 60rem) {
+        width: 74px;
+      }
+    }
+  }
+  .logo-text {
+    margin-top: 0;
+    h1 {
+      color: $Color-Grey;
+      font-size: 1.5rem;
+      @media only screen and (min-width: 60rem) {
+        font-size: 2rem;
+      }
+    }
+  }
+  .screen.logo {
+    display: block;
+  }
+  .handheld.logo {
+    display: none;
+  }
+}
+
+.nav-toggle {
+  display: none;
+}

@@ -1,0 +1,68 @@
+#main-header {
+  background-color: #FFF;
+  border-bottom: 2px solid $Color-Light-Grey;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  .nav-item {
+    display: none;
+    background-color: #FFF;
+    border-top: 1px solid $Color-Light-Grey;
+    font-size: 1.25rem;
+    line-height: 2;
+    &.is-active {
+      background-color: $Color-Even-Lighter-Grey;
+      cursor: default;
+      pointer-events: none;
+    }
+    &.entrance.is-active {
+      background-color: transparent;
+    }
+    &:not(.logo) a {
+      display: block;
+      padding-left: 1.875rem;
+    }
+    &:not(.logo):hover {
+      background-color: $Color-Even-Lighter-Grey;
+      cursor: pointer;
+    }
+  }
+  .logo {
+    line-height: 1;
+    padding: 0.5rem 0 0.25rem 0.5rem;
+  }
+  .logo-image {
+    display: inline-block;
+    width: 37px;
+  }
+  .logo-text {
+    display: inline-block;
+    margin-top: 0.3rem;
+    vertical-align: top;
+  }
+  .handheld.logo {
+    display: block;
+  }
+  .screen.logo {
+    display: none;
+  }
+}
+
+.nav-toggle {
+  border: 1px solid $Color-Black;
+  border-radius: 5px;
+  cursor: pointer;
+  font: 1rem $Font-Source-Sans-Pro;
+  margin: 0.15rem;
+  padding: 0.25rem 0.5rem 0.5rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  &::after {
+    content: "\25BC";
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+}

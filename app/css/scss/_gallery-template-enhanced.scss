@@ -1,0 +1,45 @@
+.content-presenter h2 {
+  margin-bottom: 1rem;
+}
+
+.content-presenter .marquee-image {
+  margin: 1.5rem 0 2rem;
+}
+
+.content-presenter .artifact-image,
+.content-presenter .artifact-description {
+  width: 40%;
+}
+
+.content-presenter .artifact .left {
+  float: left;
+  margin: 0 4% 0 6%;
+  text-align: left;
+}
+
+.content-presenter .artifact .right {
+  float: right;
+  margin: 0 6% 0 4%;
+  text-align: right;
+}
+
+.content-presenter .banner-image {
+  width: 50%;
+}
+
+.content-presenter .banner-image.left {
+  float: left;
+}
+
+.content-presenter .banner-image.right {
+  float: right;
+}
+
+
+/*===============================================================================
+    THIS IS BAD AND YOU SHOULD FEEL BAD, FIX EVENTUALLY
+===============================================================================*/
+
+#resume .marquee-image {
+  border: none;
+}

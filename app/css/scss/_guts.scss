@@ -1,0 +1,56 @@
+#guts {
+  background-color: #FFF;
+  border-bottom: 2px solid $Color-Light-Grey;
+  padding: 3.35rem 10% 0;  /* 3.35rem needed to push #guts below the nav */
+  @include transition(all 600ms ease-in-out);
+}
+
+.content {
+  margin: 10% 0;
+}
+
+.gallery {
+
+}
+
+.non-gallery {
+
+}
+
+
+
+#guts.slideDown {
+  max-height: 187.5rem;
+  overflow: hidden;
+}
+
+#guts.slideUp {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.content.fadeIn {
+  opacity: 1;
+  visibility: visible;
+  @include transition(opacity 200ms linear);
+}
+
+.content.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+  @include transition(visibility 0ms linear 200ms, opacity 200ms linear)
+}
+
+#papn.sub.gallery,
+#csh.sub.gallery,
+#fb.sub.gallery,
+#sns.sub.gallery {
+  @include hyphens(normal, manual);
+}
+
+#petershambora.sub.gallery,
+#wtfdrink.sub.gallery,
+#laura.sub.gallery,
+#resizely.sub.gallery {
+  @include hyphens(break-word, auto);
+}

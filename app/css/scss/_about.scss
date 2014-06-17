@@ -1,0 +1,27 @@
+.about-image {
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.about-words {
+  header {
+    margin: 1rem 0 0.5rem;
+    text-align: center;
+  }
+  p {
+    text-align: justify;
+  }
+  .about-body {
+    word-spacing: -2px;
+  }
+  .about-specialties {
+    margin-top: 1.5rem;
+  }
+  ul {
+    list-style: disc;
+    margin-top: .5rem;
+    padding-left: 2.5rem;
+  }
+}

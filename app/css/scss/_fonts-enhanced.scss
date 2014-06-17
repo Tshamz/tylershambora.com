@@ -1,0 +1,15 @@
+h1,
+h2,
+h3,
+p {
+  text-rendering: optimizeLegibility;
+}
+
+h3 {
+  font: 1.3rem/1.5 $Font-DIN-Medium;
+}
+
+em {
+  color: $Color-Light-Grey;
+  font: 0.875rem $Font-Georgia;
+}
