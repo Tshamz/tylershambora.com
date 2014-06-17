@@ -12,8 +12,11 @@ $(document).ready(function() {
   VARIABLES
 ==========================================================================*/
 
+  var $subPagesDocument;
   var messageDelay = 2000;
-  $guts = $('#guts');
+  var fadeTransitionLength = 250;
+  var slideTransitionLength = 800;
+  var $guts = $('#guts');
   var $landing = $('#landing');
   var subGalleries = ["papn", "csh", "fb", "sns", "petershambora", "wtfdrink", "laura", "resizely"];
 
@@ -23,29 +26,28 @@ $(document).ready(function() {
 
   // Load the new content into the page, and build up a gallery if necessary
   var loadPageContent = function(pageName, callback) {
-    $guts.load("sub-pages.html #" + pageName + ", #guts-footer", function() {
-      var newPage = pageName;
-      switch (newPage) {
-        case "resume":
-        case "papn":
-        case "csh":
-        case "fb":
-        case "sns":
-        case "petershambora":
-        case "wtfdrink":
-        case "laura":
-        case "resizely":
-          buildUpGallery();
-          break;
-        case "contact":
-          repopulateForm();
-          break;
-      }
-      if (callback) {
-        callback();
-      }
-    });
-    $()
+    $guts.children().not('#guts-footer').remove();  // Empty out the content (except for the footer)
+    $guts.prepend($subPagesDocument.closest('#' + pageName));  // Then .prepend() the new content
+    var newPage = pageName;
+    switch (newPage) {
+      case "resume":
+      case "papn":
+      case "csh":
+      case "fb":
+      case "sns":
+      case "petershambora":
+      case "wtfdrink":
+      case "laura":
+      case "resizely":
+        buildUpGallery();
+        break;
+      case "contact":
+        repopulateForm();
+        break;
+    }
+    if (callback) {
+      callback();
+    }
   };
 
   // Build and setup whatever gallery's been loaded
@@ -113,9 +115,13 @@ $(document).ready(function() {
     var hash = window.location.hash.substring(1);
     $('#main-header .' + hash).addClass('is-active');
     $('#main-header .' + hash + ' a').attr('disabled', 'disabled');  // Prevents further clicks on active link in IE
-    loadPageContent(hash, function() {
-      $guts.toggleClass('slideUp slideDown');
-      setTimeout(function(){$('.content').toggleClass('fadeOut fadeIn');}, 600);  // $guts slide transition takes 600ms
+    $.get("subPagesDocument.html", function(data) {
+      $subPagesDocument = $(data);
+      // Wait until the HTML document with all the sub-pages has been loaded and assigned to a variable
+      loadPageContent(hash, function() {
+        $guts.toggleClass('slideUp slideDown');
+        setTimeout(function(){$('.content').toggleClass('fadeOut fadeIn');}, slideTransitionLength);  // $guts slide transition takes 600ms
+      });
     });
   };
 
@@ -166,7 +172,7 @@ $(document).ready(function() {
         loadPageContent(newHash, function() {
           $('.content').toggleClass('fadeIn fadeOut');
         });
-      }, 200);
+      }, fadeTransitionLength);
     }
     // Are we leaving a sub gallery and going back to Portfolio?
     else if ($(".content").hasClass('sub') && newHash === "portfolio") {
@@ -175,17 +181,17 @@ $(document).ready(function() {
         loadPageContent(newHash, function() {
           $('.content').toggleClass('fadeIn fadeOut');
         });
-      }, 200);
+      }, fadeTransitionLength);
     // Just moving from one content section to another
     } else {
       $('.content').toggleClass('fadeIn fadeOut');
-      setTimeout(function(){$guts.toggleClass('slideDown slideUp');}, 200);  // $('.content') fade transition takes 200ms
+      setTimeout(function(){$guts.toggleClass('slideDown slideUp');}, fadeTransitionLength);  // $('.content') fade transition takes 200ms
       setTimeout(function() {
         loadPageContent(newHash, function() {
           $guts.toggleClass('slideUp slideDown');
-          setTimeout(function(){$('.content').toggleClass('fadeOut fadeIn');}, 600);  // $guts slide transition takes 600ms
+          setTimeout(function(){$('.content').toggleClass('fadeOut fadeIn');}, slideTransitionLength);  // $guts slide transition takes 600ms
         });
-      }, 800);  // 200ms for the fade + 600ms for the slide
+      }, fadeTransitionLength + slideTransitionLength);  // 200ms for the fade + 600ms for the slide
     }
   });
 

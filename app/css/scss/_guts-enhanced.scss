@@ -1,9 +1,10 @@
 #guts {
   padding-top: 0;
+  text-align: center;
 }
 
-.content {
-
+.non-gallery .content {
+  margin: 3.5rem auto 2.5rem;
 }
 
 .gallery {
@@ -13,5 +14,7 @@
 }
 
 .non-gallery {
-
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
 }

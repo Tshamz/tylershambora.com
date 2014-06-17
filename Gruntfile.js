@@ -12,17 +12,18 @@ module.exports = function(grunt) {
     express: {
       all: {
         options: {
-          port: 9000,
+          port: 8000,
           hostname: "0.0.0.0",
           bases: ["app"], // Replace with the directory you want the files served from
-                             // Make sure you don't use `.` or `..` in the path as Express
-                             // is likely to return 403 Forbidden responses if you do
-                             // http://stackoverflow.com/questions/14594121/express-res-sendfile-throwing-forbidden-error
+                              // Make sure you don't use `.` or `..` in the path as Express
+                              // is likely to return 403 Forbidden responses if you do
+                              // http://stackoverflow.com/questions/14594121/express-res-sendfile-throwing-forbidden-error
           livereload: true
         }
       }
     },
 
+    // grunt-watch will monitor the projects files
     watch: {
       all: {
         // Replace with whatever file you want to trigger the update from
@@ -30,7 +31,7 @@ module.exports = function(grunt) {
         // or an Array of String for multiple entries
         // You can use globing patterns like `css/**/*.css`
         // See https://github.com/gruntjs/grunt-contrib-watch#files
-        files: ["*.html", "*.php", "css/*.css", "js/**/*.js", "img/**/*.*" ],
+        files: ["app/index.html", "app/cache.manifest", "app/css/*.css", "app/js/*.js", "app/img/**/*.{png|jpg}", "app/img/*.{png|jpg}"],
         options: {
           livereload: true
         }

@@ -21,6 +21,11 @@ h2 {
   text-transform: uppercase;
 }
 
+h3,
+em {
+  display: none;
+}
+
 p {
   font: 1.125rem/1.45 $Font-DIN-Regular;
 }

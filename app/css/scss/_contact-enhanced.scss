@@ -1,9 +1,13 @@
+#contact {
+  text-align: left;
+}
+
 #contact .form-inputs {
   @include flex-justify-content(space-between);
 }
 
 #contact #contact-form {
-  max-width: 61rem;
+
 }
 
 #contact p {
@@ -17,5 +21,4 @@
 
 #contact #contact-form {
   margin: 0 auto;
-  padding: 0 7.5%;
 }

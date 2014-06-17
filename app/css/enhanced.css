@@ -22,135 +22,99 @@
 */
 @-webkit-keyframes super-rainbow {
   0% {
-    background-color: transparent;
-  }
+    background-color: transparent; }
 
   16.66% {
-    background-color: blue;
-  }
+    background-color: blue; }
 
   33.33% {
-    background-color: green;
-  }
+    background-color: green; }
 
   50% {
-    background-color: yellow;
-  }
+    background-color: yellow; }
 
   66.66% {
-    background-color: orange;
-  }
+    background-color: orange; }
 
   83.33% {
-    background-color: red;
-  }
+    background-color: red; }
 
   100% {
-    background-color: transparent;
-  }
-}
+    background-color: transparent; } }
 @-moz-keyframes super-rainbow {
   0% {
-    background-color: transparent;
-  }
+    background-color: transparent; }
 
   16.66% {
-    background-color: blue;
-  }
+    background-color: blue; }
 
   33.33% {
-    background-color: green;
-  }
+    background-color: green; }
 
   50% {
-    background-color: yellow;
-  }
+    background-color: yellow; }
 
   66.66% {
-    background-color: orange;
-  }
+    background-color: orange; }
 
   83.33% {
-    background-color: red;
-  }
+    background-color: red; }
 
   100% {
-    background-color: transparent;
-  }
-}
+    background-color: transparent; } }
 @-o-keyframes super-rainbow {
   0% {
-    background-color: transparent;
-  }
+    background-color: transparent; }
 
   16.66% {
-    background-color: blue;
-  }
+    background-color: blue; }
 
   33.33% {
-    background-color: green;
-  }
+    background-color: green; }
 
   50% {
-    background-color: yellow;
-  }
+    background-color: yellow; }
 
   66.66% {
-    background-color: orange;
-  }
+    background-color: orange; }
 
   83.33% {
-    background-color: red;
-  }
+    background-color: red; }
 
   100% {
-    background-color: transparent;
-  }
-}
+    background-color: transparent; } }
 @keyframes super-rainbow {
   0% {
-    background-color: transparent;
-  }
+    background-color: transparent; }
 
   16.66% {
-    background-color: blue;
-  }
+    background-color: blue; }
 
   33.33% {
-    background-color: green;
-  }
+    background-color: green; }
 
   50% {
-    background-color: yellow;
-  }
+    background-color: yellow; }
 
   66.66% {
-    background-color: orange;
-  }
+    background-color: orange; }
 
   83.33% {
-    background-color: red;
-  }
+    background-color: red; }
 
   100% {
-    background-color: transparent;
-  }
-}
-h1,
-h2,
-h3,
-p {
-  text-rendering: optimizeLegibility;
-}
+    background-color: transparent; } }
+h1, h2, h3, p {
+  text-rendering: optimizeLegibility; }
 
 h3 {
-  font: 1.3rem/1.5 "DIN Next W01 Medium", sans-serif;
-}
+  display: block;
+  font: 1.25rem/1 "source sans pro", sans-serif;
+  text-transform: uppercase; }
 
 em {
   color: #aaaaaa;
-  font: 0.875rem georgia, serif;
-}
+  font: 0.875rem georgia, serif; }
 
 #no-support {
   display: none;
@@ -161,8 +125,7 @@ em {
   position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 999;
-}
+  z-index: 999; }
 
 .no-support-inner {
   position: relative;
@@ -170,44 +133,35 @@ em {
   width: 90%;
   background-color: white;
   margin: 4rem auto 0;
-  padding: 1.5rem 0.75rem;
-}
+  padding: 1.5rem 0.75rem; }
 
 .no-support-text {
   display: inline-block;
-  margin: 0 2rem;
-}
+  margin: 0 2rem; }
 
-.no-support-text p:first-child,
-.no-support-text p:last-child {
-  margin: 1.25rem 0;
-}
+.no-support-text p:first-child, .no-support-text p:last-child {
+  margin: 1.25rem 0; }
 
 #unsupported-features {
   list-style-type: disc;
-  margin-left: 2rem;
-}
+  margin-left: 2rem; }
 
 #unsupported-features li {
-  font-weight: 800;
-}
+  font-weight: 800; }
 
 .no-support-downloads {
-  display: inline-block;
-}
+  display: inline-block; }
 
 .no-support-downloads span {
   float: left;
   width: 25%;
   background-color: #FFF;
   text-align: center;
-  padding: 1rem;
-}
+  padding: 1rem; }
 
 #main-header {
   height: 10rem;
-  position: relative;
-}
+  position: relative; }
 #main-header > nav {
   position: absolute;
   bottom: 0;
@@ -232,8 +186,7 @@ em {
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   -ms-justify-content: space-between;
-  justify-content: space-between;
-}
+  justify-content: space-between; }
 #main-header .nav-item {
   border-top: none;
   border-bottom: 5px solid #FFF;
@@ -247,260 +200,209 @@ em {
   -moz-transition: border-bottom 200ms ease-in-out;
   -ms-transition: border-bottom 200ms ease-in-out;
   -o-transition: border-bottom 200ms ease-in-out;
-  transition: border-bottom 200ms ease-in-out;
-}
-@media only screen and (min-width: 60rem) {
+  transition: border-bottom 200ms ease-in-out; }
+@media only screen and (min-width: 70rem) {
   #main-header .nav-item {
-    font-size: 1.35rem;
-  }
-}
+    font-size: 1.35rem; } }
 #main-header .nav-item a {
-  color: inherit;
-}
+  color: inherit; }
 #main-header .nav-item:not(.logo) {
   display: block !important;
-  /* Have to use !important because jQuery inline styles */
-}
+  /* Have to use !important because jQuery inline styles */ }
 #main-header .nav-item:not(.logo).is-active {
   background-color: transparent;
   border-bottom: 5px solid #9fbcdf;
-  color: #aaaaaa;
-}
+  color: #aaaaaa; }
 #main-header .nav-item:not(.logo) a {
-  padding-left: 0;
-}
+  padding-left: 0; }
 #main-header .nav-item:not(.logo):hover {
   background-color: transparent;
   border-bottom: 5px solid #9fbcdf;
-  color: #aaaaaa;
-}
+  color: #aaaaaa; }
 #main-header .logo {
   border-bottom: none;
   margin-top: 0;
   padding-bottom: 0.75rem;
-  padding-left: 0;
-}
+  padding-left: 0; }
 #main-header .logo:hover .color-fader {
   -webkit-animation: super-rainbow 10s infinite linear;
   -moz-animation: super-rainbow 10s infinite linear;
   -o-animation: super-rainbow 10s infinite linear;
-  animation: super-rainbow 10s infinite linear;
-}
+  animation: super-rainbow 10s infinite linear; }
 #main-header .logo-image {
   border-radius: 51%;
-  height: 54px;
-  width: 54px;
-}
-@media only screen and (min-width: 60rem) {
+  height: 52px;
+  width: 52px; }
+@media only screen and (min-width: 70rem) {
   #main-header .logo-image {
-    height: 73px;
-    width: 73px;
-  }
-}
+    height: 71px;
+    width: 71px; } }
 #main-header .logo-image img {
-  /* Image must be +1px than container so background colors don't bleed */
+  /* Image must be at least +1px than container so background colors don't bleed */
   width: 55px;
   -webkit-transition: width 300ms ease-in-out;
   -moz-transition: width 300ms ease-in-out;
   -ms-transition: width 300ms ease-in-out;
   -o-transition: width 300ms ease-in-out;
-  transition: width 300ms ease-in-out;
-}
-@media only screen and (min-width: 60rem) {
+  transition: width 300ms ease-in-out; }
+@media only screen and (min-width: 70rem) {
   #main-header .logo-image img {
-    width: 74px;
-  }
-}
+    width: 74px; } }
 #main-header .logo-text {
-  margin-top: 0;
-}
+  margin-top: 0; }
 #main-header .logo-text h1 {
   color: #666666;
-  font-size: 1.5rem;
-}
-@media only screen and (min-width: 60rem) {
+  font-size: 1.5rem; }
+@media only screen and (min-width: 70rem) {
   #main-header .logo-text h1 {
-    font-size: 2rem;
-  }
-}
+    font-size: 2rem; } }
 #main-header .screen.logo {
-  display: block;
-}
+  display: block; }
 #main-header .handheld.logo {
-  display: none;
-}
+  display: none; }
 
 .nav-toggle {
-  display: none;
-}
+  display: none; }
 
 #guts {
   padding-top: 0;
-}
+  text-align: center; }
+
+.non-gallery .content {
+  margin: 3.5rem auto 2.5rem; }
 
 .gallery {
   position: relative;
   max-width: 75rem;
-  overflow-x: hidden;
-}
+  overflow-x: hidden; }
 
-#about .about-inner {
-  display: inline-block;
-}
+.non-gallery {
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto; }
 
-#about .about-image-container {
+#guts-footer {
+  font-size: 0.9rem;
+  background-color: #FFF;
+  border-top: 1px solid #aaaaaa;
+  padding: 2rem 0 3rem; }
+#guts-footer .footer-copy {
+  float: left; }
+#guts-footer .footer-links {
+  float: right; }
+
+#about {
+  display: inline-block; }
+
+.about-image {
   float: left;
-  width: 30%;
-}
+  width: 42%;
+  margin-top: 1.5rem; }
+.about-image img {
+  max-height: 420px; }
+
+.about-words {
+  float: right;
+  width: 55%;
+  margin-left: 2.5%%; }
+.about-words header {
+  margin: 1rem 0 0.5rem;
+  text-align: center; }
+.about-words p {
+  text-align: justify; }
+.about-words .about-body {
+  word-spacing: -2px; }
+.about-words .about-specialties {
+  margin-top: 1.5rem; }
+.about-words ul {
+  list-style: disc;
+  padding-left: 2.5rem; }
+
+.portfolio-items {
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem; }
 
 #portfolio .portfolio-item img {
-  padding: 0;
-}
-
-#portfolio .portfolio-item h3 {
-  display: block;
-  font: 1.25rem/1.5 "source sans pro", sans-serif;
-  text-transform: uppercase;
-}
+  padding: 0; }
 
 #portfolio .portfolio-item a {
-  padding: 10% 5% 15%;
-}
+  padding: 10% 5% 15%; }
+
+@media only screen and (min-width: 60rem) {
+  /*
+  1. Increases size of #main-header #primary-nav
+  2. Shows .portfolio-item sub-titles & increases site of .portfolio titles
+  */
+  #portfolio .portfolio-item h3 {
+    font: 200 1.5rem/1 "source sans pro", sans-serif; }
+
+  #portfolio .portfolio-item em {
+    display: block;
+    padding-bottom: 10%; } }
+#contact {
+  text-align: left; }
 
 #contact .form-inputs {
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   -ms-justify-content: space-between;
-  justify-content: space-between;
-}
-
-#contact #contact-form {
-  max-width: 61rem;
-}
+  justify-content: space-between; }
 
 #contact p {
-  font: 1.15rem/1.4 "DIN Next W01 Regular", sans-serif;
-}
+  font: 1.15rem/1.4 "DIN Next W01 Regular", sans-serif; }
 
-#contact .name-entry,
-#contact .email-entry {
+#contact .name-entry, #contact .email-entry {
   -webkit-flex-basis: 48%;
   -moz-flex-basis: 48%;
   -ms-flex-basis: 48%;
-  flex-basis: 48%;
-}
+  flex-basis: 48%; }
 
 #contact #contact-form {
-  margin: 0 auto;
-  padding: 0 7.5%;
-}
+  margin: 0 auto; }
 
 .content-presenter h2 {
-  margin-bottom: 1rem;
-}
+  margin-bottom: 1rem; }
 
 .content-presenter .marquee-image {
-  margin: 1.5rem 0 2rem;
-}
+  margin: 1.5rem 0 2rem; }
 
-.content-presenter .artifact-image,
-.content-presenter .artifact-description {
-  width: 40%;
-}
+.content-presenter .artifact-image, .content-presenter .artifact-description {
+  width: 40%; }
 
 .content-presenter .artifact .left {
   float: left;
   margin: 0 4% 0 6%;
-  text-align: left;
-}
+  text-align: left; }
 
 .content-presenter .artifact .right {
   float: right;
   margin: 0 6% 0 4%;
-  text-align: right;
-}
+  text-align: right; }
 
 .content-presenter .banner-image {
-  width: 50%;
-}
+  width: 50%; }
 
 .content-presenter .banner-image.left {
-  float: left;
-}
+  float: left; }
 
 .content-presenter .banner-image.right {
-  float: right;
-}
+  float: right; }
 
 /*===============================================================================
     THIS IS BAD AND YOU SHOULD FEEL BAD, FIX EVENTUALLY
 ===============================================================================*/
 #resume .marquee-image {
-  border: none;
-}
+  border: none; }
 
-@media only screen and (min-width: 52rem) {
-  /*
-  1. Updates #about h2 and #about p font-size
-  2. Shows .portfolio-item(s) title
-  */
-  #about h2 {
-    font-size: 4rem;
-  }
-
-  #about p {
-    font-size: 1.4rem;
-  }
-}
-@media only screen and (min-width: 56.15rem) {
-  /*
-  1. Floats #about .about-words to the right so words don't wrap under image
-  */
-  #about .about-words {
-    width: 67.5%;
-    float: right;
-  }
-}
-@media only screen and (min-width: 60rem) {
-  /*
-  1. Increases size of #main-header #primary-nav
-  2. Increases .about-copy font-size
-  3. Shows .portfolio-item sub-titles
-  */
-  #portfolio .portfolio-item h3 {
-    font: 200 1.5rem/1.35 "source sans pro", sans-serif;
-  }
-
-  #portfolio .portfolio-item em {
-    display: block;
-    padding-bottom: 10%;
-  }
-}
-@media only screen and (min-width: 65rem) {
-  /*
-  1. Increases font-sizes for .portfolio-item(s) titles
-  */
-}
-@media only screen and (min-width: 68rem) {
-  /*
-  1. Increases font-size of #about title
-  */
-  #about h2 {
-    font-size: 4.5rem;
-  }
-
-  #about p {
-    font-size: 1.5rem;
-  }
-}
 @media only screen and (min-width: 75rem) {
   /*
   1. Switches single page .content.gallery to the .content.gallery slider
   2. Sets width of resume .artifact-image
   */
-  .content.gallery {
+  .gallery {
     height: 32rem;
-  }
+    margin-left: auto;
+    margin-right: auto; }
 
   .gallery-control {
     background-image: url(../img/gallery-control.png);
@@ -515,12 +417,10 @@ em {
     -moz-transition: opacity 400ms ease-in-out;
     -ms-transition: opacity 400ms ease-in-out;
     -o-transition: opacity 400ms ease-in-out;
-    transition: opacity 400ms ease-in-out;
-  }
+    transition: opacity 400ms ease-in-out; }
 
   .next {
-    right: 0.625rem;
-  }
+    right: 0.625rem; }
 
   .previous {
     left: 0.625rem;
@@ -528,8 +428,7 @@ em {
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
+    transform: rotate(180deg); }
 
   .is-disabled {
     opacity: 0.3;
@@ -537,58 +436,46 @@ em {
     -moz-transition: opacity 400ms ease-in-out;
     -ms-transition: opacity 400ms ease-in-out;
     -o-transition: opacity 400ms ease-in-out;
-    transition: opacity 400ms ease-in-out;
-  }
+    transition: opacity 400ms ease-in-out; }
 
   .content-presenter li {
     position: absolute;
     text-align: center;
-    width: 100%;
-  }
+    width: 100%; }
 
   .content-presenter .content-block {
     border-bottom: none;
     margin-bottom: 0;
-    padding-bottom: 0;
-  }
+    padding-bottom: 0; }
 
   .content-presenter .content-block-inner {
     margin: 1.5rem auto 0;
     max-width: 80rem;
     padding: 0 6rem;
-    width: 100%;
-  }
+    width: 100%; }
 
   .content-presenter .marquee-image {
-    margin: 0;
-  }
+    margin: 0; }
 
   .content-presenter .marquee-description {
     display: inline-block;
     float: left;
     margin-right: 4%;
-    width: 34%;
-  }
+    width: 34%; }
 
   .content-presenter .marquee figure {
     display: inline-block;
     float: right;
-    width: 60%;
-  }
+    width: 60%; }
 
   .content-presenter .description-body {
-    text-align: left;
-  }
+    text-align: left; }
 
   .content-presenter .artifact .left {
-    margin: 0 0 0 10%;
-  }
+    margin: 0 0 0 10%; }
 
   .content-presenter .artifact .right {
-    margin: 0 10% 0 0;
-  }
+    margin: 0 10% 0 0; }
 
   #resume .content-presenter .artifact-image.right {
-    width: 330px;
-  }
-}
+    width: 330px; } }

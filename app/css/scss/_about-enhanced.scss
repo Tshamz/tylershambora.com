@@ -1,8 +1,35 @@
-#about .about-inner {
+#about {
   display: inline-block;
 }
 
-#about .about-image-container {
+.about-image {
   float: left;
-  width: 30%;
+  width: 42%;
+  margin-top: 1.5rem;
+  img {
+    max-height: 420px;
+  }
+}
+
+.about-words {
+  float: right;
+  width: 55%;
+  margin-left: 2.5%%;
+  header {
+    margin: 1rem 0 0.5rem;
+    text-align: center;
+  }
+  p {
+    text-align: justify;
+  }
+  .about-body {
+    word-spacing: -2px;
+  }
+  .about-specialties {
+    margin-top: 1.5rem;
+  }
+  ul {
+    list-style: disc;
+    padding-left: 2.5rem;
+  }
 }

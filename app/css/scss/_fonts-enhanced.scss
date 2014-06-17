@@ -6,7 +6,9 @@ p {
 }
 
 h3 {
-  font: 1.3rem/1.5 $Font-DIN-Medium;
+  display: block;
+  font: 1.25rem/1 $Font-Source-Sans-Pro;
+  text-transform: uppercase;
 }
 
 em {
