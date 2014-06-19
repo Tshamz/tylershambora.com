@@ -6,17 +6,13 @@
   @include flex-justify-content(space-between);
 }
 
-#contact #contact-form {
-
-}
-
 #contact p {
   font: 1.15rem/1.4 $Font-DIN-Regular;
 }
 
 #contact .name-entry,
 #contact .email-entry {
-  @include flex-basis(48%);
+  @include flex-basis(47%);
 }
 
 #contact #contact-form {

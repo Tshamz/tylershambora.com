@@ -12,42 +12,41 @@ $(document).ready(function() {
   VARIABLES
 ==========================================================================*/
 
-  var $subPagesDocument;
   var messageDelay = 2000;
   var fadeTransitionLength = 250;
   var slideTransitionLength = 800;
   var $guts = $('#guts');
   var $landing = $('#landing');
-  var subGalleries = ["papn", "csh", "fb", "sns", "petershambora", "wtfdrink", "laura", "resizely"];
+  var subGalleries = ["papn", "csh", "fb", "sns", "petershambora", "wtfdrink", "laura", "resizely", "cpconsulting"];
 
 /*==========================================================================
   LOADING PAGE CONTENT AND GALLERY SETUP
 ==========================================================================*/
 
-  // Load the new content into the page, and build up a gallery if necessary
   var loadPageContent = function(pageName, callback) {
-    $guts.children().not('#guts-footer').remove();  // Empty out the content (except for the footer)
-    $guts.prepend($subPagesDocument.closest('#' + pageName));  // Then .prepend() the new content
-    var newPage = pageName;
-    switch (newPage) {
-      case "resume":
-      case "papn":
-      case "csh":
-      case "fb":
-      case "sns":
-      case "petershambora":
-      case "wtfdrink":
-      case "laura":
-      case "resizely":
-        buildUpGallery();
-        break;
-      case "contact":
-        repopulateForm();
-        break;
-    }
-    if (callback) {
-      callback();
-    }
+    $guts.load("sub-pages.html #" + pageName + ", #guts-footer", function() {
+      var newPage = pageName;
+      switch (newPage) {
+        case "resume":
+        case "papn":
+        case "csh":
+        case "fb":
+        case "sns":
+        case "petershambora":
+        case "wtfdrink":
+        case "laura":
+        case "resizely":
+        case "cpsolutions":
+          buildUpGallery();
+          break;
+        case "contact":
+          repopulateForm();
+          break;
+      }
+      if (callback) {
+        callback();
+      }
+    });
   };
 
   // Build and setup whatever gallery's been loaded
@@ -126,7 +125,7 @@ $(document).ready(function() {
   };
 
   // If the initial URL contains a hash, load that page and go to it
-  if (window.location.hash) {
+  if (window.location.hash ) {
     initialLoad();
   }
   // Or else just make 'entrance' the hash, and load n' go there
@@ -134,6 +133,10 @@ $(document).ready(function() {
     window.location.hash = "entrance";
     initialLoad();
   }
+
+/*==========================================================================
+  NAVIGATION
+==========================================================================*/
 
   // Clicking on the nav-toggle button reveals the nav menu
   $('.nav-toggle').click(function() {

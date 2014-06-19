@@ -1,6 +1,5 @@
 .portfolio-items {
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
+  padding: 1rem 0;
 }
 
 #portfolio .portfolio-item img {
@@ -8,7 +7,21 @@
 }
 
 #portfolio .portfolio-item a {
-  padding: 10% 5% 15%;
+  padding: 7.5% 5%;
+}
+
+#portfolio .portfolio-item h3,
+#portfolio .portfolio-item em {
+  @include transition(color 250ms ease-in-out);
+}
+
+#portfolio .portfolio-item:hover h3,
+#portfolio .portfolio-item:hover em {
+  color: #FFF;
+}
+
+#portfolio .portfolio-item h3 {
+  margin-bottom: 0.5rem;
 }
 
 @media only screen and (min-width: 60rem) {
@@ -21,6 +34,6 @@
   }
   #portfolio .portfolio-item em {
     display: block;
-    padding-bottom: 10%;
+    padding-bottom: 0.5rem;
   }
 }

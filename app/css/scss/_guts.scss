@@ -2,7 +2,7 @@
   background-color: #FFF;
   border-bottom: 2px solid $Color-Light-Grey;
   padding: 3.35rem 10% 0;  /* 3.35rem needed to push #guts below the nav */
-  @include transition(all 600ms ease-in-out);
+  @include transition(all $CSS-slideUpDown ease-in-out);
 }
 
 .content {
@@ -32,13 +32,13 @@
 .content.fadeIn {
   opacity: 1;
   visibility: visible;
-  @include transition(opacity 200ms linear);
+  @include transition(opacity $CSS-fadeInOut linear);  /* See above about JS timings */
 }
 
 .content.fadeOut {
   opacity: 0;
   visibility: hidden;
-  @include transition(visibility 0ms linear 200ms, opacity 200ms linear)
+  @include transition(visibility 0ms linear $CSS-fadeInOut, opacity $CSS-fadeInOut linear)  /* And again, about the timings */
 }
 
 #papn.sub.gallery,

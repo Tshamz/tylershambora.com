@@ -5,8 +5,16 @@
   padding: 1.5rem 0 2.5rem;
   .footer-copy {
     float: left;
+    text-align: left;
   }
   .footer-links {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 35rem) {
+  #guts-footer .footer-links {
+    display: inline;
     float: right;
     i {
       margin-left: 0.4rem;
