@@ -1,0 +1,25 @@
+#wtf-overlay {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+
+#wtf-warning {
+  text-align: center;
+  background-color: #ccc;
+  position: fixed;
+  top: 9.5rem;
+  padding: 1.5rem;
+}
+
+#wtf-warning p {
+  margin-bottom: 1rem;
+}
+
+#wtf-warning button {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+}

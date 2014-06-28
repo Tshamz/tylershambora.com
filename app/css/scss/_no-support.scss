@@ -1,9 +1,6 @@
 #no-support {
   display: none;
-  background-color: transparent;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAAA1BMVEUAAACnej3aAAAAAXRSTlNANjqZ9gAAAA5JREFUGJVjYBgFgwkAAAGQAAHY85U/AAAAAElFTkSuQmCC);
-  background-repeat: repeat;
-  background-position: top left;
+  background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   height: 100%;
   width: 100%;
@@ -49,3 +46,10 @@
   text-align: center;
   padding: 1rem;
 }
+
+
+
+
+
+
+

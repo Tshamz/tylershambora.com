@@ -135,6 +135,15 @@ img {
   max-width: 100%;
 }
 
+.hyphenate {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
 #mti_wfs_colophon {
   display: none !important;
 }
@@ -161,7 +170,7 @@ h1 {
 }
 
 h2 {
-  font: 3.75rem/1 "DIN Next W01 Heavy", sans-serif;
+  font: 3.2rem/1 "DIN Next W01 Heavy", sans-serif;
   text-transform: uppercase;
 }
 
@@ -184,10 +193,7 @@ input, button, select, textarea {
 
 #no-support {
   display: none;
-  background-color: transparent;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAAA1BMVEUAAACnej3aAAAAAXRSTlNANjqZ9gAAAA5JREFUGJVjYBgFgwkAAAGQAAHY85U/AAAAAElFTkSuQmCC);
-  background-repeat: repeat;
-  background-position: top left;
+  background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   height: 100%;
   width: 100%;
@@ -232,6 +238,32 @@ input, button, select, textarea {
   background-color: #FFF;
   text-align: center;
   padding: 1rem;
+}
+
+#wtf-overlay {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+
+#wtf-warning {
+  text-align: center;
+  background-color: #ccc;
+  position: fixed;
+  top: 9.5rem;
+  padding: 1.5rem;
+}
+
+#wtf-warning p {
+  margin-bottom: 1rem;
+}
+
+#wtf-warning button {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
 }
 
 #main-header {
@@ -306,6 +338,7 @@ input, button, select, textarea {
 #guts {
   background-color: #FFF;
   border-bottom: 2px solid #aaaaaa;
+  margin-bottom: 5rem;
   padding: 3.35rem 10% 0;
   /* 3.35rem needed to push #guts below the nav */
   -webkit-transition: all 800ms ease-in-out;
@@ -321,7 +354,7 @@ input, button, select, textarea {
 }
 
 #guts.slideDown {
-  max-height: 187.5rem;
+  max-height: 325rem;
   overflow: hidden;
 }
 
@@ -333,22 +366,22 @@ input, button, select, textarea {
 .content.fadeIn {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity 250ms linear;
-  -moz-transition: opacity 250ms linear;
-  -ms-transition: opacity 250ms linear;
-  -o-transition: opacity 250ms linear;
-  transition: opacity 250ms linear;
+  -webkit-transition: opacity 400ms linear;
+  -moz-transition: opacity 400ms linear;
+  -ms-transition: opacity 400ms linear;
+  -o-transition: opacity 400ms linear;
+  transition: opacity 400ms linear;
   /* See above about JS timings */
 }
 
 .content.fadeOut {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: visibility 0ms linear 250ms, opacity 250ms linear;
-  -moz-transition: visibility 0ms linear 250ms, opacity 250ms linear;
-  -ms-transition: visibility 0ms linear 250ms, opacity 250ms linear;
-  -o-transition: visibility 0ms linear 250ms, opacity 250ms linear;
-  transition: visibility 0ms linear 250ms, opacity 250ms linear;
+  -webkit-transition: visibility 0ms linear 400ms, opacity 400ms linear;
+  -moz-transition: visibility 0ms linear 400ms, opacity 400ms linear;
+  -ms-transition: visibility 0ms linear 400ms, opacity 400ms linear;
+  -o-transition: visibility 0ms linear 400ms, opacity 400ms linear;
+  transition: visibility 0ms linear 400ms, opacity 400ms linear;
 }
 
 #papn.sub.gallery,
@@ -649,65 +682,93 @@ input, button, select, textarea {
   display: none;
 }
 
-.content-presenter .content-block {
-  border-bottom: 1px solid #aaaaaa;
-  margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
-}
-
-.content-presenter .content-block:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.content-presenter .marquee-image {
-  border: 2px solid #aaaaaa;
-  margin: 1rem 0;
-  padding: 0.5rem;
-}
-
-.content-presenter .marquee-image.no-border {
-  border: none;
-}
-
-.content-presenter h2 {
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-
-.content-presenter .description-body {
-  text-align: justify;
-}
-
-.content-presenter .artifact {
-  display: inline-block;
-}
-
-.content-presenter .artifact-image.drop-shadow {
-  -webkit-box-shadow: 0px 3px 5px black;
-  -moz-box-shadow: 0px 3px 5px black;
-  box-shadow: 0px 3px 5px black;
-}
-
-.content-presenter .artifact-description {
-  margin-top: 1.75rem;
-}
-
-.content-presenter .banner-image {
-  display: block;
-}
-
-.content-presenter .banner-description {
-  display: inline-block;
-  margin-top: 2rem;
-}
-
-.content-presenter p a {
+.gallery a {
   color: #9fbcdf;
 }
 
-.content-presenter p a:hover {
-  color: #333333;
+.gallery a:hover {
+  color: inherit;
+}
+
+.gallery-panel {
+  display: inline-block;
+  border-bottom: 1px solid #aaaaaa;
+  margin-bottom: 3.5rem;
+  padding-bottom: 3rem;
+}
+
+.gallery .slide:last-child .gallery-panel {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.marquee-image {
+  border: 2px solid #CCC;
+  margin-bottom: 2rem;
+  padding: 10px;
+}
+
+.gallery-title,
+.gallery-url {
+  text-align: center;
+}
+
+.page-title {
+  display: inline-block;
+}
+
+.gallery-title h2 {
+  display: inline;
+}
+
+.page-badge {
+  display: inline-block;
+}
+
+.gallery-description {
+  font-size: 1.1rem;
+  text-align: justify;
+  margin-top: 1rem;
+}
+
+.gallery-panel.border .gallery-image {
+  padding: 10px;
+  border: 2px solid #CCC;
+}
+
+.gallery-image {
+  margin-bottom: 2rem;
+}
+
+.gallery-text {
+  text-align: justify;
+}
+
+.gallery .massive-url {
+  font-size: 1rem;
+}
+
+.gallery.resume .marquee-image {
+  border: none;
+}
+
+.gallery-panel.resume img {
+  max-height: 40rem;
+}
+
+.gallery-panel.box-shadow img {
+  box-shadow: 0px 3px 5px #000;
+}
+
+.site-priorities {
+  text-align: center;
+}
+
+.site-priorities ol {
+  font-weight: 800;
+  display: inline-block;
+  text-align: left;
 }
 
 @media only screen and (min-width: 35rem) {

@@ -143,6 +143,11 @@ p {
   text-rendering: optimizeLegibility;
 }
 
+h2 {
+  font: 3.75rem/1 "DIN Next W01 Heavy", sans-serif;
+  text-transform: uppercase;
+}
+
 h3 {
   display: block;
   font: 1.25rem/1 "source sans pro", sans-serif;
@@ -151,15 +156,12 @@ h3 {
 
 em {
   color: #aaaaaa;
-  font: 0.875rem georgia, serif;
+  font: 0.75rem georgia, serif;
 }
 
 #no-support {
   display: none;
-  background-color: transparent;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAAA1BMVEUAAACnej3aAAAAAXRSTlNANjqZ9gAAAA5JREFUGJVjYBgFgwkAAAGQAAHY85U/AAAAAElFTkSuQmCC);
-  background-repeat: repeat;
-  background-position: top left;
+  background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   height: 100%;
   width: 100%;
@@ -204,6 +206,41 @@ em {
   background-color: #FFF;
   text-align: center;
   padding: 1rem;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.lightbox-image-container {
+  padding: 2rem;
+  position: relative;
+  background-color: #fff;
+  border: 5px solid #aaa;
+  width: 95%;
+  margin: 10rem auto 0;
+}
+
+.lightbox-close {
+  font-weight: 800;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  margin: 0.75rem 0.75rem 0 0;
+  top: 0;
+  right: 0;
+}
+
+#lightbox-image {
+  display: block;
+  margin: 0 auto;
 }
 
 #main-header {
@@ -354,7 +391,7 @@ em {
 }
 
 .non-gallery {
-  max-width: 50rem;
+  max-width: 55rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -428,7 +465,7 @@ em {
 }
 
 #portfolio .portfolio-item h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 @media only screen and (min-width: 60rem) {
@@ -472,59 +509,105 @@ em {
   margin: 0 auto;
 }
 
-.content-presenter h2 {
-  margin-bottom: 1rem;
+.gallery .resume img {
+  cursor: pointer;
 }
 
-.content-presenter .marquee-image {
-  margin: 1.5rem 0 2rem;
+.gallery .massive-url {
+  font-size: inherit;
 }
 
-.content-presenter .artifact-image,
-.content-presenter .artifact-description {
-  width: 40%;
+.gallery p {
+  font-size: 1.25rem;
 }
 
-.content-presenter .artifact .left {
-  float: left;
-  margin: 0 4% 0 6%;
+.gallery .gallery-url a {
+  font-size: 1.5rem;
+}
+
+.gallery-description {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.gallery-description p {
+  font-size: 1.3rem;
+}
+
+.gallery .gallery-image img[lightbox="true"] {
+  cursor: pointer;
+}
+
+.gallery-panel.top-image .gallery-image {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.gallery-panel.top-image .gallery-text {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.gallery-panel.right-image .gallery-text,
+.gallery-panel.left-image .gallery-image {
+  margin-right: 2.5%;
+  margin-left: 7.5%;
   text-align: left;
 }
 
-.content-presenter .artifact .right {
-  float: right;
-  margin: 0 6% 0 4%;
+.gallery-panel.left-image .gallery-text,
+.gallery-panel.right-image .gallery-image {
+  margin-right: 7.5%;
+  margin-left: 2.5%;
   text-align: right;
 }
 
-.content-presenter .banner-image {
-  width: 50%;
+.gallery-panel.left-image .gallery-image,
+.gallery-panel.left-image .gallery-text,
+.gallery-panel.right-image .gallery-image,
+.gallery-panel.right-image .gallery-text {
+  width: 40%;
 }
 
-.content-presenter .banner-image.left {
+.gallery-panel.left-image .gallery-image,
+.gallery-panel.left-image .gallery-text,
+.gallery-panel.right-image .gallery-text {
   float: left;
 }
 
-.content-presenter .banner-image.right {
+.gallery-panel.right-image .gallery-image {
   float: right;
 }
 
-/*===============================================================================
-    THIS IS BAD AND YOU SHOULD FEEL BAD, FIX EVENTUALLY
-===============================================================================*/
-#resume .marquee-image {
-  border: none;
-}
+@media only screen and (max-width: 62.5rem) {
+  .gallery .push-image-down .gallery-image {
+    margin-top: 1rem;
+  }
 
+  .gallery .push-text-down .gallery-text {
+    margin-top: 1rem;
+  }
+}
 @media only screen and (min-width: 75rem) {
   /*
   1. Switches single page .content.gallery to the .content.gallery slider
   2. Sets width of resume .artifact-image
   */
   .gallery {
-    height: 25rem;
+    height: 34rem;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .gallery.content {
+    margin-top: 5rem;
+    margin-bottom: 0;
+  }
+
+  .slide {
+    position: absolute;
+    padding: 0 5rem;
+    width: 100%;
   }
 
   .gallery-control {
@@ -544,11 +627,11 @@ em {
   }
 
   .next {
-    right: 0.625rem;
+    right: 0;
   }
 
   .previous {
-    left: 0.625rem;
+    left: 0;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -563,6 +646,41 @@ em {
     -ms-transition: opacity 400ms ease-in-out;
     -o-transition: opacity 400ms ease-in-out;
     transition: opacity 400ms ease-in-out;
+  }
+
+  .gallery .marquee-image,
+  .gallery .gallery-title,
+  .gallery .gallery-url,
+  .gallery .gallery-description {
+    width: 47.5%;
+  }
+
+  .gallery .marquee-image {
+    float: right;
+  }
+
+  .gallery .gallery-title,
+  .gallery .gallery-url,
+  .gallery .gallery-description {
+    float: left;
+  }
+
+  .gallery .gallery-description {
+    margin: 0;
+  }
+
+  .gallery .gallery-description p {
+    text-align: justify;
+  }
+
+  .page-badge {
+    display: block;
+  }
+
+  .gallery-panel {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .content-presenter li {

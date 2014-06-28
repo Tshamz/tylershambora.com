@@ -1,65 +1,94 @@
-.content-presenter {
-
-}
-
-.content-presenter .content-block {
-  border-bottom: 1px solid $Color-Light-Grey;
-  margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
-}
-
-.content-presenter .content-block:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.content-presenter .marquee-image {
-  border: 2px solid $Color-Light-Grey;
-  margin: 1rem 0;
-  padding: 0.5rem;
-}
-
-.content-presenter .marquee-image.no-border {
-  border: none;
-}
-
-.content-presenter h2 {
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-
-.content-presenter .description-body {
-  text-align: justify;
-}
-
-.content-presenter .artifact {
-  display: inline-block;
-}
-
-.content-presenter .artifact-image.drop-shadow {
-  @include box-shadow(0px 3px 5px $Color-Black)
-}
-
-.content-presenter .artifact-description {
-  margin-top: 1.75rem;
-}
-
-.content-presenter .banner-image {
-  display: block;
-}
-
-.content-presenter .banner-description {
-  display: inline-block;
-  margin-top: 2rem;
-}
-
-.content-presenter p a {
+.gallery a {
   color: $Color-Light-Blue;
 }
 
-.content-presenter p a:hover {
-  color: $Color-Dark-Grey;
+.gallery a:hover {
+  color: inherit;
 }
+
+
+
+.gallery-panel {
+  display: inline-block;
+  border-bottom: 1px solid $Color-Light-Grey;
+  margin-bottom: 3.5rem;
+  padding-bottom: 3rem;
+}
+
+.gallery .slide:last-child .gallery-panel {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.marquee-image {
+  border: 2px solid #CCC;
+  margin-bottom: 2rem;
+  padding: 10px;
+}
+
+.gallery-title,
+.gallery-url {
+  text-align: center;
+}
+
+.page-title {
+  display: inline-block;
+}
+
+.gallery-title h2 {
+  display: inline;
+}
+
+.page-badge {
+  display: inline-block;
+}
+
+.gallery-description {
+  font-size: 1.1rem;
+  text-align: justify;
+  margin-top: 1rem;
+}
+
+.gallery-panel.border .gallery-image {
+  padding: 10px;
+  border: 2px solid #CCC;
+}
+
+.gallery-image {
+  margin-bottom: 2rem;
+}
+
+.gallery-text {
+  text-align: justify;
+}
+
+.gallery .massive-url {
+  font-size: 1rem;
+}
+
+.gallery.resume .marquee-image {
+  border: none;
+}
+
+.gallery-panel.resume img {
+  max-height: 40rem;
+}
+
+.gallery-panel.box-shadow img {
+  box-shadow: 0px 3px 5px #000;
+}
+
+.site-priorities {
+  text-align: center;
+}
+
+.site-priorities ol {
+  font-weight: 800;
+  display: inline-block;
+  text-align: left;
+}
+
 
 @media only screen and (min-width: 35rem) {
   .content-presenter .content-block {

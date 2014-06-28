@@ -1,45 +1,85 @@
-.content-presenter h2 {
-  margin-bottom: 1rem;
+.gallery .resume img {
+  cursor: pointer;
 }
 
-.content-presenter .marquee-image {
-  margin: 1.5rem 0 2rem;
+.gallery .massive-url {
+  font-size: inherit;
 }
 
-.content-presenter .artifact-image,
-.content-presenter .artifact-description {
-  width: 40%;
+.gallery p {
+  font-size: 1.25rem;
 }
 
-.content-presenter .artifact .left {
-  float: left;
-  margin: 0 4% 0 6%;
+.gallery .gallery-url a {
+  font-size: 1.5rem;
+}
+
+
+.gallery-panel.left-image .gallery-image,
+.gallery-panel.right-image .gallery-image {
+
+}
+
+.gallery-description {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.gallery-description p {
+  font-size: 1.3rem;
+}
+
+.gallery .gallery-image img[lightbox="true"] {
+  cursor: pointer;
+}
+
+.gallery-panel.top-image .gallery-image {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.gallery-panel.top-image .gallery-text {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.gallery-panel.right-image .gallery-text,
+.gallery-panel.left-image .gallery-image {
+  margin-right: 2.5%;
+  margin-left: 7.5%;
   text-align: left;
 }
 
-.content-presenter .artifact .right {
-  float: right;
-  margin: 0 6% 0 4%;
+.gallery-panel.left-image .gallery-text,
+.gallery-panel.right-image .gallery-image {
+  margin-right: 7.5%;
+  margin-left: 2.5%;
   text-align: right;
 }
 
-.content-presenter .banner-image {
-  width: 50%;
+.gallery-panel.left-image .gallery-image,
+.gallery-panel.left-image .gallery-text,
+.gallery-panel.right-image .gallery-image,
+.gallery-panel.right-image .gallery-text {
+  width: 40%;
 }
 
-.content-presenter .banner-image.left {
+.gallery-panel.left-image .gallery-image,
+.gallery-panel.left-image .gallery-text,
+.gallery-panel.right-image .gallery-text {
   float: left;
 }
 
-.content-presenter .banner-image.right {
+.gallery-panel.right-image .gallery-image {
   float: right;
 }
 
+@media only screen and (max-width: 62.5rem) {
+  .gallery .push-image-down .gallery-image {
+    margin-top: 1rem;
+  }
 
-/*===============================================================================
-    THIS IS BAD AND YOU SHOULD FEEL BAD, FIX EVENTUALLY
-===============================================================================*/
-
-#resume .marquee-image {
-  border: none;
+  .gallery .push-text-down .gallery-text {
+    margin-top: 1rem;
+  }
 }

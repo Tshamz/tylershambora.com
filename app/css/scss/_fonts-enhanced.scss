@@ -5,6 +5,11 @@ p {
   text-rendering: optimizeLegibility;
 }
 
+h2 {
+  font: 3.75rem/1 $Font-DIN-Heavy;
+  text-transform: uppercase;
+}
+
 h3 {
   display: block;
   font: 1.25rem/1 $Font-Source-Sans-Pro;
@@ -13,5 +18,5 @@ h3 {
 
 em {
   color: $Color-Light-Grey;
-  font: 0.875rem $Font-Georgia;
+  font: 0.75rem $Font-Georgia;
 }
