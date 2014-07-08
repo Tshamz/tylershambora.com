@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Laura McClure</title>
+		<link rel="stylesheet" type="text/css" href="doingItWithStyle.css">
+		<link rel="stylesheet" type="text/css" href="contactMe.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type='text/javascript' src='js/ajaxInTheBox.js'></script>
+		<script type='text/javascript' src='js/hashchange.min.js'></script>
+		<script type="text/javascript" src="http://fast.fonts.net/jsapi/f50c600c-b75a-4330-98df-077adf456869.js"></script>
+
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+		<script>
+		function slideSwitch() {
+		    var $active = $('#slideshowNew div.active');
+
+		    if ( $active.length == 0 ) $active = $('#slideshowNew div:last');
+
+		    var $next =  $active.next().length ? $active.next()
+		        : $('#slideshowNew div:first');
+
+		    $active.addClass('last-active');
+
+		    $next.css({opacity: 0.0})
+		        .addClass('active')
+		        .animate({opacity: 1.0}, 1000, function() {
+		            $active.removeClass('active last-active');
+		        });
+		}
+
+		$(function() {
+			slideSwitch();
+			setInterval( "slideSwitch();", 3500 );
+		});
+		</script>
+
+</head>
+<body>
+	<div id="container">
+
+		<header>
+			<div id="logoWords">
+				<a href="index.html"><img src="images/logo.jpg" height="70" alt="Ms. McClure's Logo"/>
+				<h1 class="mahogany">Laura <span class="spaceOut">Mc</span>Clure</h1></a>
+			</div>
+			<nav>
+				<ul id="navList">
+					<li><a href="index.html" >Home</a></li>
+					<li class="biguns">//</li>
+					<li><a href="articles.html" >Articles</a></li>
+					<li class="biguns">//</li>
+					<li><a href="bio.html" >About</a></li>
+					<li class="biguns">//</li>
+					<li><a href="blog.html" target="_blank">Blog</a></li>
+					<li class="biguns">//</li>
+					<li><a href="contact.html" >Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div style="clear:both"></div>
+
+		<section id="mainContent">
+
+			<div id="steakNpotatoes" class="homePage">
+				<div id="WIP2">
+					<ul class="slideShow">
+						<li>
+							<p class="avenir95 DARKNESS">
+								<span id="hiTop">Writer,</span>
+								<br />
+								<span id="hiMiddle">Editor,</span>
+								<br />
+								<span id="hiBottom">Africa Geek.</span>
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="threeColumns">
+				<div class="columnHomePage">
+					<div class="wordsInside">
+						<h5>Selected Article</h5>
+						<h4><a href="http://google.com" target="_blank">Google.com</a></h4>
+						<p>This link takes you to google.</p>
+					</div>
+				</div>
+				<div class="columnHomePage">
+					<div class="wordsInside">
+						<h5>Blog Post</h5>
+						<h4><a href="http://lauramcclure.posterous.com/name-that-song" target="_bank">Name That Song</a></h4>
+						<p>TEXT GOES HERE</p>
+					</div>
+				</div>
+				<div class="columnHomePage lastHomeColumn">
+					<div class="wordsInside">
+						<h5>Bio</h5>
+						<h4><a href="http://tylershambora.com/laura/#bio.html">A little about Laura</a></h4>
+						<p>TEXT GOES HERE</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div style="clear:both"></div>
+
+		<div id="phrases">
+			<p class="avenirUltraLite">
+				<span id="thePhrase">A flute without holes, is not a flute. A donut without a hole, is a Danish.</span>
+			</p>
+		</div>
+
+		<footer>
+			<div id="footerContents">
+				<div class="footerColumn firstColumn">
+					<ul id="siteMapFooter" class="">
+						<li><p class="avenirUltraLite footerTitle">Site Map</p></li>
+						<li><p><a href="index.html">Home</a></p></li>
+						<li><p><a href="articles.html">Articles</a></p></li>
+						<li><p><a href="bio.html">About</a></p></li>
+						<li><p><a href="blog.html">Blog</a></p></li>
+						<li><p><a href="contact.html">Contact</a></p></li>
+					</ul>
+				</div>
+				<div class="footerColumn middleColumn">
+					<ul id="socialMediaFooter" class="">
+						<li><p class="avenirUltraLite footerTitle">Social Media</p></li>
+						<li><p><img src="images/twitterIcon.png" alt="twitterIcon" /><a href="http://twitter.com/lauramcclure" target="_blank">Twitter</a></p></li>
+						<li><p><img src="images/posterousIcon.png" alt="posterousIcon" /><a href="http://lauramcclure.posterous.com/" target="_blank">Posterous</a></p></li>
+						<li><p><img src="images/tumblrIcon.png" alt="tumblrIcon" /><a href="http://lauramcclure.tumblr.com/" target="_blank">Tumblr</a></p></li>
+						<li><p><img src="images/facebookIcon.png" alt="facebookIcon" /><a href="http://facebook.com/lauramcclurehoughton" target="_blank">Facebook</a></p></li>
+					</ul>
+				</div>
+				<div class="footerColumn middleColumn addressColumn">
+					<ul id="contactFooter" class="right">
+						<li><p class="avenirUltraLite footerTitle bigFooterTitle">Contact</p></li>
+						<li><p>415-425-2000</p></li>
+						<li><p>San Francisco Writers Grotto</p></li>
+						<li><p>490 2nd Street, 2nd Floor</p></li>
+						<li><p>San Francisco, CA 94107</p></li>
+						<li><p><a href="mailto:laura@lauramcclure.us">laura@lauramcclure.us</a></p></li>
+					</ul>
+				</div>
+				<div class="footerColumn lastColumn">
+					<div id="pictureHolder">
+						<img src="images/logo.png" height="70" alt="Ms. McClure's Logo" />
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+</body>
+</html>

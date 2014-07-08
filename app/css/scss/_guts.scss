@@ -1,7 +1,6 @@
 #guts {
   background-color: #FFF;
   border-bottom: 2px solid $Color-Light-Grey;
-  margin-bottom: 5rem;
   padding: 3.35rem 10% 0;  /* 3.35rem needed to push #guts below the nav */
   @include transition(all $CSS-slideUpDown ease-in-out);
 }
@@ -21,7 +20,7 @@
 
 
 #guts.slideDown {
-  max-height: 325rem;
+  max-height: 400rem;
   overflow: hidden;
 }
 

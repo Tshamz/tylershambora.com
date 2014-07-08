@@ -159,88 +159,28 @@ em {
   font: 0.75rem georgia, serif;
 }
 
-#no-support {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  z-index: 999;
+#wtf-warning {
+  left: 25%;
+  right: 25%;
 }
 
-.no-support-inner {
-  position: relative;
-  max-width: 50rem;
-  width: 90%;
-  background-color: white;
-  margin: 4rem auto 0;
-  padding: 1.5rem 0.75rem;
+#wtf-warning button {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
 }
 
-.no-support-text {
-  display: inline-block;
-  margin: 0 2rem;
-}
-
-.no-support-text p:first-child,
-.no-support-text p:last-child {
-  margin: 1.25rem 0;
-}
-
-#unsupported-features {
-  list-style-type: disc;
-  margin-left: 2rem;
-}
-
-#unsupported-features li {
-  font-weight: 800;
-}
-
-.no-support-downloads {
-  display: inline-block;
-}
-
-.no-support-downloads span {
-  float: left;
-  width: 25%;
-  background-color: #FFF;
-  text-align: center;
-  padding: 1rem;
-}
-
-#lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
-}
-
-.lightbox-image-container {
+#entrance {
+  margin: 4rem auto;
   padding: 2rem;
-  position: relative;
-  background-color: #fff;
-  border: 5px solid #aaa;
-  width: 95%;
-  margin: 10rem auto 0;
 }
 
-.lightbox-close {
-  font-weight: 800;
-  font-size: 1.5rem;
-  cursor: pointer;
-  position: absolute;
-  margin: 0.75rem 0.75rem 0 0;
-  top: 0;
-  right: 0;
-}
-
-#lightbox-image {
-  display: block;
+.what-i-am {
+  width: 28rem;
   margin: 0 auto;
+}
+
+.what-i-am h2 {
+  font-size: 2.5rem;
 }
 
 #main-header {
@@ -354,7 +294,7 @@ em {
   margin-top: 0;
 }
 #main-header .logo-text h1 {
-  color: #666666;
+  color: #353d48;
   font-size: 1.5rem;
 }
 @media only screen and (min-width: 70rem) {
@@ -374,6 +314,7 @@ em {
 }
 
 #guts {
+  background-color: #fff;
   padding-top: 0;
   /* Needed to remove the css used to push #guts below the fixed header */
   text-align: center;
@@ -509,8 +450,17 @@ em {
   margin: 0 auto;
 }
 
+#contact .status-message {
+  top: 18.125rem;
+  width: 22.5rem;
+}
+
 .gallery .resume img {
   cursor: pointer;
+}
+
+.gallery-panel.resume img {
+  max-height: 30rem;
 }
 
 .gallery .massive-url {

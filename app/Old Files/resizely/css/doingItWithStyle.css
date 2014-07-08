@@ -1,0 +1,20 @@
+body {padding-top:100px;}
+section {padding:35px 0px}
+footer {height:100px;width:100%;background:rgb(42,42,42);}
+footer p {padding-top:35px;color:#fff;text-align:center;}
+
+#aboutContent {}
+#aboutContent img {display:block;margin:0px auto;}
+
+#howContent {}
+#howContent li {margin-bottom:20px;}
+
+#pricingContent {}
+
+.title {width:200px;margin:0 auto;font-family: Bitter,Rockwell,Georgia,serif;text-align:center;font-size:28px;padding:20px 0px;margin-bottom:10px;border-bottom:1px dotted #ccc;}
+.pacifico {font-family:"Pacifico";}
+.arimo {font-family:"Arimo";}
+.bar {height:50px;}
+.lightBlue {color:rgb(60,141,197);}
+.darkBlue {background:rgba(110,128,136,.75);}
+

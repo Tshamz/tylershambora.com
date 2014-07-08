@@ -121,7 +121,7 @@ html {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  color: #333333;
+  color: #353d48;
   font: normal normal normal 100%/1 "DIN Next W01 Regular", sans-serif;
   overflow: -moz-scrollbars-vertical;
   overflow: scroll;
@@ -240,6 +240,41 @@ input, button, select, textarea {
   padding: 1rem;
 }
 
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.lightbox-image-container {
+  padding: 2rem;
+  position: relative;
+  background-color: #fff;
+  border: 5px solid #aaa;
+  width: 95%;
+  margin: 10rem auto 0;
+}
+
+.lightbox-close {
+  font-weight: 800;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  margin: 0.75rem 0.75rem 0 0;
+  top: 0;
+  right: 0;
+}
+
+#lightbox-image {
+  display: block;
+  margin: 0 auto;
+}
+
 #wtf-overlay {
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
@@ -253,8 +288,10 @@ input, button, select, textarea {
   text-align: center;
   background-color: #ccc;
   position: fixed;
-  top: 9.5rem;
+  top: 1.5rem;
   padding: 1.5rem;
+  left: 0;
+  right: 0;
 }
 
 #wtf-warning p {
@@ -262,8 +299,30 @@ input, button, select, textarea {
 }
 
 #wtf-warning button {
-  margin: 0 1rem;
+  margin: 0 0.5rem 0.5rem;
   padding: 0.5rem 1rem;
+}
+
+#entrance {
+  margin: 10% auto;
+  padding: 5%;
+}
+
+.what-i-am {
+  text-align: center;
+  width: 14.5rem;
+  margin: 0 auto;
+}
+
+.what-i-am h2 {
+  color: #CCC;
+  font-size: 1.4rem;
+  letter-spacing: -2px;
+}
+
+.what-i-am i {
+  color: #353d48;
+  font-style: normal;
 }
 
 #main-header {
@@ -283,7 +342,7 @@ input, button, select, textarea {
   line-height: 2;
 }
 #main-header .nav-item.is-active {
-  background-color: #f2f2f2;
+  background-color: #cccccc;
   cursor: default;
   pointer-events: none;
 }
@@ -295,7 +354,7 @@ input, button, select, textarea {
   padding-left: 1.875rem;
 }
 #main-header .nav-item:not(.logo):hover {
-  background-color: #f2f2f2;
+  background-color: #cccccc;
   cursor: pointer;
 }
 #main-header .logo {
@@ -338,7 +397,6 @@ input, button, select, textarea {
 #guts {
   background-color: #FFF;
   border-bottom: 2px solid #aaaaaa;
-  margin-bottom: 5rem;
   padding: 3.35rem 10% 0;
   /* 3.35rem needed to push #guts below the nav */
   -webkit-transition: all 800ms ease-in-out;
@@ -354,7 +412,7 @@ input, button, select, textarea {
 }
 
 #guts.slideDown {
-  max-height: 325rem;
+  max-height: 400rem;
   overflow: hidden;
 }
 
@@ -432,7 +490,7 @@ input, button, select, textarea {
     margin-right: 0.2rem;
   }
   #guts-footer .footer-links a {
-    color: #333333;
+    color: #353d48;
     text-decoration: underline;
   }
   #guts-footer .footer-links a:hover {
@@ -632,7 +690,7 @@ input, button, select, textarea {
 }
 
 #contact input[type="submit"] {
-  background: #666666;
+  background: #6d7e94;
   border: 1px solid #aaaaaa;
   color: white;
   opacity: 0.75;
@@ -653,13 +711,13 @@ input, button, select, textarea {
 
 #contact input[type="submit"]:active {
   background: #aaaaaa;
-  -webkit-box-shadow: 0 0 0.5rem #333333 inset;
-  -moz-box-shadow: 0 0 0.5rem #333333 inset;
-  box-shadow: 0 0 0.5rem #333333 inset;
+  -webkit-box-shadow: 0 0 0.5rem #353d48 inset;
+  -moz-box-shadow: 0 0 0.5rem #353d48 inset;
+  box-shadow: 0 0 0.5rem #353d48 inset;
 }
 
 #contact .status-message {
-  background-color: #f2f2f2;
+  background-color: #CCC;
   border: 1px solid #aaaaaa;
   display: none;
   left: 0;
@@ -667,12 +725,15 @@ input, button, select, textarea {
   padding: 1rem;
   position: fixed;
   right: 0;
+  top: 4rem;
+  width: 90%;
+  -webkit-box-shadow: 0 0 0.5rem #6d7e94;
+  -moz-box-shadow: 0 0 0.5rem #6d7e94;
+  box-shadow: 0 0 0.5rem #6d7e94;
+}
+
+#contact .status-message p {
   text-align: center;
-  top: 18.125rem;
-  width: 22.5rem;
-  -webkit-box-shadow: 0 0 0.5rem #666666;
-  -moz-box-shadow: 0 0 0.5rem #666666;
-  box-shadow: 0 0 0.5rem #666666;
 }
 
 .status-message .sending-message,
@@ -695,6 +756,7 @@ input, button, select, textarea {
   border-bottom: 1px solid #aaaaaa;
   margin-bottom: 3.5rem;
   padding-bottom: 3rem;
+  width: 100%;
 }
 
 .gallery .slide:last-child .gallery-panel {
@@ -751,10 +813,6 @@ input, button, select, textarea {
 
 .gallery.resume .marquee-image {
   border: none;
-}
-
-.gallery-panel.resume img {
-  max-height: 40rem;
 }
 
 .gallery-panel.box-shadow img {

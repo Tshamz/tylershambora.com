@@ -1,0 +1,72 @@
+var galleryInformation = {
+  "laura": {
+    "marqueeImage": "laura.jpg",
+    "galleryTitle": "HeyLaura.com",
+    "galleryURL": "http://heylaura.com",
+    "galleryDescription": "This is something I did in my spare time.",
+    "additionalGalleryPanels": 2
+  },
+  "resizely": {
+    "marqueeImage": "resizely.jpg",
+    "galleryTitle": "resize.ly",
+    "galleryURL": "http://resize.ly",
+    "galleryDescription": "I'm off the chain like broke numchucks",
+    "additionalGalleryPanels": 1
+  },
+  "sns": {
+    "marqueeImage": "sns.jpg",
+    "galleryTitle": "SpeakerNoiseSociety (Defunct)",
+    "galleryURL": null,
+    "galleryDescription": "Don't hate the player, hate the game.",
+    "additionalGalleryPanels": 3
+  },
+  "petershambora": {
+    "marqueeImage": "petershambora.jpg",
+    "galleryTitle": "PeterShambora.com",
+    "galleryURL": "http://petershambora.com",
+    "galleryDescription": "Yuv ya babt!",
+    "additionalGalleryPanels": 1
+  },
+  "fb": {
+    "marqueeImage": "fb.jpg",
+    "galleryTitle": "FreshB33ts (Not Updated)",
+    "galleryURL": "http://freshb33ts.com",
+    "galleryDescription": "I kiss ya sista",
+    "additionalGalleryPanels": 2
+  },
+  "papn": {
+    "marqueeImage": "papn.jpg",
+    "galleryTitle": "Palo Alto Party Network (Defunct)",
+    "galleryURL": null,
+    "galleryDescription": "I'm off the chain like broke numchucks",
+    "additionalGalleryPanels": 1
+  },
+  "csh": {
+    "marqueeImage": "csh.jpg",
+    "galleryTitle": "Casa Street Hooligans",
+    "galleryURL": "http://casastreethooligans.com",
+    "galleryDescription": "May the best cuisine reign supreme!",
+    "additionalGalleryPanels": 1
+  },
+  "wtfdrink": {
+    "marqueeImage": "wtfdrink.jpg",
+    "galleryTitle": "WTFDrink.com",
+    "galleryURL": "http://wtfdrink.com",
+    "galleryDescription": "Fresh off the plane, konichiwa bitches!",
+    "additionalGalleryPanels": 4
+  },
+  "cpconsulting": {
+    "marqueeImage": "cpconsulting.jpg",
+    "galleryTitle": "CP Consulting (Mockup)",
+    "galleryURL": null,
+    "galleryDescription": "Uhhhh, how'd this get here???",
+    "additionalGalleryPanels": 2
+  },
+  "resume": {
+    "marqueeImage": "resume.jpg",
+    "galleryTitle": "Resume",
+    "galleryURL": "http://tylershambora.com/resume",
+    "galleryDescription": "Marry me!",
+    "additionalGalleryPanels": 1
+  }
+};

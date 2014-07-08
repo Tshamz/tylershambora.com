@@ -91,7 +91,7 @@
 }
 
 #contact .status-message {
-  background-color: $Color-Even-Lighter-Grey;
+  background-color: #CCC;
   border: 1px solid $Color-Light-Grey;
   display: none;
   left: 0;
@@ -99,10 +99,13 @@
   padding: 1rem;
   position: fixed;
   right: 0;
-  text-align: center;
-  top: 18.125rem;
-  width: 22.5rem;
+  top: 4rem;
+  width: 90%;
   @include box-shadow(0 0 0.5rem $Color-Grey);
+}
+
+#contact .status-message p {
+  text-align: center;
 }
 
 .status-message .sending-message,

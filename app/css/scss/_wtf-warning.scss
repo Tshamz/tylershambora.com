@@ -11,8 +11,10 @@
   text-align: center;
   background-color: #ccc;
   position: fixed;
-  top: 9.5rem;
+  top: 1.5rem;
   padding: 1.5rem;
+  left: 0;
+  right: 0;
 }
 
 #wtf-warning p {
@@ -20,6 +22,6 @@
 }
 
 #wtf-warning button {
-  margin: 0 1rem;
+  margin: 0 0.5rem 0.5rem;
   padding: 0.5rem 1rem;
 }
