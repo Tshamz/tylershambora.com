@@ -455,12 +455,12 @@ em {
   width: 22.5rem;
 }
 
-.gallery .resume img {
-  cursor: pointer;
-}
-
 .gallery-panel.resume img {
   max-height: 30rem;
+}
+
+.gallery .resume img {
+  cursor: pointer;
 }
 
 .gallery .massive-url {
@@ -555,9 +555,14 @@ em {
   }
 
   .slide {
+    margin-top: 2rem;
     position: absolute;
     padding: 0 5rem;
     width: 100%;
+  }
+
+  .slide.first {
+    margin-top: 0;
   }
 
   .gallery-control {
@@ -607,6 +612,7 @@ em {
 
   .gallery .marquee-image {
     float: right;
+    margin-top: 2rem;
   }
 
   .gallery .gallery-title,
