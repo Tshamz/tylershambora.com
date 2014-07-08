@@ -1,0 +1,2 @@
+#ignore the app/Old Files dir. that serves as essentially a trash can (but without actually deleting anything) for all out of date and non-relevant content
+app/Old Files/**
