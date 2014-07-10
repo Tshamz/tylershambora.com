@@ -1,12 +1,12 @@
 #main-header {
-  height: 10rem;
+  height: 7.5rem;
   position: relative;
   > nav {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    max-width: 70rem;
+    max-width: 60rem;
     margin: 0 auto;
     padding: 0 3rem;
     @include flex-box;
@@ -19,10 +19,10 @@
     border-bottom: 5px solid #FFF;
     font-family: $Font-DIN-Light;;
     font-size: 1.15rem;
-    line-height: 2;
+    line-height: 2.45;
     text-transform: uppercase;
     margin-top: 1.5rem;
-    padding: 0.625rem 0 1.875rem;
+    padding: 0.625rem 0 1.375rem;
     @include transition(border-bottom 200ms ease-in-out);
     @media only screen and (min-width: 70rem) {
       font-size: 1.35rem;
@@ -50,7 +50,7 @@
   .logo {
     border-bottom: none;
     margin-top: 0;
-    padding-bottom: 0.75rem;
+    padding-bottom: 0;
     padding-left: 0;
     &:hover .color-fader {
       @include animation(super-rainbow 10s infinite linear);

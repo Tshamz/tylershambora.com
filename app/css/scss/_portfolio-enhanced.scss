@@ -7,7 +7,7 @@
 }
 
 #portfolio .portfolio-item a {
-  padding: 7.5% 5%;
+  padding: 7.5%;
 }
 
 #portfolio .portfolio-item h3,
@@ -30,10 +30,12 @@
   2. Shows .portfolio-item sub-titles & increases site of .portfolio titles
   */
   #portfolio .portfolio-item h3 {
-    font: 200 1.5rem/1 $Font-Source-Sans-Pro;
+    font: 200 1.35rem/1 $Font-Source-Sans-Pro;
   }
   #portfolio .portfolio-item em {
     display: block;
     padding-bottom: 0.5rem;
   }
 }
+
+// test1

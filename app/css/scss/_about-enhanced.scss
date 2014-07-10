@@ -5,9 +5,15 @@
 .about-image {
   float: left;
   width: 42%;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  @media only screen and (min-width: 56.5rem) {
+    margin-top: 1.25rem;
+  }
+  @media only screen and (min-width: 65rem) {
+    margin-top: 0.5rem;
+  }
   img {
-    max-height: 420px;
+    max-height: 380px;
   }
 }
 
@@ -16,8 +22,7 @@
   width: 55%;
   margin-left: 2.5%%;
   header {
-    margin: 1rem 0 0.5rem;
-    text-align: center;
+    margin-top: 0;
   }
   p {
     text-align: justify;
@@ -26,7 +31,7 @@
     word-spacing: -2px;
   }
   .about-specialties {
-    margin-top: 1.5rem;
+    margin-top: 0.75rem;
   }
   ul {
     list-style: disc;

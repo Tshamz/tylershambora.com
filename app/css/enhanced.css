@@ -160,8 +160,8 @@ em {
 }
 
 #wtf-warning {
-  left: 25%;
-  right: 25%;
+  left: 20%;
+  right: 20%;
 }
 
 #wtf-warning button {
@@ -171,7 +171,7 @@ em {
 
 #entrance {
   margin: 4rem auto;
-  padding: 2rem;
+  padding: 0;
 }
 
 .what-i-am {
@@ -184,7 +184,7 @@ em {
 }
 
 #main-header {
-  height: 10rem;
+  height: 7.5rem;
   position: relative;
 }
 #main-header > nav {
@@ -192,7 +192,7 @@ em {
   bottom: 0;
   left: 0;
   right: 0;
-  max-width: 70rem;
+  max-width: 60rem;
   margin: 0 auto;
   padding: 0 3rem;
   display: -webkit-box;
@@ -218,10 +218,10 @@ em {
   border-bottom: 5px solid #FFF;
   font-family: "DIN Next W01 light", sans-serif;
   font-size: 1.15rem;
-  line-height: 2;
+  line-height: 2.45;
   text-transform: uppercase;
   margin-top: 1.5rem;
-  padding: 0.625rem 0 1.875rem;
+  padding: 0.625rem 0 1.375rem;
   -webkit-transition: border-bottom 200ms ease-in-out;
   -moz-transition: border-bottom 200ms ease-in-out;
   -ms-transition: border-bottom 200ms ease-in-out;
@@ -256,7 +256,7 @@ em {
 #main-header .logo {
   border-bottom: none;
   margin-top: 0;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0;
   padding-left: 0;
 }
 #main-header .logo:hover .color-fader {
@@ -315,13 +315,8 @@ em {
 
 #guts {
   background-color: #fff;
-  padding-top: 0;
+  padding: 0 5%;
   /* Needed to remove the css used to push #guts below the fixed header */
-  text-align: center;
-}
-
-.non-gallery .content {
-  margin: 3.5rem auto 2.5rem;
 }
 
 .gallery {
@@ -332,7 +327,7 @@ em {
 }
 
 .non-gallery {
-  max-width: 55rem;
+  max-width: 45rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -350,10 +345,20 @@ em {
 .about-image {
   float: left;
   width: 42%;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+}
+@media only screen and (min-width: 56.5rem) {
+  .about-image {
+    margin-top: 1.25rem;
+  }
+}
+@media only screen and (min-width: 65rem) {
+  .about-image {
+    margin-top: 0.5rem;
+  }
 }
 .about-image img {
-  max-height: 420px;
+  max-height: 380px;
 }
 
 .about-words {
@@ -362,8 +367,7 @@ em {
   margin-left: 2.5%%;
 }
 .about-words header {
-  margin: 1rem 0 0.5rem;
-  text-align: center;
+  margin-top: 0;
 }
 .about-words p {
   text-align: justify;
@@ -372,7 +376,7 @@ em {
   word-spacing: -2px;
 }
 .about-words .about-specialties {
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
 }
 .about-words ul {
   list-style: disc;
@@ -388,7 +392,7 @@ em {
 }
 
 #portfolio .portfolio-item a {
-  padding: 7.5% 5%;
+  padding: 7.5%;
 }
 
 #portfolio .portfolio-item h3,
@@ -415,7 +419,7 @@ em {
   2. Shows .portfolio-item sub-titles & increases site of .portfolio titles
   */
   #portfolio .portfolio-item h3 {
-    font: 200 1.5rem/1 "source sans pro", sans-serif;
+    font: 200 1.35rem/1 "source sans pro", sans-serif;
   }
 
   #portfolio .portfolio-item em {
@@ -436,6 +440,7 @@ em {
 
 #contact p {
   font: 1.15rem/1.4 "DIN Next W01 Regular", sans-serif;
+  margin-bottom: 0;
 }
 
 #contact .name-entry,
@@ -453,14 +458,6 @@ em {
 #contact .status-message {
   top: 18.125rem;
   width: 22.5rem;
-}
-
-.gallery-panel.resume img {
-  max-height: 30rem;
-}
-
-.gallery .resume img {
-  cursor: pointer;
 }
 
 .gallery .massive-url {
@@ -484,6 +481,13 @@ em {
   font-size: 1.3rem;
 }
 
+@media only screen and (min-width: 75rem) {
+  .gallery-description p,
+  .gallery p {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+}
 .gallery .gallery-image img[lightbox="true"] {
   cursor: pointer;
 }
@@ -529,13 +533,23 @@ em {
   float: right;
 }
 
-@media only screen and (max-width: 62.5rem) {
-  .gallery .push-image-down .gallery-image {
-    margin-top: 1rem;
+.gallery-panel.laura-logo img {
+  max-width: 20rem;
+  display: block;
+  text-align: left;
+}
+
+.gallery-panel.resizely-bottom-image img {
+  max-width: 35rem;
+}
+
+@media only screen and (min-width: 62.5rem) {
+  .gallery .push-down-text .gallery-text {
+    margin-top: 1.5rem;
   }
 
-  .gallery .push-text-down .gallery-text {
-    margin-top: 1rem;
+  .gallery .double-push-down-text .gallery-text {
+    margin-top: 3rem;
   }
 }
 @media only screen and (min-width: 75rem) {
@@ -544,18 +558,18 @@ em {
   2. Sets width of resume .artifact-image
   */
   .gallery {
-    height: 34rem;
+    height: 26.5rem;
     margin-left: auto;
     margin-right: auto;
   }
 
   .gallery.content {
-    margin-top: 5rem;
+    margin-top: 2.5rem;
     margin-bottom: 0;
   }
 
   .slide {
-    margin-top: 2rem;
+    margin-top: 1rem;
     position: absolute;
     padding: 0 5rem;
     width: 100%;
@@ -606,6 +620,7 @@ em {
   .gallery .marquee-image,
   .gallery .gallery-title,
   .gallery .gallery-url,
+  .gallery .gallery-status,
   .gallery .gallery-description {
     width: 47.5%;
   }
@@ -613,6 +628,10 @@ em {
   .gallery .marquee-image {
     float: right;
     margin-top: 2rem;
+  }
+
+  .gallery .gallery-title {
+    margin-top: 1rem;
   }
 
   .gallery .gallery-title,
@@ -627,10 +646,6 @@ em {
 
   .gallery .gallery-description p {
     text-align: justify;
-  }
-
-  .page-badge {
-    display: block;
   }
 
   .gallery-panel {

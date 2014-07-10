@@ -18,6 +18,7 @@
 #contact label {
   display: block;
   margin: 1.25rem 0 0.35rem;
+  text-align: left;
 }
 
 #contact textarea {
@@ -29,7 +30,8 @@
 #contact input[type="email"],
 #contact textarea {
   border: 1px solid $Color-Light-Grey;
-  padding: 1rem;
+  font-size: 0.85rem;
+  padding: 0.75rem;
   width: 100%;
 }
 
@@ -65,7 +67,7 @@
 }
 
 #contact .submit-button {
-  margin-top: 2.25rem;
+  margin-top: 2rem;
   text-align: right;
 }
 

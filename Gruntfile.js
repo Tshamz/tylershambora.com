@@ -1,4 +1,3 @@
-// Gruntfile with the configuration of grunt-express and grunt-open. No livereload yet!
 module.exports = function(grunt) {
 
   // Load Grunt tasks declared in the package.json file
@@ -6,7 +5,6 @@ module.exports = function(grunt) {
 
   // Configure Grunt
   grunt.initConfig({
-
     // grunt-express will serve the files from the folders listed in `bases`
     // on specified `port` and `hostname`
     express: {
@@ -15,10 +13,41 @@ module.exports = function(grunt) {
           port: 8000,
           hostname: "0.0.0.0",
           bases: ["app"], // Replace with the directory you want the files served from
-                              // Make sure you don't use `.` or `..` in the path as Express
-                              // is likely to return 403 Forbidden responses if you do
-                              // http://stackoverflow.com/questions/14594121/express-res-sendfile-throwing-forbidden-error
+                          // Make sure you don't use `.` or `..` in the path as Express
+                          // is likely to return 403 Forbidden responses if you do
+                          // http://stackoverflow.com/questions/14594121/express-res-sendfile-throwing-forbidden-error
           livereload: true
+        }
+      }
+    },
+
+    uglify: {
+      dist: {
+        files: grunt.file.expandMapping(["app/js/main.js"], "", {
+          rename: function(destBase, destPath) {
+            return destBase + destPath.replace(".js", ".min.js");
+          }
+        })
+      }
+    },
+
+    sass: {
+      dev: {
+        options: {
+          style: "expanded"
+        },
+        files: {
+          "app/css/style.css": "app/css/scss/style.scss",
+          "app/css/enhanced.css": "app/css/scss/enhanced.scss"
+        }
+      },
+      dist: {
+        options: {
+          style: "compressed"
+        },
+        files: {
+          "app/css/style.min.css": "app/css/scss/style.scss",
+          "app/css/enhanced.min.css": "app/css/scss/enhanced.scss"
         }
       }
     },
@@ -26,15 +55,23 @@ module.exports = function(grunt) {
     // grunt-watch will monitor the projects files
     watch: {
       all: {
-        // Replace with whatever file you want to trigger the update from
+        // Replace with whatever file(s) you want to trigger the update from
         // Either as a String for a single entry
         // or an Array of String for multiple entries
         // You can use globing patterns like `css/**/*.css`
         // See https://github.com/gruntjs/grunt-contrib-watch#files
-        files: ["app/index.html", "app/cache.manifest", "app/css/*.css", "app/js/*.js", "app/img/**/*.{png|jpg}", "app/img/*.{png|jpg}"],
+        files: ["app/index.html", "app/cache.manifest", "app/img/**/*.{png|jpg}", "app/img/*.{png|jpg}"],
         options: {
           livereload: true
-        }
+        },
+      },
+      scripts: {
+        files: ["app/js/main.js", "!app/js/main.min.js"],
+        tasks: ["uglify"]
+      },
+      sass: {
+        files: ["app/css/scss/*.scss"],
+        tasks: ["sass:dev", "sass:dist"]
       }
     },
 

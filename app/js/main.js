@@ -131,10 +131,13 @@ $(document).ready(function() {
             baseGallery += marqueeImage;
           baseGallery += '</div>';
           baseGallery += '<div class="gallery-title">';
-            baseGallery += '<span class="page-title"><h2 class="hyphenate">' + pageTitle + ' </h2><span class="page-badge">' + statusBadge + '</span></span>';
+            baseGallery += '<h2 class="hyphenate">' + pageTitle + '</h2>';
           baseGallery += '</div>';
           baseGallery += '<div class="gallery-url">';
             baseGallery += pageURL;
+          baseGallery += '</div>';
+          baseGallery += '<div class="gallery-status">';
+            baseGallery += statusBadge;
           baseGallery += '</div>';
           baseGallery += '<div class="gallery-description">';
             baseGallery += '<p>' + pageDescription + '</p>';

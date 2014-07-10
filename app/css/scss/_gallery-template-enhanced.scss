@@ -1,11 +1,3 @@
-.gallery-panel.resume img {
-  max-height: 30rem;
-}
-
-.gallery .resume img {
-  cursor: pointer;
-}
-
 .gallery .massive-url {
   font-size: inherit;
 }
@@ -18,12 +10,6 @@
   font-size: 1.5rem;
 }
 
-
-.gallery-panel.left-image .gallery-image,
-.gallery-panel.right-image .gallery-image {
-
-}
-
 .gallery-description {
   margin-left: 5%;
   margin-right: 5%;
@@ -31,6 +17,14 @@
 
 .gallery-description p {
   font-size: 1.3rem;
+}
+
+@media only screen and (min-width: 75rem) {
+  .gallery-description p,
+  .gallery p {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
 }
 
 .gallery .gallery-image img[lightbox="true"] {
@@ -78,12 +72,21 @@
   float: right;
 }
 
-@media only screen and (max-width: 62.5rem) {
-  .gallery .push-image-down .gallery-image {
-    margin-top: 1rem;
-  }
+.gallery-panel.laura-logo img {
+  max-width: 20rem;
+  display: block;
+  text-align: left;
+}
 
-  .gallery .push-text-down .gallery-text {
-    margin-top: 1rem;
+.gallery-panel.resizely-bottom-image img {
+  max-width: 35rem;
+}
+
+@media only screen and (min-width: 62.5rem) {
+  .gallery .push-down-text .gallery-text {
+    margin-top: 1.5rem;
+  }
+  .gallery .double-push-down-text .gallery-text {
+    margin-top: 3rem;
   }
 }
