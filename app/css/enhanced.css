@@ -538,6 +538,9 @@ em {
   .gallery .slide.first {
     margin-top: 0;
   }
+  .gallery + #guts-footer {
+    display: none;
+  }
 
   .gallery-panel {
     border: none;
@@ -581,10 +584,6 @@ em {
   }
   .gallery-panel.double-push-down-text .gallery-text {
     margin-top: 3rem;
-  }
-
-  + #guts-footer {
-    display: none;
   }
 }
 #laura .laura-logo img {
