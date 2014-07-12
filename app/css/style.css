@@ -177,6 +177,35 @@ img {
   font-family: 'Akzidenz-Grotesk-BQ';
   src: url("../font/Akzidenz-Grotesk-BQ-Condensed.woff") format("woff"), url("../font/Akzidenz-Grotesk-BQ-Condensed.ttf") format("truetype");
 }
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../font/icon-font.eot?v=4.1.0");
+  src: url("../font/icon-font.woff?v=4.1.0") format("woff"), url("../font/icon-font.ttf?v=4.1.0") format("truetype"), url("../font/icon-font.svg?v=4.1.0") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-twitter::before {
+  content: '\e800';
+}
+
+.fa-instagram::before {
+  content: '\e801';
+}
+
+.fa-github::before {
+  content: '\e803';
+}
+
 h1,
 h2,
 h3,
