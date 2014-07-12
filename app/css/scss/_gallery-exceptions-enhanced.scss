@@ -1,0 +1,15 @@
+#laura {
+  .laura-logo img {
+    max-width: 20rem;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 75rem) {
+  #resizely {
+    .resizely-bottom-image img {
+      max-width: 55rem;
+    }
+  }
+}

@@ -12,7 +12,7 @@ $(document).ready(function() {
   VARIABLES
 ==========================================================================*/
 
-  var subPagesDocument;
+  var injectedHtml;
   var galleryInfos = '';
   var cachedGalleries = {};
   var messageDelay = 2000;
@@ -26,8 +26,8 @@ $(document).ready(function() {
 ==========================================================================*/
 
   $.when(
-    $.get("subPagesDocument.html", function(data) {
-      subPagesDocument = $(data);
+    $.get("injectedHtml.html", function(data) {
+      injectedHtml = $(data);
     }),
     $.getJSON('/js/galleryInfos.json', function(data) {
       galleryInfos = data;
@@ -72,7 +72,7 @@ $(document).ready(function() {
       case "contact":
         repopulateForm();
       default:
-        $guts.prepend(subPagesDocument.closest('#' + newPage));
+        $guts.prepend(injectedHtml.closest('#' + newPage));
     }
     if (callback) {
       callback();
@@ -115,12 +115,11 @@ $(document).ready(function() {
 
     var baseGallery = '';
     if (galleryInfos[galleryName]["subGallery"]) {
-      baseGallery += '<section class="fadeOut content sub gallery">';
-    } else if (galleryName === "resume") {
-      baseGallery += '<section class="fadeOut content gallery resume">';
-    } else  {
-      baseGallery += '<section class="fadeOut content gallery>';
+      baseGallery += '<section id="' + galleryName + '" class="fadeOut content sub gallery">';
+    } else {
+      baseGallery += '<section id="' + galleryName + '" class="fadeOut content gallery">';
     }
+
       baseGallery += '<nav>';
         baseGallery += '<div class="gallery-control previous"></div>';
         baseGallery += '<div class="gallery-control next"></div>';
@@ -251,11 +250,11 @@ $(document).ready(function() {
   });
 
   // Update the is active class on site navigation
-  $('#main-header .nav-item').click(function() {
+  $('#main-header .nav-item a').on('click', function() {
     $('#main-header .nav-item').removeClass('is-active');
     $('#main-header a').removeAttr('disabled');
-    if ($(this).is("#main-header .nav-item")) {
-      $(this).addClass('is-active');
+    if ($(this).is("#main-header .nav-item a")) {
+      $(this).parent().addClass('is-active');
       $(this).find('a').attr('disabled', 'disabled');  // Prevents further clicks on active link in IE
     }
   });

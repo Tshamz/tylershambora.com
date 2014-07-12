@@ -1,39 +1,36 @@
-.portfolio-items {
-  padding: 1rem 0;
-}
-
-#portfolio .portfolio-item img {
-  padding: 0;
-}
-
-#portfolio .portfolio-item a {
-  padding: 7.5%;
-}
-
-#portfolio .portfolio-item h3,
-#portfolio .portfolio-item em {
-  @include transition(color 250ms ease-in-out);
-}
-
-#portfolio .portfolio-item:hover h3,
-#portfolio .portfolio-item:hover em {
-  color: #FFF;
-}
-
-#portfolio .portfolio-item h3 {
-  margin-bottom: 0.75rem;
+#portfolio {
+  .portfolio-items {
+    padding: 1rem 0;
+  }
+  .portfolio-item {
+    img {
+      padding: 0;
+    }
+    a {
+      padding: 7.5%;
+    }
+    h3 {
+      margin-bottom: 0.75rem;
+    }
+    h3,
+    em {
+      @include transition(color 250ms ease-in-out);
+    }
+    &:hover h3,
+    &:hover em {
+      color: #fff;
+    }
+  }
 }
 
 @media only screen and (min-width: 60rem) {
-  /*
-  1. Increases size of #main-header #primary-nav
-  2. Shows .portfolio-item sub-titles & increases site of .portfolio titles
-  */
-  #portfolio .portfolio-item h3 {
-    font: 200 1.35rem/1 $Font-Source-Sans-Pro;
-  }
-  #portfolio .portfolio-item em {
-    display: block;
-    padding-bottom: 0.5rem;
+  #portfolio .portfolio-item {
+    h3 {
+      font: 200 1.35rem/1 $Font-Source-Sans-Pro;
+    }
+    em {
+      display: block;
+      padding-bottom: 0.5rem;
+    }
   }
 }

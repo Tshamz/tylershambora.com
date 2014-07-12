@@ -19,10 +19,8 @@
     border-bottom: 5px solid #FFF;
     font-family: $Font-DIN-Light;;
     font-size: 1.15rem;
-    line-height: 2.45;
+    line-height: 4.5;
     text-transform: uppercase;
-    margin-top: 1.5rem;
-    padding: 0.625rem 0 1.375rem;
     @include transition(border-bottom 200ms ease-in-out);
     @media only screen and (min-width: 70rem) {
       font-size: 1.35rem;
@@ -49,9 +47,6 @@
   }
   .logo {
     border-bottom: none;
-    margin-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
     &:hover .color-fader {
       @include animation(super-rainbow 10s infinite linear);
     }
@@ -84,6 +79,8 @@
   }
   .screen.logo {
     display: block;
+    line-height: 0;
+    padding: 0 0 1rem;
   }
   .handheld.logo {
     display: none;

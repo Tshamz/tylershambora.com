@@ -1,0 +1,84 @@
+@media only screen and (min-width: 75rem) {
+  .gallery {
+    height: 26.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    .gallery-control {
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAApCAMAAACfvvDEAAAAh1BMVEUAAACfvOCfvN+fvOCfvN+fvOCfvOCcvN+OntegvN+gvd2eud+fu+Cfvd+fvOCfu9+fvN+fvN+fvN+fveCfvOCfveChudyfvN+YuN2jvuCnxeqkwuapyO3S3u+3y+ary/Da4/HI1+ufvN+StNyvxuTP3O2+0Ojz9vqfvN+fvN+fvN+fvN+fvN8veROXAAAAF3RSTlMAudjgwWYxAwFgEwcsk3lyWv736/yaIOxJEhwAAAGqSURBVDjLjZWBbqMwDIadkACBdkOtJhMnvYDWu3v/N5zbhga6hO0TqGr66U9twMCTpgVoD+YoZHWupDiaw22hgS2PpW4QSMET430gFKa7BzCbwN5ICg4TLpDU/Ussf6kFeXzFk6j51404nALmCDhENYrv6DEP2Xc2kugclnBuUdsWBstiWbUDS/fIGgn3IKzZ4qMRAfcJomevBZNNHDepmj3oZLbsq125XnYApch5sqNNoYZLF4VO/p0wqUE0cMBCh8a16vAApiDaqKaajmnzvdRwBLWY9hs4Xp5leQWSYsDnN3hpvuAY+wTnaF7/ZJmmR6Y7wSlW9O+SY57+X+P+cI6mzYHXacYlU9JS6Q1MB5+fOM1j7JLcq320T5FrL/czibGfhvbFCOnidd+KDuviveSSyATVlO9PFu16c4Cu8vn/iQlfdcBowh1SZAO9+vHZVD00v37eHzPEuN0Z4gxLcS69kSuL9HZ3FtVRaWsXxUU1WJqf5nXU1io3k71KMznNeV2R38x5T5Xuk7h+d2iF5D05dLcPVDrz7mCa21nrDyXRYqU+dN3AOvALyf99MRLlviwAAAAASUVORK5CYII=);
+      cursor: pointer;
+      height: 41px;
+      opacity: 1.0;
+      position: absolute;
+      top: 3.5rem;
+      width: 41px;
+      z-index: 99;
+      @include transition(opacity 400ms ease-in-out);
+    }
+    .next {
+      right: 0;
+    }
+    .previous {
+      left: 0;
+      @include transform(rotate(180deg));
+    }
+    &.is-disabled {
+      opacity: 0.3;
+      @include transition(opacity 400ms ease-in-out);
+    }
+    .slide {
+      margin-top: 2rem;
+      position: absolute;
+      padding: 0 5rem;
+      width: 100%;
+      &.first {
+        margin-top: 0;
+      }
+    }
+  }
+  .gallery-panel {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    .marquee-image,
+    .gallery-title,
+    .gallery-url,
+    .gallery-status,
+    .gallery-description {
+      width: 47.5%;
+    }
+    .gallery-title,
+    .gallery-url,
+    .gallery-description {
+      float: left;
+    }
+    .marquee-image {
+      float: right;
+      margin-top: 3rem;
+    }
+    .gallery-title {
+      margin-top: 2rem;
+    }
+    .gallery-description {
+      margin: 0;
+      padding: 0 2.5% 0 5%;
+      p {
+        text-align: justify;
+        font-size: 1.1rem;
+        line-height: 1.35;
+      }
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.35;
+    }
+    &.push-down-text .gallery-text {
+      margin-top: 1.5rem;
+    }
+    &.double-push-down-text .gallery-text {
+      margin-top: 3rem;
+    }
+  }
+  + #guts-footer {
+    display: none;
+  }
+}

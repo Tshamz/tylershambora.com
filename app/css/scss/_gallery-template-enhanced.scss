@@ -1,92 +1,51 @@
-.gallery .massive-url {
-  font-size: inherit;
-}
-
-.gallery p {
-  font-size: 1.25rem;
-}
-
-.gallery .gallery-url a {
-  font-size: 1.5rem;
-}
-
-.gallery-description {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.gallery-description p {
-  font-size: 1.3rem;
-}
-
-@media only screen and (min-width: 75rem) {
-  .gallery-description p,
-  .gallery p {
-    font-size: 1.1rem;
-    line-height: 1.35;
+.gallery-panel {
+  .gallery-url a {
+    font-size: 1.5rem;
   }
-}
-
-.gallery .gallery-image img[lightbox="true"] {
-  cursor: pointer;
-}
-
-.gallery-panel.top-image .gallery-image {
-  margin-bottom: 2rem;
-  width: 100%;
-}
-
-.gallery-panel.top-image .gallery-text {
-  margin: 0 auto;
-  width: 80%;
-}
-
-.gallery-panel.right-image .gallery-text,
-.gallery-panel.left-image .gallery-image {
-  margin-right: 2.5%;
-  margin-left: 7.5%;
-  text-align: left;
-}
-
-.gallery-panel.left-image .gallery-text,
-.gallery-panel.right-image .gallery-image {
-  margin-right: 7.5%;
-  margin-left: 2.5%;
-  text-align: right;
-}
-
-.gallery-panel.left-image .gallery-image,
-.gallery-panel.left-image .gallery-text,
-.gallery-panel.right-image .gallery-image,
-.gallery-panel.right-image .gallery-text {
-  width: 40%;
-}
-
-.gallery-panel.left-image .gallery-image,
-.gallery-panel.left-image .gallery-text,
-.gallery-panel.right-image .gallery-text {
-  float: left;
-}
-
-.gallery-panel.right-image .gallery-image {
-  float: right;
-}
-
-.gallery-panel.laura-logo img {
-  max-width: 20rem;
-  display: block;
-  text-align: left;
-}
-
-.gallery-panel.resizely-bottom-image img {
-  max-width: 35rem;
-}
-
-@media only screen and (min-width: 62.5rem) {
-  .gallery .push-down-text .gallery-text {
-    margin-top: 1.5rem;
+  .gallery-description {
+    margin-left: 5%;
+    margin-right: 5%;
+    p {
+      font-size: 1.3rem;
+    }
   }
-  .gallery .double-push-down-text .gallery-text {
-    margin-top: 3rem;
+  .lengthy-url {
+    font-size: inherit;
+  }
+  p {
+    font-size: 1.25rem;
+  }
+  img[lightbox="true"] {
+    cursor: pointer;
+  }
+  &.top-image .gallery-image {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  &.top-image .gallery-text {
+    margin: 0 auto;
+    width: 80%;
+  }
+  &.left-image .gallery-image,
+  &.left-image .gallery-text,
+  &.right-image .gallery-text {
+    float: left;
+  }
+  &.right-image .gallery-image {
+    float: right;
+  }
+  &.left-image .gallery-image,
+  &.right-image .gallery-text {
+    margin-right: 2.5%;
+    margin-left: 7.5%;
+    text-align: left;
+    width: 40%;
+  }
+  &.left-image .gallery-text,
+  &.right-image .gallery-image {
+    margin-right: 7.5%;
+    margin-left: 2.5%;
+    text-align: right;
+    width: 40%;
   }
 }

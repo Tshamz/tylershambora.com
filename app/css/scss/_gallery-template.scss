@@ -4,28 +4,6 @@
     margin-bottom: 0;
     padding-bottom: 0;
   }
-  .marquee-image {
-    border: 2px solid #CCC;
-    margin-bottom: 2rem;
-    padding: 10px;
-  }
-  &.resume {
-    .marquee-image {
-      margin-bottom: 0.25rem;
-      padding-bottom: 0;
-      border: none;
-    }
-    img {
-      cursor: pointer;
-      max-height: 20rem;
-    }
-  }
-  a {
-    color: $Color-Light-Blue;
-    &:hover {
-    color: inherit;
-    }
-  }
 }
 
 .gallery-panel {
@@ -34,6 +12,11 @@
   margin-bottom: 3.5rem;
   padding-bottom: 3rem;
   width: 100%;
+  .marquee-image {
+    border: 2px solid #CCC;
+    margin-bottom: 2rem;
+    padding: 10px;
+  }
   .gallery-title {
     margin-bottom: -0.5rem;
   }
@@ -68,11 +51,10 @@
   &.box-shadow img {
     box-shadow: 0px 3px 5px #000;
   }
-}
-
-@media only screen and (min-width: 35rem) {
-  .content-presenter .content-block {
-    margin-bottom: 3.5rem;
-    padding-bottom: 3rem;
+  a {
+    color: $Color-Light-Blue;
+    &:hover {
+    color: inherit;
+    }
   }
 }

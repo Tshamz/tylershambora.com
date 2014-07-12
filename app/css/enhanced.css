@@ -15,7 +15,9 @@
     a "_resume.scss" partial, and eventually imported into a styles.scss file, which is then
     later minified).
 
-2.  Most/All (depending when you read this) of the css selectors begin with either an ID or a
+2.  I'm not a very good speller, so there might be some spelling errors everywhere.
+
+3.  Most/All (depending when you read this) of the css selectors begin with either an ID or a
     class name describing the subpage or module that they are a part of. IMO, when reading the
     compressed css, this makes finding what you're looking for, or making sense of what you're
     reading much easier. At the moment, Generic css rules are not proceeded with anything.
@@ -24,14 +26,19 @@
 
     (TODO: *Consider* prefixing site wide css rules with ID/Class)
 
-3.  Use of !important is frowned upon, but at times necessary
+4.  Use of !important is frowned upon, but at times necessary
 
-4.  All measurements are in REM or %
+5.  All measurements are in REM or %
 
-5.  An exception to the that last rule is in measurements of very small size, e.g. border, border-
+6.  An exception to the that last rule is in measurements of very small size, e.g. border, border-
     radius, line-spacing,
 
-6.  Use data:uris instead of images whenever possible
+7.  Use data:uris instead of images whenever possible
+
+8.  Font-sizes go on the typographic elements
+
+
+--- SCSS & CSS STYLING/FORMATTING ---
 
 
 n.  This is a living document
@@ -177,19 +184,8 @@ em {
   font: 0.75rem georgia, serif;
 }
 
-#wtf-warning {
-  left: 20%;
-  right: 20%;
-}
-
-#wtf-warning button {
-  margin: 0 1rem;
-  padding: 0.5rem 1rem;
-}
-
 #entrance {
-  margin: 4rem auto;
-  padding: 0;
+  padding: 2rem 0;
 }
 #entrance .what-i-am {
   width: 28rem;
@@ -234,10 +230,8 @@ em {
   border-bottom: 5px solid #FFF;
   font-family: "DIN Next W01 light", sans-serif;
   font-size: 1.15rem;
-  line-height: 2.45;
+  line-height: 4.5;
   text-transform: uppercase;
-  margin-top: 1.5rem;
-  padding: 0.625rem 0 1.375rem;
   -webkit-transition: border-bottom 200ms ease-in-out;
   -moz-transition: border-bottom 200ms ease-in-out;
   -ms-transition: border-bottom 200ms ease-in-out;
@@ -271,9 +265,6 @@ em {
 }
 #main-header .logo {
   border-bottom: none;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
 }
 #main-header .logo:hover .color-fader {
   -webkit-animation: super-rainbow 10s infinite linear;
@@ -320,6 +311,8 @@ em {
 }
 #main-header .screen.logo {
   display: block;
+  line-height: 0;
+  padding: 0 0 1rem;
 }
 #main-header .handheld.logo {
   display: none;
@@ -334,15 +327,13 @@ em {
   padding: 0 5%;
   /* Needed to remove the css used to push #guts below the fixed header */
 }
-
-.gallery {
+#guts .gallery {
   position: relative;
   max-width: 75rem;
   overflow-x: hidden;
   overflow-y: hidden;
 }
-
-.non-gallery {
+#guts .non-gallery {
   max-width: 45rem;
   margin-left: auto;
   margin-right: auto;
@@ -351,60 +342,58 @@ em {
 #about {
   display: inline-block;
 }
-
-.about-image {
+#about .about-image {
   float: left;
   width: 42%;
   margin-top: 2rem;
 }
 @media only screen and (min-width: 56.5rem) {
-  .about-image {
+  #about .about-image {
     margin-top: 1.25rem;
   }
 }
 @media only screen and (min-width: 65rem) {
-  .about-image {
+  #about .about-image {
     margin-top: 0.5rem;
   }
 }
-.about-image img {
+#about .about-image img {
   max-height: 380px;
 }
-
-.about-words {
+#about .about-words {
   float: right;
   width: 55%;
   margin-left: 2.5%%;
 }
-.about-words header {
+#about .about-words header {
   margin-top: 0;
 }
-.about-words p {
+#about .about-words p {
   text-align: justify;
 }
-.about-words .about-body {
+#about .about-words .about-body {
   word-spacing: -2px;
 }
-.about-words .about-specialties {
+#about .about-words .about-specialties {
   margin-top: 0.75rem;
 }
-.about-words ul {
+#about .about-words ul {
   list-style: disc;
   padding-left: 2.5rem;
 }
 
-.portfolio-items {
+#portfolio .portfolio-items {
   padding: 1rem 0;
 }
-
 #portfolio .portfolio-item img {
   padding: 0;
 }
-
 #portfolio .portfolio-item a {
   padding: 7.5%;
 }
-
+#portfolio .portfolio-item h3 {
+  margin-bottom: 0.75rem;
+}
 #portfolio .portfolio-item h3,
 #portfolio .portfolio-item em {
   -webkit-transition: color 250ms ease-in-out;
@@ -413,25 +402,14 @@ em {
   -o-transition: color 250ms ease-in-out;
   transition: color 250ms ease-in-out;
 }
-
-#portfolio .portfolio-item:hover h3,
-#portfolio .portfolio-item:hover em {
-  color: #FFF;
-}
-
-#portfolio .portfolio-item h3 {
-  margin-bottom: 0.75rem;
+#portfolio .portfolio-item:hover h3, #portfolio .portfolio-item:hover em {
+  color: #fff;
 }
 
 @media only screen and (min-width: 60rem) {
-  /*
-  1. Increases size of #main-header #primary-nav
-  2. Shows .portfolio-item sub-titles & increases site of .portfolio titles
-  */
   #portfolio .portfolio-item h3 {
     font: 200 1.35rem/1 "source sans pro", sans-serif;
   }
-
   #portfolio .portfolio-item em {
     display: block;
     padding-bottom: 0.5rem;
@@ -440,19 +418,12 @@ em {
 #contact {
   text-align: left;
 }
-
 #contact .form-inputs {
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   -ms-justify-content: space-between;
   justify-content: space-between;
 }
-
-#contact p {
-  font: 1.15rem/1.4 "DIN Next W01 Regular", sans-serif;
-  margin-bottom: 0;
-}
-
 #contact .name-entry,
 #contact .email-entry {
   -webkit-flex-basis: 47%;
@@ -460,137 +431,72 @@ em {
   -ms-flex-basis: 47%;
   flex-basis: 47%;
 }
-
-#contact #contact-form {
-  margin: 0 auto;
-}
-
 #contact .status-message {
   top: 18.125rem;
   width: 22.5rem;
 }
-
-.gallery .massive-url {
-  font-size: inherit;
+#contact p {
+  font: 1.15rem/1.4 "DIN Next W01 Regular", sans-serif;
+  margin-bottom: 0;
+}
+#contact form {
+  margin: 0 auto;
 }
 
-.gallery p {
-  font-size: 1.25rem;
-}
-
-.gallery .gallery-url a {
+.gallery-panel .gallery-url a {
   font-size: 1.5rem;
 }
-
-.gallery-description {
+.gallery-panel .gallery-description {
   margin-left: 5%;
   margin-right: 5%;
 }
-
-.gallery-description p {
+.gallery-panel .gallery-description p {
   font-size: 1.3rem;
 }
-
-@media only screen and (min-width: 75rem) {
-  .gallery-description p,
-  .gallery p {
-    font-size: 1.1rem;
-    line-height: 1.35;
-  }
+.gallery-panel .lengthy-url {
+  font-size: inherit;
 }
-.gallery .gallery-image img[lightbox="true"] {
+.gallery-panel p {
+  font-size: 1.25rem;
+}
+.gallery-panel img[lightbox="true"] {
   cursor: pointer;
 }
-
 .gallery-panel.top-image .gallery-image {
   margin-bottom: 2rem;
   width: 100%;
 }
-
 .gallery-panel.top-image .gallery-text {
   margin: 0 auto;
   width: 80%;
 }
-
-.gallery-panel.right-image .gallery-text,
-.gallery-panel.left-image .gallery-image {
-  margin-right: 2.5%;
-  margin-left: 7.5%;
-  text-align: left;
-}
-
-.gallery-panel.left-image .gallery-text,
-.gallery-panel.right-image .gallery-image {
-  margin-right: 7.5%;
-  margin-left: 2.5%;
-  text-align: right;
-}
-
-.gallery-panel.left-image .gallery-image,
-.gallery-panel.left-image .gallery-text,
-.gallery-panel.right-image .gallery-image,
-.gallery-panel.right-image .gallery-text {
-  width: 40%;
-}
-
-.gallery-panel.left-image .gallery-image,
-.gallery-panel.left-image .gallery-text,
-.gallery-panel.right-image .gallery-text {
+.gallery-panel.left-image .gallery-image, .gallery-panel.left-image .gallery-text, .gallery-panel.right-image .gallery-text {
   float: left;
 }
-
 .gallery-panel.right-image .gallery-image {
   float: right;
 }
-
-.gallery-panel.laura-logo img {
-  max-width: 20rem;
-  display: block;
+.gallery-panel.left-image .gallery-image, .gallery-panel.right-image .gallery-text {
+  margin-right: 2.5%;
+  margin-left: 7.5%;
   text-align: left;
+  width: 40%;
+}
+.gallery-panel.left-image .gallery-text, .gallery-panel.right-image .gallery-image {
+  margin-right: 7.5%;
+  margin-left: 2.5%;
+  text-align: right;
+  width: 40%;
 }
 
-.gallery-panel.resizely-bottom-image img {
-  max-width: 35rem;
-}
-
-@media only screen and (min-width: 62.5rem) {
-  .gallery .push-down-text .gallery-text {
-    margin-top: 1.5rem;
-  }
-
-  .gallery .double-push-down-text .gallery-text {
-    margin-top: 3rem;
-  }
-}
 @media only screen and (min-width: 75rem) {
-  /*
-  1. Switches single page .content.gallery to the .content.gallery slider
-  2. Sets width of resume .artifact-image
-  */
   .gallery {
     height: 26.5rem;
     margin-left: auto;
     margin-right: auto;
   }
-
-  .gallery.content {
-    margin-top: 2.5rem;
-    margin-bottom: 0;
-  }
-
-  .slide {
-    margin-top: 1rem;
-    position: absolute;
-    padding: 0 5rem;
-    width: 100%;
-  }
-
-  .slide.first {
-    margin-top: 0;
-  }
-
-  .gallery-control {
-    background-image: url(../img/gallery-control.png);
+  .gallery .gallery-control {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAApCAMAAACfvvDEAAAAh1BMVEUAAACfvOCfvN+fvOCfvN+fvOCfvOCcvN+OntegvN+gvd2eud+fu+Cfvd+fvOCfu9+fvN+fvN+fvN+fveCfvOCfveChudyfvN+YuN2jvuCnxeqkwuapyO3S3u+3y+ary/Da4/HI1+ufvN+StNyvxuTP3O2+0Ojz9vqfvN+fvN+fvN+fvN+fvN8veROXAAAAF3RSTlMAudjgwWYxAwFgEwcsk3lyWv736/yaIOxJEhwAAAGqSURBVDjLjZWBbqMwDIadkACBdkOtJhMnvYDWu3v/N5zbhga6hO0TqGr66U9twMCTpgVoD+YoZHWupDiaw22hgS2PpW4QSMET430gFKa7BzCbwN5ICg4TLpDU/Ussf6kFeXzFk6j51404nALmCDhENYrv6DEP2Xc2kugclnBuUdsWBstiWbUDS/fIGgn3IKzZ4qMRAfcJomevBZNNHDepmj3oZLbsq125XnYApch5sqNNoYZLF4VO/p0wqUE0cMBCh8a16vAApiDaqKaajmnzvdRwBLWY9hs4Xp5leQWSYsDnN3hpvuAY+wTnaF7/ZJmmR6Y7wSlW9O+SY57+X+P+cI6mzYHXacYlU9JS6Q1MB5+fOM1j7JLcq320T5FrL/czibGfhvbFCOnidd+KDuviveSSyATVlO9PFu16c4Cu8vn/iQlfdcBowh1SZAO9+vHZVD00v37eHzPEuN0Z4gxLcS69kSuL9HZ3FtVRaWsXxUU1WJqf5nXU1io3k71KMznNeV2R38x5T5Xuk7h+d2iF5D05dLcPVDrz7mCa21nrDyXRYqU+dN3AOvALyf99MRLlviwAAAAASUVORK5CYII=);
     cursor: pointer;
     height: 41px;
     opacity: 1.0;
@@ -604,12 +510,10 @@ em {
     -o-transition: opacity 400ms ease-in-out;
     transition: opacity 400ms ease-in-out;
   }
-
-  .next {
+  .gallery .next {
     right: 0;
   }
-
-  .previous {
+  .gallery .previous {
     left: 0;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -617,8 +521,7 @@ em {
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-
-  .is-disabled {
+  .gallery.is-disabled {
     opacity: 0.3;
     -webkit-transition: opacity 400ms ease-in-out;
     -moz-transition: opacity 400ms ease-in-out;
@@ -626,36 +529,14 @@ em {
     -o-transition: opacity 400ms ease-in-out;
     transition: opacity 400ms ease-in-out;
   }
-
-  .gallery .marquee-image,
-  .gallery .gallery-title,
-  .gallery .gallery-url,
-  .gallery .gallery-status,
-  .gallery .gallery-description {
-    width: 47.5%;
-  }
-
-  .gallery .marquee-image {
-    float: right;
+  .gallery .slide {
     margin-top: 2rem;
+    position: absolute;
+    padding: 0 5rem;
+    width: 100%;
   }
-
-  .gallery .gallery-title {
-    margin-top: 1rem;
-  }
-
-  .gallery .gallery-title,
-  .gallery .gallery-url,
-  .gallery .gallery-description {
-    float: left;
-  }
-
-  .gallery .gallery-description {
-    margin: 0;
-  }
-
-  .gallery .gallery-description p {
-    text-align: justify;
+  .gallery .slide.first {
+    margin-top: 0;
   }
 
   .gallery-panel {
@@ -663,60 +544,57 @@ em {
     margin-bottom: 0;
     padding-bottom: 0;
   }
-
-  .content-presenter li {
-    position: absolute;
-    text-align: center;
-    width: 100%;
+  .gallery-panel .marquee-image,
+  .gallery-panel .gallery-title,
+  .gallery-panel .gallery-url,
+  .gallery-panel .gallery-status,
+  .gallery-panel .gallery-description {
+    width: 47.5%;
   }
-
-  .content-presenter .content-block {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .content-presenter .content-block-inner {
-    margin: 1.5rem auto 0;
-    max-width: 80rem;
-    padding: 0 6rem;
-    width: 100%;
-  }
-
-  .content-presenter .marquee-image {
-    margin: 0;
-  }
-
-  .content-presenter .marquee-description {
-    display: inline-block;
+  .gallery-panel .gallery-title,
+  .gallery-panel .gallery-url,
+  .gallery-panel .gallery-description {
     float: left;
-    margin-right: 4%;
-    width: 34%;
   }
-
-  .content-presenter .marquee figure {
-    display: inline-block;
+  .gallery-panel .marquee-image {
     float: right;
-    width: 60%;
+    margin-top: 3rem;
+  }
+  .gallery-panel .gallery-title {
+    margin-top: 2rem;
+  }
+  .gallery-panel .gallery-description {
+    margin: 0;
+    padding: 0 2.5% 0 5%;
+  }
+  .gallery-panel .gallery-description p {
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+  .gallery-panel p {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+  .gallery-panel.push-down-text .gallery-text {
+    margin-top: 1.5rem;
+  }
+  .gallery-panel.double-push-down-text .gallery-text {
+    margin-top: 3rem;
   }
 
-  .content-presenter .description-body {
-    text-align: left;
-  }
-
-  .content-presenter .artifact .left {
-    margin: 0 0 0 10%;
-  }
-
-  .content-presenter .artifact .right {
-    margin: 0 10% 0 0;
-  }
-
-  #resume .content-presenter .artifact-image.right {
-    width: 330px;
-  }
-
-  .gallery + #guts-footer {
+  + #guts-footer {
     display: none;
+  }
+}
+#laura .laura-logo img {
+  max-width: 20rem;
+  display: block;
+  text-align: left;
+}
+
+@media only screen and (min-width: 75rem) {
+  #resizely .resizely-bottom-image img {
+    max-width: 55rem;
   }
 }

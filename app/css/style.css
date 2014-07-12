@@ -15,7 +15,9 @@
     a "_resume.scss" partial, and eventually imported into a styles.scss file, which is then
     later minified).
 
-2.  Most/All (depending when you read this) of the css selectors begin with either an ID or a
+2.  I'm not a very good speller, so there might be some spelling errors everywhere.
+
+3.  Most/All (depending when you read this) of the css selectors begin with either an ID or a
     class name describing the subpage or module that they are a part of. IMO, when reading the
     compressed css, this makes finding what you're looking for, or making sense of what you're
     reading much easier. At the moment, Generic css rules are not proceeded with anything.
@@ -24,14 +26,19 @@
 
     (TODO: *Consider* prefixing site wide css rules with ID/Class)
 
-3.  Use of !important is frowned upon, but at times necessary
+4.  Use of !important is frowned upon, but at times necessary
 
-4.  All measurements are in REM or %
+5.  All measurements are in REM or %
 
-5.  An exception to the that last rule is in measurements of very small size, e.g. border, border-
+6.  An exception to the that last rule is in measurements of very small size, e.g. border, border-
     radius, line-spacing,
 
-6.  Use data:uris instead of images whenever possible
+7.  Use data:uris instead of images whenever possible
+
+8.  Font-sizes go on the typographic elements
+
+
+--- SCSS & CSS STYLING/FORMATTING ---
 
 
 n.  This is a living document
@@ -292,7 +299,8 @@ input, button, select, textarea {
   width: 100%;
   z-index: 999;
 }
-#wtf-overlay #wtf-warning {
+
+#wtf-warning {
   text-align: center;
   background-color: #ccc;
   position: fixed;
@@ -301,10 +309,10 @@ input, button, select, textarea {
   left: 1rem;
   right: 1rem;
 }
-#wtf-overlay #wtf-warning p {
+#wtf-warning p {
   margin-bottom: 1rem;
 }
-#wtf-overlay #wtf-warning button {
+#wtf-warning button {
   margin: 0 0.5rem 0.5rem;
   padding: 0.5rem 1rem;
 }
@@ -326,6 +334,9 @@ input, button, select, textarea {
 #entrance .what-i-am i {
   color: #353d48;
   font-style: normal;
+}
+#entrance + #guts-footer {
+  display: none;
 }
 
 #main-header {
@@ -444,7 +455,7 @@ input, button, select, textarea {
 }
 
 #guts-footer {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   background-color: #FFF;
   border-top: 1px solid #aaaaaa;
   padding: 1rem 0 2rem;
@@ -693,26 +704,6 @@ input, button, select, textarea {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-.gallery .marquee-image {
-  border: 2px solid #CCC;
-  margin-bottom: 2rem;
-  padding: 10px;
-}
-.gallery.resume .marquee-image {
-  margin-bottom: 0.25rem;
-  padding-bottom: 0;
-  border: none;
-}
-.gallery.resume img {
-  cursor: pointer;
-  max-height: 20rem;
-}
-.gallery a {
-  color: #9fbcdf;
-}
-.gallery a:hover {
-  color: inherit;
-}
 
 .gallery-panel {
   display: inline-block;
@@ -720,6 +711,11 @@ input, button, select, textarea {
   margin-bottom: 3.5rem;
   padding-bottom: 3rem;
   width: 100%;
+}
+.gallery-panel .marquee-image {
+  border: 2px solid #CCC;
+  margin-bottom: 2rem;
+  padding: 10px;
 }
 .gallery-panel .gallery-title {
   margin-bottom: -0.5rem;
@@ -755,10 +751,19 @@ input, button, select, textarea {
 .gallery-panel.box-shadow img {
   box-shadow: 0px 3px 5px #000;
 }
+.gallery-panel a {
+  color: #9fbcdf;
+}
+.gallery-panel a:hover {
+  color: inherit;
+}
 
-@media only screen and (min-width: 35rem) {
-  .content-presenter .content-block {
-    margin-bottom: 3.5rem;
-    padding-bottom: 3rem;
-  }
+#resume .marquee-image {
+  margin-bottom: 0.25rem;
+  padding-bottom: 0;
+  border: none;
+}
+#resume img {
+  cursor: pointer;
+  max-height: 20rem;
 }

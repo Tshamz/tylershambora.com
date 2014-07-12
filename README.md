@@ -15,5 +15,7 @@ Check out [tylershambora.com](http://tylershambora.com) for an up to date, live 
 *  ~~Cleaning up the (min-width: 75rem) slider so it doesn't look bad~~ (Done, although the slider still kinda looks/feels kinda rough around the edges)
 *  The lightbox needs a little clean up on isle five work
 *  Markup for the site lives in three different places: index.html, subPagesDocument.html, and main.js. It would be nice to do one of a few things: Get everything in the same place under the same file type, at least abstract the HTML in the JavaScript into a separate JS file and do a little more robust templating..., or just do something different than what I'm doing now, cause right now what I'm doing is madness.
+*  Knock off all the TODOs
+*  Rewrite all the copy associated with the gallery items so they are the correct length
 
 kbye.

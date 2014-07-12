@@ -1,26 +1,21 @@
 #contact {
   text-align: left;
-}
-
-#contact .form-inputs {
-  @include flex-justify-content(space-between);
-}
-
-#contact p {
-  font: 1.15rem/1.4 $Font-DIN-Regular;
-  margin-bottom: 0;
-}
-
-#contact .name-entry,
-#contact .email-entry {
-  @include flex-basis(47%);
-}
-
-#contact #contact-form {
-  margin: 0 auto;
-}
-
-#contact .status-message {
-  top: 18.125rem;
-  width: 22.5rem;
+  .form-inputs {
+    @include flex-justify-content(space-between);
+  }
+  .name-entry,
+  .email-entry {
+    @include flex-basis(47%);
+  }
+  .status-message {
+    top: 18.125rem;
+    width: 22.5rem;
+  }
+  p {
+    font: 1.15rem/1.4 $Font-DIN-Regular;
+    margin-bottom: 0;
+  }
+  form {
+    margin: 0 auto;
+  }
 }

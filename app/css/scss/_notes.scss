@@ -15,7 +15,9 @@
     a "_resume.scss" partial, and eventually imported into a styles.scss file, which is then
     later minified).
 
-2.  Most/All (depending when you read this) of the css selectors begin with either an ID or a
+2.  I'm not a very good speller, so there might be some spelling errors everywhere.
+
+3.  Most/All (depending when you read this) of the css selectors begin with either an ID or a
     class name describing the subpage or module that they are a part of. IMO, when reading the
     compressed css, this makes finding what you're looking for, or making sense of what you're
     reading much easier. At the moment, Generic css rules are not proceeded with anything.
@@ -24,18 +26,22 @@
 
     (TODO: *Consider* prefixing site wide css rules with ID/Class)
 
-3.  Use of !important is frowned upon, but at times necessary
+4.  Use of !important is frowned upon, but at times necessary
 
-4.  All measurements are in REM or %
+5.  All measurements are in REM or %
 
-5.  An exception to the that last rule is in measurements of very small size, e.g. border, border-
+6.  An exception to the that last rule is in measurements of very small size, e.g. border, border-
     radius, line-spacing,
 
-6.  Use data:uris instead of images whenever possible
+7.  Use data:uris instead of images whenever possible
+
+8.  Font-sizes go on the typographic elements
+
+
+--- SCSS & CSS STYLING/FORMATTING ---
 
 
 n.  This is a living document
 
 
 */
-
