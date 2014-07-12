@@ -1,5 +1,5 @@
 /*===============================================================================
-    NORMALIZE
+    CUSTOM NORMALIZE BASED OFF HTML5 NORMALIZE
 ===============================================================================*/
 
 html,body,div,span,h1,h2,h3,p,em,img,strong,b,i,ul,li,form,label,tr,th,article,figcaption,figure,header,nav,section{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
@@ -44,18 +44,21 @@ img {
   max-width: 100%;
 }
 
+// USED ON THE SUB GALLERIES
+// TODO: research best hypen solution and write a mixin for this
 .hyphenate {
- -ms-word-break: break-all;
-     word-break: break-all;
+   -ms-word-break: break-all;
+       word-break: break-all;
+       // Non standard for webkit
+       word-break: break-word;
 
-     // Non standard for webkit
-     word-break: break-word;
-
--webkit-hyphens: auto;
-   -moz-hyphens: auto;
-        hyphens: auto;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
 }
 
+// I continue to pay for a plan that includes "no badge", but when I ask support for help I
+// get the opposite of help. So I take matters into my own hands...
 #mti_wfs_colophon {
   display: none !important;
 }

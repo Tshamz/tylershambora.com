@@ -4,49 +4,29 @@
   padding: 3.35rem 10% 0;  /* 3.35rem needed to push #guts below the nav */
   text-align: center;
   @include transition(all $CSS-slideUpDown ease-in-out);
-}
-
-.content {
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.content.resume {
-  margin-top: 1.5rem;
-}
-
-#guts.slideDown {
-  max-height: 400rem;
-  overflow: hidden;
-}
-
-#guts.slideUp {
-  max-height: 0;
-  overflow: hidden;
-}
-
-.content.fadeIn {
-  opacity: 1;
-  visibility: visible;
-  @include transition(opacity $CSS-fadeInOut linear);  /* See above about JS timings */
-}
-
-.content.fadeOut {
-  opacity: 0;
-  visibility: hidden;
-  @include transition(visibility 0ms linear $CSS-fadeInOut, opacity $CSS-fadeInOut linear)  /* And again, about the timings */
-}
-
-#papn.sub.gallery,
-#csh.sub.gallery,
-#fb.sub.gallery,
-#sns.sub.gallery {
-  @include hyphens(normal, manual);
-}
-
-#petershambora.sub.gallery,
-#wtfdrink.sub.gallery,
-#laura.sub.gallery,
-#resizely.sub.gallery {
-  @include hyphens(break-word, auto);
+  &.slideDown {
+    max-height: 400rem;
+    overflow: hidden;
+  }
+  &.slideUp {
+    max-height: 0;
+    overflow: hidden;
+  }
+  .content {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    &.fadeIn {
+      opacity: 1;
+      visibility: visible;
+      @include transition(opacity $CSS-fadeInOut linear);
+    }
+    &.fadeOut {
+      opacity: 0;
+      visibility: hidden;
+      @include transition(visibility 0ms linear $CSS-fadeInOut, opacity $CSS-fadeInOut linear);
+    }
+    &.resume {
+      margin-top: 1.5rem;
+    }
+  }
 }

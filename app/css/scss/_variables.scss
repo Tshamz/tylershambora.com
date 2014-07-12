@@ -12,9 +12,10 @@ $Color-Dark-Grey: #353D48;
 $Color-Grey: #6D7E94;
 $Color-Light-Grey: #AAA;
 $Color-Lighter-Grey: #CCC;
+$Color-Light-Blue: #9FBCDF;
+
 $Color-White: #FFF;
 $Color-Black: #000;
-$Color-Light-Blue: #9FBCDF;
 $Color-Red: #F88181;
 $Color-Green: #BDF9F3;
 
@@ -25,5 +26,7 @@ $Color-Rainbow-Yellow: #FFFF00;
 $Color-Rainbow-Green: #008000;
 $Color-Rainbow-Blue: #0000FF;
 
-$CSS-slideUpDown: 800ms;  // This as well as
-$CSS-fadeInOut: 400ms;    // this need to jive with the timings in the JS
+$CSS-slideUpDown: 800ms;  // Needs to match 'slideTransitionLength' var in main.js
+$CSS-fadeInOut: 400ms;    // Needs to match 'fadeTransitionLength' var in main.js
+
+// Write a max-width variable

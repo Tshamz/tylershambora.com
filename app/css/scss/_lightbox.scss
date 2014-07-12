@@ -7,28 +7,25 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
-}
-
-.lightbox-image-container {
-  padding: 2rem;
-  position: relative;
-  background-color: #fff;
-  border: 5px solid #aaa;
-  width: 95%;
-  margin: 3rem auto 0;
-}
-
-.lightbox-close {
-  font-weight: 800;
-  font-size: 1.5rem;
-  cursor: pointer;
-  position: absolute;
-  margin: 0.75rem 0.75rem 0 0;
-  top: 0;
-  right: 0;
-}
-
-#lightbox-image {
-  display: block;
-  margin: 0 auto;
+  .lightbox-image-container {
+    padding: 2rem;
+    position: relative;
+    background-color: #fff;
+    border: 5px solid #aaa;
+    width: 95%;
+    margin: 3rem auto 0;
+  }
+  .lightbox-close {
+    font-weight: 800;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    margin: 0.75rem 0.75rem 0 0;
+    top: 0;
+    right: 0;
+  }
+  #lightbox-image {
+    display: block;
+    margin: 0 auto;
+  }
 }

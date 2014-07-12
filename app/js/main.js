@@ -286,6 +286,9 @@ $(document).ready(function() {
   });
 
   $(window).on('hashchange', function() {
+    // This counts only when the hash changes, it does not count if the initial
+    // page also initially included a hash, either way, record a hashchange
+    ga('Navigation', 'Click', 'hashchange');
     // Collect information about current states
     var newHash = window.location.hash.substring(1);  // Where we are headed...
     // Are we going into a sub gallery?
@@ -297,6 +300,8 @@ $(document).ready(function() {
         loadPageContent(newHash, function() {
           $('.content').toggleClass('fadeIn fadeOut');
           $('html, body').animate({ scrollTop: 0 }, 400);
+          ga('Navigation', 'Event', '#' + newHash);
+          ga('Navigation', 'Event', 'Portfolio => Sub-Gallery');
         });
       }, fadeTransitionLength);
     }
@@ -307,6 +312,8 @@ $(document).ready(function() {
         loadPageContent(newHash, function() {
           $('.content').toggleClass('fadeIn fadeOut');
           $('html, body').animate({ scrollTop: 0 }, 400);
+          ga('Navigation', 'Event', '#' + newHash);
+          ga('Navigation', 'Event', 'Portfolio <= Sub-Gallery');
         });
       }, fadeTransitionLength);
     // Just moving from one content section to another
@@ -319,6 +326,8 @@ $(document).ready(function() {
           setTimeout(function(){
             $('.content').toggleClass('fadeOut fadeIn');
             $('html, body').animate({ scrollTop: 0 }, 400);
+            ga('Navigation', 'Event', '#' + newHash);
+            ga('Navigation', 'Event', 'Generic Navigation');
           }, slideTransitionLength);
         });
       }, fadeTransitionLength + slideTransitionLength);

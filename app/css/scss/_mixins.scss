@@ -89,15 +89,6 @@
   justify-content: $property;
 }
 
-@mixin hyphens($chrome-property, $other-property) {
-  word-wrap: $chrome-property;
-  -webkit-hyphens: $other-property;
-  -moz-hyphens: $other-property;
-  -ms-hyphens: $other-property;
-  -o-hyphens: $other-property;
-  hyphens: $other-property;
-}
-
 @mixin transform($properties) {
   -webkit-transform: $properties;
   -moz-transform: $properties;

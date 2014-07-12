@@ -1,13 +1,11 @@
 #entrance {
   margin: 4rem auto;
   padding: 0;
-}
-
-.what-i-am {
-  width: 28rem;
-  margin: 0 auto;
-}
-
-.what-i-am h2 {
-  font-size: 2.5rem;
+  .what-i-am {
+    width: 28rem;
+    margin: 0 auto;
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
 }

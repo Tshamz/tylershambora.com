@@ -1,45 +1,38 @@
-#portfolio .portfolio-items {
-  @include flex-box;
-  @include flex-flow(row wrap);
+#portfolio {
+  .portfolio-items {
+    @include flex-box;
+    @include flex-flow(row wrap);
+  }
+  .portfolio-item {
+    border-bottom: 1px solid #a6a6a6;
+    border-right: 1px solid #a6a6a6;
+    text-align: center;
+    @include transition(background-color 250ms ease-in-out);
+    @include flex-basis(33.33%);
+    &:hover {
+      background-color: $Color-Light-Blue;
+      color: #FFF;
+    }
+    &:nth-child(3n) {
+      border-right: none;
+    }
+    &:nth-last-child(3),
+    &:nth-last-child(2),
+    &:nth-last-child(1) {
+      border-bottom: none;
+    }
+  }
+  a {
+    display: block;
+    @include transition(margin 300ms ease-in-out);
+    &:hover {
+      margin-bottom: -0.175rem;
+      margin-top: 0.175rem;
+    }
+  }
+  img {
+    margin: 0 auto;
+    max-width: 90%;
+    padding: 12.5% 0;
+  }
 }
-
-#portfolio .portfolio-item {
-  border-bottom: 1px solid #a6a6a6;
-  border-right: 1px solid #a6a6a6;
-  text-align: center;
-  @include transition(background-color 250ms ease-in-out);
-  @include flex-basis(33.33%);
-}
-
-#portfolio .portfolio-item a {
-  display: block;
-  @include transition(margin 300ms ease-in-out);
-}
-
-#portfolio .portfolio-item a:hover {
-  margin-bottom: -0.175rem;
-  margin-top: 0.175rem;
-}
-
-#portfolio .portfolio-item:hover {
-  background-color: $Color-Light-Blue;
-  color: #FFF;
-}
-
-#portfolio .portfolio-item:nth-child(3n) {
-  border-right: none;
-}
-
-#portfolio .portfolio-item:nth-last-child(3),
-#portfolio .portfolio-item:nth-last-child(2),
-#portfolio .portfolio-item:nth-last-child(1) {
-  border-bottom: none;
-}
-
-#portfolio .portfolio-item img {
-  margin: 0 auto;
-  max-width: 90%;
-  padding: 12.5% 0;
-}
-
-// test2

@@ -1,9 +1,31 @@
-.gallery a {
-  color: $Color-Light-Blue;
-}
-
-.gallery a:hover {
-  color: inherit;
+.gallery {
+  .slide:last-child .gallery-panel {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .marquee-image {
+    border: 2px solid #CCC;
+    margin-bottom: 2rem;
+    padding: 10px;
+  }
+  &.resume {
+    .marquee-image {
+      margin-bottom: 0.25rem;
+      padding-bottom: 0;
+      border: none;
+    }
+    img {
+      cursor: pointer;
+      max-height: 20rem;
+    }
+  }
+  a {
+    color: $Color-Light-Blue;
+    &:hover {
+    color: inherit;
+    }
+  }
 }
 
 .gallery-panel {
@@ -12,76 +34,40 @@
   margin-bottom: 3.5rem;
   padding-bottom: 3rem;
   width: 100%;
-}
-
-.gallery .slide:last-child .gallery-panel {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.marquee-image {
-  border: 2px solid #CCC;
-  margin-bottom: 2rem;
-  padding: 10px;
-}
-
-.gallery.resume .marquee-image {
-  margin-bottom: 0.25rem;
-  padding-bottom: 0;
-}
-
-.gallery-title {
-  margin-bottom: -0.5rem;
-}
-
-.gallery-url {
-  margin-bottom: 0.35rem;
-}
-
-.gallery-status {
-  margin-bottom: 1.25rem;
-}
-
-.gallery-title,
-.gallery-url,
-.gallery-status {
-  text-align: center;
-}
-
-.gallery-description {
-  font-size: 1.1rem;
-  text-align: justify;
-}
-
-.gallery-panel.border .gallery-image {
-  padding: 10px;
-  border: 2px solid #CCC;
-}
-
-.gallery-image {
-  margin-bottom: 2rem;
-}
-
-.gallery-text {
-  text-align: justify;
-}
-
-.gallery .massive-url {
-  font-size: 1rem;
-}
-
-.gallery.resume .marquee-image {
-  border: none;
-}
-
-.gallery-panel.resume img {
-  cursor: pointer;
-  max-height: 20rem;
-}
-
-.gallery-panel.box-shadow img {
-  box-shadow: 0px 3px 5px #000;
+  .gallery-title {
+    margin-bottom: -0.5rem;
+  }
+  .gallery-url {
+    margin-bottom: 0.35rem;
+  }
+  .gallery-status {
+    margin-bottom: 1.25rem;
+  }
+  .gallery-title,
+  .gallery-url,
+  .gallery-status {
+    text-align: center;
+  }
+  .gallery-description {
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+  .gallery-image {
+    margin-bottom: 2rem;
+  }
+  &.border .gallery-image {
+    padding: 10px;
+    border: 2px solid #CCC;
+  }
+  .gallery-text {
+    text-align: justify;
+  }
+  .lengthy-url {
+    font-size: 1rem;
+  }
+  &.box-shadow img {
+    box-shadow: 0px 3px 5px #000;
+  }
 }
 
 @media only screen and (min-width: 35rem) {

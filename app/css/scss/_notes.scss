@@ -1,22 +1,40 @@
 /*
 
-=================================================================================
+===================================================================================================
     NOTES
-=================================================================================
+===================================================================================================
 
-1.  IDs should only used on the outermost elements (one level below body, e.g.
-    main), elements that contain significant portions of content (the mini-pages
-    injected into the <main id="guts"> container), or elements that are used often
-    as hooks in regards to scripting (again, the <main id="guts"> container). The
-    reason for this is: a) Because I feel that IDs are good at indicating what is
-    and isn't a large, macro level container of content, and b) to easily target a
-    specific instance of reused content (for example, instead of creating a
-    ".no-border" class with "border: none;", only using it in one instance, and
-    introducing presentation into the structure, the same, single-serving style
-    may be applied with, #resume .marquee-image, put in a "_resume.scss" partial,
-    and eventually imported into a styles.scss file, which is then later minified).
+1.  IDs should only used on the outermost elements (one level below body, e.g. that contain
+    significant portions of content (the mini-pages injected into the <main id="guts"> container),
+    or elements that are used often as hooks in regards to scripting (again, the <main id="guts">
+    container). The reason for this is: a) Because I feel that IDs are good at indicating what is
+    and isn't a large, macro level container of content, and b) to easily target a specific
+    instance of reused content (for example, instead of creating a ".no-border" class with
+    "border: none;", only using it in one instance, and introducing presentation into the
+    structure, the same, single-serving style may be applied with, #resume .marquee-image, put in
+    a "_resume.scss" partial, and eventually imported into a styles.scss file, which is then
+    later minified).
 
-2.  Ordering of properties inside of selectors
+2.  Most/All (depending when you read this) of the css selectors begin with either an ID or a
+    class name describing the subpage or module that they are a part of. IMO, when reading the
+    compressed css, this makes finding what you're looking for, or making sense of what you're
+    reading much easier. At the moment, Generic css rules are not proceeded with anything.
+
+    (TODO: However, I'm curious about the performance hit of extra IDs and classes, so, test this)
+
+    (TODO: *Consider* prefixing site wide css rules with ID/Class)
+
+3.  Use of !important is frowned upon, but at times necessary
+
+4.  All measurements are in REM or %
+
+5.  An exception to the that last rule is in measurements of very small size, e.g. border, border-
+    radius, line-spacing,
+
+6.  Use data:uris instead of images whenever possible
+
+
+n.  This is a living document
 
 
 */
