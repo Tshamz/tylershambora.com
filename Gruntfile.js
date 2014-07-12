@@ -5,8 +5,6 @@ module.exports = function(grunt) {
 
   // Configure Grunt
   grunt.initConfig({
-    // grunt-express will serve the files from the folders listed in `bases`
-    // on specified `port` and `hostname`
     express: {
       all: {
         options: {
@@ -22,11 +20,10 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      dist: {
-        files: grunt.file.expandMapping(["app/js/main.js"], "", {
-          rename: function(destBase, destPath) {
-            return destBase + destPath.replace(".js", ".min.js");
-          }
+      all: {
+        files: grunt.file.expandMapping(["app/js/main.js", "app/js/feature-test.js"], "", {
+          ext: '.min.js',
+          extDot: 'last'
         })
       }
     },
@@ -52,14 +49,22 @@ module.exports = function(grunt) {
       }
     },
 
-    // grunt-watch will monitor the projects files
+    imagemin: {
+      dynamic: {
+        options: {
+          optimizationLevel: 7
+        },
+        files: [{
+          expand: true,
+          cwd: 'app/img',
+          src: ['**/*.{png,jpg}'],
+          dest: 'app/dist/img'
+        }]
+      }
+    },
+
     watch: {
       all: {
-        // Replace with whatever file(s) you want to trigger the update from
-        // Either as a String for a single entry
-        // or an Array of String for multiple entries
-        // You can use globing patterns like `css/**/*.css`
-        // See https://github.com/gruntjs/grunt-contrib-watch#files
         files: ["app/index.html", "app/cache.manifest", "app/img/**/*.{png|jpg}", "app/img/*.{png|jpg}"],
         options: {
           livereload: true
@@ -67,18 +72,27 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ["app/js/main.js", "!app/js/main.min.js"],
-        tasks: ["uglify"]
+        tasks: ["newer:uglify"]
       },
       sass: {
         files: ["app/css/scss/*.scss"],
-        tasks: ["sass:dev", "sass:dist"]
+        tasks: ["newer:sass"]
       }
     },
 
-    // grunt-open will open your browser at the project's URL
+    copy: {
+      main: {
+        files: [
+          { expand: true, cwd: 'app/', src: '*.{html,pdf,php,manifest}', dest: 'app/dist/' },
+          { expand: true, cwd: 'app/css/', src: '*.css', dest: 'app/dist/css/' },
+          { expand: true, cwd: 'app/js/', src: '*.{js,json}', dest: 'app/dist/js/' },
+          { expand: true, cwd: 'app/font/', src: '*.{ttf,woff,eot,svg}', dest: 'app/dist/font/' }
+        ]
+      }
+    },
+
     open: {
       all: {
-        // Gets the port from the connect configuration
         path: 'http://localhost:<%= express.all.options.port%>'
       }
     }
@@ -90,4 +104,15 @@ module.exports = function(grunt) {
     'open',
     'watch'
   ]);
+
+  grunt.registerTask('build', [
+    'uglify',
+    'sass',
+    'copy'
+  ]);
+
+  grunt.registerTask('minimg', [
+    'imagemin'
+  ]);
+
 };
