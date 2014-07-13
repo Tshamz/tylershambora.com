@@ -72,11 +72,11 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ["app/js/main.js", "!app/js/main.min.js"],
-        tasks: ["newer:uglify"]
+        tasks: ["uglify"]
       },
       sass: {
         files: ["app/css/scss/*.scss"],
-        tasks: ["newer:sass"]
+        tasks: ["sass"]
       }
     },
 

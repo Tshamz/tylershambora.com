@@ -510,6 +510,14 @@ em {
     -o-transition: opacity 400ms ease-in-out;
     transition: opacity 400ms ease-in-out;
   }
+  .gallery .gallery-control.is-disabled {
+    opacity: 0.3;
+    -webkit-transition: opacity 400ms ease-in-out;
+    -moz-transition: opacity 400ms ease-in-out;
+    -ms-transition: opacity 400ms ease-in-out;
+    -o-transition: opacity 400ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
+  }
   .gallery .next {
     right: 0;
   }
@@ -520,14 +528,6 @@ em {
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
-  }
-  .gallery.is-disabled {
-    opacity: 0.3;
-    -webkit-transition: opacity 400ms ease-in-out;
-    -moz-transition: opacity 400ms ease-in-out;
-    -ms-transition: opacity 400ms ease-in-out;
-    -o-transition: opacity 400ms ease-in-out;
-    transition: opacity 400ms ease-in-out;
   }
   .gallery .slide {
     margin-top: 2rem;
@@ -575,6 +575,9 @@ em {
     font-size: 1.1rem;
     line-height: 1.35;
   }
+  .gallery-panel .gallery-text {
+    margin-top: 0.5rem;
+  }
   .gallery-panel p {
     font-size: 1.1rem;
     line-height: 1.35;
@@ -585,11 +588,13 @@ em {
   .gallery-panel.double-push-down-text .gallery-text {
     margin-top: 3rem;
   }
+  .gallery-panel.half-push-down-text .gallery-text {
+    margin-top: 1rem;
+  }
 }
 #laura .laura-logo img {
-  max-width: 20rem;
+  max-width: 23rem;
   display: block;
-  text-align: left;
 }
 
 @media only screen and (min-width: 75rem) {

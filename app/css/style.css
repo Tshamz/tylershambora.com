@@ -348,7 +348,7 @@ input, button, select, textarea {
 
 #entrance {
   margin: 0 auto;
-  padding: 3rem;
+  padding: 5%;
 }
 #entrance .what-i-am {
   text-align: center;
@@ -443,11 +443,11 @@ input, button, select, textarea {
   padding: 3.35rem 10% 0;
   /* 3.35rem needed to push #guts below the nav */
   text-align: center;
-  -webkit-transition: all 800ms ease-in-out;
-  -moz-transition: all 800ms ease-in-out;
-  -ms-transition: all 800ms ease-in-out;
-  -o-transition: all 800ms ease-in-out;
-  transition: all 800ms ease-in-out;
+  -webkit-transition: all 600ms ease-in-out;
+  -moz-transition: all 600ms ease-in-out;
+  -ms-transition: all 600ms ease-in-out;
+  -o-transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out;
 }
 #guts.slideDown {
   max-height: 400rem;
@@ -464,20 +464,20 @@ input, button, select, textarea {
 #guts .content.fadeIn {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity 400ms linear;
-  -moz-transition: opacity 400ms linear;
-  -ms-transition: opacity 400ms linear;
-  -o-transition: opacity 400ms linear;
-  transition: opacity 400ms linear;
+  -webkit-transition: opacity 200ms linear;
+  -moz-transition: opacity 200ms linear;
+  -ms-transition: opacity 200ms linear;
+  -o-transition: opacity 200ms linear;
+  transition: opacity 200ms linear;
 }
 #guts .content.fadeOut {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: visibility 0ms linear 400ms, opacity 400ms linear;
-  -moz-transition: visibility 0ms linear 400ms, opacity 400ms linear;
-  -ms-transition: visibility 0ms linear 400ms, opacity 400ms linear;
-  -o-transition: visibility 0ms linear 400ms, opacity 400ms linear;
-  transition: visibility 0ms linear 400ms, opacity 400ms linear;
+  -webkit-transition: visibility 0ms linear 200ms, opacity 200ms linear;
+  -moz-transition: visibility 0ms linear 200ms, opacity 200ms linear;
+  -ms-transition: visibility 0ms linear 200ms, opacity 200ms linear;
+  -o-transition: visibility 0ms linear 200ms, opacity 200ms linear;
+  transition: visibility 0ms linear 200ms, opacity 200ms linear;
 }
 #guts .content.resume {
   margin-top: 1.5rem;

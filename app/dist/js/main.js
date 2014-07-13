@@ -16,8 +16,8 @@ $(document).ready(function() {
   var galleryInfos = '';
   var cachedGalleries = {};
   var messageDelay = 2000;
-  var slideTransitionLength = 800;
-  var fadeTransitionLength = 400;
+  var slideTransitionLength = 600;
+  var fadeTransitionLength = 200;
   var $guts = $('#guts');
   var subGalleries = ["papn", "csh", "fb", "sns", "petershambora", "wtfdrink", "laura", "resizely", "cpsolutions"];
 
