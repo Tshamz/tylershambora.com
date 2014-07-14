@@ -131,9 +131,9 @@
     "galleryStatus": "online",
      "galleryDescription": "I spent a great deal of time on my resume, going over numerous iterations until I finally got it into the state it's in today. I designed it using Adobe InDesign, which is a fantastic tool for designing text based documents.",
     "additionalGalleries": [
-      [false, "right-image resume", "resume/resume1.jpg", "I'd even had some experience with it's predecessor, PageMaker. In my middle school journalism class we'd use PageMaker to design each page of the newspaper. One of the nice things I really like about InDesign is that it preserves fonts when you export, meaning that all the text stays selectable no matter what font you end up using"],
-      [false, "left-image resume", "resume/resume3.jpg", "All in all, my resume was an opportunity for me to flex some of my design skills, let a bit of my sense of humor shine through, and ultimately serve as an opportunity to show off a great deal of my creativity."],
-      [false, "resume box-shadow", "resume/resume-bare.jpg", ""]
+      [false, "right-image", "resume/resume1.jpg", "I'd even had some experience with it's predecessor, PageMaker. In my middle school journalism class we'd use PageMaker to design each page of the newspaper. One of the nice things I really like about InDesign is that it preserves fonts when you export, meaning that all the text stays selectable no matter what font you end up using"],
+      [false, "left-image", "resume/resume3.jpg", "All in all, my resume was an opportunity for me to flex some of my design skills, let a bit of my sense of humor shine through, and ultimately serve as an opportunity to show off a great deal of my creativity."],
+      [false, "box-shadow", "resume/resume-bare.jpg", ""]
     ]
   }
 }

@@ -50,7 +50,7 @@ $(document).ready(function() {
   };
 
 /*==========================================================================
-  LOADING PAGE CONTENT AND GALLERY SETUP
+  LOADING PAGE CONTENT
 ==========================================================================*/
 
   var loadPageContent = function(pageName, callback) {
@@ -78,6 +78,10 @@ $(document).ready(function() {
       callback();
     }
   };
+
+/*==========================================================================
+  GALLERY BUILDING
+==========================================================================*/
 
   // Build and setup whatever gallery's been loaded
   var buildUpGallery = function(galleryName) {
@@ -170,20 +174,6 @@ $(document).ready(function() {
     $('.gallery .slide:last-of-type').addClass('last');
     $('.previous').addClass('is-disabled');
 
-    $guts.on('click', '.gallery img[lightbox="true"]', function() {
-      var imgSrc = $(this).attr('src');
-      $('#lightbox-image').attr('src', imgSrc);
-      $('#lightbox').show();
-    });
-    $('#lightbox-image').click(function(e) {
-      e.stopPropagation();
-    });
-    $('#lightbox').click(function() {
-      $('#lightbox').hide();
-    });
-    $('.gallery-panel.resume img').click(function() {
-      window.open('/resume.pdf', 'Tyler Shambora\'s Resume');
-    });
   };
 
 /*==========================================================================
@@ -231,6 +221,25 @@ $(document).ready(function() {
     if ($('.previous').hasClass('is-disabled')) {
       $('.previous').removeClass('is-disabled');
     }
+  });
+
+/*==========================================================================
+  LIGHTBOX BINDINGS
+==========================================================================*/
+
+  $guts.on('click', '.gallery img[lightbox="true"]', function() {
+    var imgSrc = $(this).attr('src');
+    $('#lightbox-image').attr('src', imgSrc);
+    $('#lightbox').show();
+  });
+  $('#lightbox-image').click(function(e) {
+    e.stopPropagation();
+  });
+  $('#lightbox').click(function() {
+    $('#lightbox').hide();
+  });
+  $guts.on('click', '#resume .gallery-image', function() {
+    window.open('/resume.pdf', 'Tyler Shambora\'s Resume');
   });
 
 /*==========================================================================
