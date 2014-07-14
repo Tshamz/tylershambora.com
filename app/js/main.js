@@ -26,7 +26,7 @@ $(document).ready(function() {
 ==========================================================================*/
 
   $.when(
-    $.get("injectedHtml.html", function(data) {
+    $.get("injected-html.html", function(data) {
       injectedHtml = $(data);
     }),
     $.getJSON('/js/galleryInfos.json', function(data) {
