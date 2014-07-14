@@ -16,7 +16,7 @@ No full page reloads, loads new content in via ajax, most of the animations are 
 *  Lazy load or intelligently load images
 *  ~~Shift my attention to work-flow~~
 *  ~~Add content for the #entrance hash~~
-*  ~~Update each portfolio gallery item ~~
+*  ~~Update each portfolio gallery item~~
 *  ~~Cleaning up the super big slider~~
 *  Markup for the site lives in three different places: index.html, subPagesDocument.html, and main.js. It would be nice to do one of a few things: Get everything in the same place under the same file type, at least abstract the HTML in the JavaScript into a separate JS file and do a little more robust templating..., or just do something different than what I'm doing now, cause right now what I'm doing is madness.
 *  Knock off all the TODOs
