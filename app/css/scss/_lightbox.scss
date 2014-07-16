@@ -7,13 +7,15 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
+  text-align: center;
   .lightbox-image-container {
-    padding: 2rem;
     position: relative;
-    background-color: #fff;
-    border: 5px solid #aaa;
-    width: 95%;
-    margin: 3rem auto 0;
+    margin: 2rem 2.5rem 0;
+  }
+  .lightbox-image-inner-container {
+    max-width: 75rem;
+    margin: 0 auto;
+    position: relative;
   }
   .lightbox-close {
     font-weight: 800;
@@ -25,7 +27,8 @@
     right: 0;
   }
   #lightbox-image {
-    display: block;
-    margin: 0 auto;
+    border: 5px solid #aaa;
+    background-color: #fff;
+    padding: 2rem;
   }
 }

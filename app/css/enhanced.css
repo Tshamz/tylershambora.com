@@ -22,27 +22,22 @@
     compressed css, this makes finding what you're looking for, or making sense of what you're
     reading much easier. At the moment, Generic css rules are not proceeded with anything.
 
-    (TODO: However, I'm curious about the performance hit of extra IDs and classes, so, test this)
-
-    (TODO: *Consider* prefixing site wide css rules with ID/Class)
-
 4.  Use of !important is frowned upon, but at times necessary
 
 5.  All measurements are in REM or %
 
 6.  An exception to the that last rule is in measurements of very small size, e.g. border, border-
-    radius, line-spacing,
+    radius, line-spacing, etc.
 
-7.  Use data:uris instead of images whenever possible
+7.  Use data:uris on plain images (data:uris hurt on mobile)
 
-8.  Font-sizes go on the typographic elements
+8.  Use spritesheets on more complex images
 
 
 --- SCSS & CSS STYLING/FORMATTING ---
 
 
 n.  This is a living document
-
 
 */
 @-webkit-keyframes super-rainbow {
@@ -463,7 +458,7 @@ em {
   cursor: pointer;
 }
 .gallery-panel.top-image .gallery-image {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   width: 100%;
 }
 .gallery-panel.top-image .gallery-text {
@@ -479,13 +474,13 @@ em {
 .gallery-panel.left-image .gallery-image, .gallery-panel.right-image .gallery-text {
   margin-right: 2.5%;
   margin-left: 7.5%;
-  text-align: left;
+  text-align: justify;
   width: 40%;
 }
 .gallery-panel.left-image .gallery-text, .gallery-panel.right-image .gallery-image {
   margin-right: 7.5%;
   margin-left: 2.5%;
-  text-align: right;
+  text-align: justify;
   width: 40%;
 }
 

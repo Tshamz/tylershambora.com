@@ -16,8 +16,8 @@ $(document).ready(function() {
   var galleryInfos = '';
   var cachedGalleries = {};
   var messageDelay = 2000;
-  var slideTransitionLength = 600;
-  var fadeTransitionLength = 200;
+  var slideTransitionLength = 1000;
+  var fadeTransitionLength = 100;
   var $guts = $('#guts');
   var subGalleries = ["papn", "csh", "fb", "sns", "petershambora", "wtfdrink", "laura", "resizely", "cpsolutions"];
 
@@ -228,9 +228,11 @@ $(document).ready(function() {
 ==========================================================================*/
 
   $guts.on('click', '.gallery img[lightbox="true"]', function() {
-    var imgSrc = $(this).attr('src');
-    $('#lightbox-image').attr('src', imgSrc);
-    $('#lightbox').show();
+    if (!$('.nav-toggle').is(':visible')) {
+      var imgSrc = $(this).attr('src');
+      $('#lightbox-image').attr('src', imgSrc);
+      $('#lightbox').show();
+    }
   });
   $('#lightbox-image').click(function(e) {
     e.stopPropagation();
@@ -280,12 +282,12 @@ $(document).ready(function() {
     });
   }
 
-  // If they click no and don't want to see all the F-Bombs, store their answer in sessionStorage and return them to the portfolio
+  // If they click no, store their answer in sessionStorage and return them to the portfolio
   $('#no-way').click(function() {
     sessionStorage.setItem('wtfdrinkPermission', false);
     $('#wtf-overlay').hide();
   });
-  // If they click yes and want to see all that F-Bomb goodness, store that answer also and send them on their merry little way. Oh and also unbind the event that asks for permission to enter the wtfdrink subgallery.
+  // If they click yes, store that answer also and send them on their way. Also unbind the event to enter the wtfdrink subgallery.
   $('#yes-way').click(function() {
     sessionStorage.setItem('wtfdrinkPermission', true);
     $('#wtf-overlay').hide();

@@ -3,6 +3,7 @@
   border-bottom: 2px solid $Color-Light-Grey;
   padding: 3.35rem 10% 0;  /* 3.35rem needed to push #guts below the nav */
   text-align: center;
+  //-webkit-transform: translateZ(0);
   @include transition(all $CSS-slideUpDown ease-in-out);
   &.slideDown {
     max-height: 400rem;

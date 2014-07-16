@@ -22,27 +22,22 @@
     compressed css, this makes finding what you're looking for, or making sense of what you're
     reading much easier. At the moment, Generic css rules are not proceeded with anything.
 
-    (TODO: However, I'm curious about the performance hit of extra IDs and classes, so, test this)
-
-    (TODO: *Consider* prefixing site wide css rules with ID/Class)
-
 4.  Use of !important is frowned upon, but at times necessary
 
 5.  All measurements are in REM or %
 
 6.  An exception to the that last rule is in measurements of very small size, e.g. border, border-
-    radius, line-spacing,
+    radius, line-spacing, etc.
 
-7.  Use data:uris instead of images whenever possible
+7.  Use data:uris on plain images (data:uris hurt on mobile)
 
-8.  Font-sizes go on the typographic elements
+8.  Use spritesheets on more complex images
 
 
 --- SCSS & CSS STYLING/FORMATTING ---
 
 
 n.  This is a living document
-
 
 */
 /*===============================================================================
@@ -297,14 +292,16 @@ input, button, select, textarea {
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
+  text-align: center;
 }
 #lightbox .lightbox-image-container {
-  padding: 2rem;
   position: relative;
-  background-color: #fff;
-  border: 5px solid #aaa;
-  width: 95%;
-  margin: 3rem auto 0;
+  margin: 2rem 2.5rem 0;
+}
+#lightbox .lightbox-image-inner-container {
+  max-width: 75rem;
+  margin: 0 auto;
+  position: relative;
 }
 #lightbox .lightbox-close {
   font-weight: 800;
@@ -316,8 +313,9 @@ input, button, select, textarea {
   right: 0;
 }
 #lightbox #lightbox-image {
-  display: block;
-  margin: 0 auto;
+  border: 5px solid #aaa;
+  background-color: #fff;
+  padding: 2rem;
 }
 
 #wtf-overlay {
@@ -333,10 +331,11 @@ input, button, select, textarea {
   text-align: center;
   background-color: #ccc;
   position: fixed;
-  top: 1.5rem;
-  padding: 1.5rem;
+  margin: 1.5rem auto 0;
   left: 1rem;
   right: 1rem;
+  max-width: 50rem;
+  padding: 1.5rem;
 }
 #wtf-warning p {
   margin-bottom: 1rem;
@@ -443,11 +442,11 @@ input, button, select, textarea {
   padding: 3.35rem 10% 0;
   /* 3.35rem needed to push #guts below the nav */
   text-align: center;
-  -webkit-transition: all 600ms ease-in-out;
-  -moz-transition: all 600ms ease-in-out;
-  -ms-transition: all 600ms ease-in-out;
-  -o-transition: all 600ms ease-in-out;
-  transition: all 600ms ease-in-out;
+  -webkit-transition: all 1000ms ease-in-out;
+  -moz-transition: all 1000ms ease-in-out;
+  -ms-transition: all 1000ms ease-in-out;
+  -o-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
 }
 #guts.slideDown {
   max-height: 400rem;
@@ -464,20 +463,20 @@ input, button, select, textarea {
 #guts .content.fadeIn {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity 200ms linear;
-  -moz-transition: opacity 200ms linear;
-  -ms-transition: opacity 200ms linear;
-  -o-transition: opacity 200ms linear;
-  transition: opacity 200ms linear;
+  -webkit-transition: opacity 100ms linear;
+  -moz-transition: opacity 100ms linear;
+  -ms-transition: opacity 100ms linear;
+  -o-transition: opacity 100ms linear;
+  transition: opacity 100ms linear;
 }
 #guts .content.fadeOut {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: visibility 0ms linear 200ms, opacity 200ms linear;
-  -moz-transition: visibility 0ms linear 200ms, opacity 200ms linear;
-  -ms-transition: visibility 0ms linear 200ms, opacity 200ms linear;
-  -o-transition: visibility 0ms linear 200ms, opacity 200ms linear;
-  transition: visibility 0ms linear 200ms, opacity 200ms linear;
+  -webkit-transition: visibility 0ms linear 100ms, opacity 100ms linear;
+  -moz-transition: visibility 0ms linear 100ms, opacity 100ms linear;
+  -ms-transition: visibility 0ms linear 100ms, opacity 100ms linear;
+  -o-transition: visibility 0ms linear 100ms, opacity 100ms linear;
+  transition: visibility 0ms linear 100ms, opacity 100ms linear;
 }
 #guts .content.resume {
   margin-top: 1.5rem;
@@ -615,7 +614,7 @@ input, button, select, textarea {
   flex-basis: 100%;
 }
 #contact .submit-button {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   text-align: right;
 }
 #contact .status-message {
@@ -744,7 +743,7 @@ input, button, select, textarea {
 .gallery-panel .marquee-image {
   border: 2px solid #CCC;
   margin-bottom: 2rem;
-  padding: 10px;
+  padding: 10px 10px 7px;
 }
 .gallery-panel .gallery-title {
   margin-bottom: -0.5rem;
@@ -768,7 +767,7 @@ input, button, select, textarea {
   margin-bottom: 2rem;
 }
 .gallery-panel.border .gallery-image {
-  padding: 10px;
+  padding: 10px 10px 5px;
   border: 2px solid #CCC;
 }
 .gallery-panel .gallery-text {

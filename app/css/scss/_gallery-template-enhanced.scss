@@ -19,7 +19,7 @@
     cursor: pointer;
   }
   &.top-image .gallery-image {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     width: 100%;
   }
   &.top-image .gallery-text {
@@ -38,14 +38,14 @@
   &.right-image .gallery-text {
     margin-right: 2.5%;
     margin-left: 7.5%;
-    text-align: left;
+    text-align: justify;
     width: 40%;
   }
   &.left-image .gallery-text,
   &.right-image .gallery-image {
     margin-right: 7.5%;
     margin-left: 2.5%;
-    text-align: right;
+    text-align: justify;
     width: 40%;
   }
 }
