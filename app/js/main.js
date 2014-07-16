@@ -100,19 +100,20 @@ $(document).ready(function() {
     var pageTitle = galleryInfos[galleryName]["galleryTitle"];
     var pageDescription = galleryInfos[galleryName]["galleryDescription"];
     var marqueeImage = galleryInfos[galleryName]["marqueeImage"];
+    var marqueeLightbox = galleryInfos[galleryName]["marqueeLightbox"];
     var pageURL = galleryInfos[galleryName]["galleryURL"];
     var pageURLAppearance = galleryInfos[galleryName]["galleryURLAppearance"];
     var statusBadge = '';
     if (galleryStatus === 'online') {
-      marqueeImage = '<a href="' + pageURL + '" target="_blank"><img src="' + marqueeImage + '" /></a>';
+      marqueeImage = '<a href="' + pageURL + '" target="_blank"><img src="' + marqueeImage + '" lightbox="' + marqueeLightbox + '"/></a>';
       statusBadge = onlineBadge;
       pageURL = '<p><strong><a href="' + pageURL + '" target="_blank">' + pageURLAppearance + '</a></strong></p>';
     } else if (galleryStatus === 'offline') {
-      marqueeImage = '<img src="' + marqueeImage + '" />';
+      marqueeImage = '<img src="' + marqueeImage + '" lightbox="' + marqueeLightbox + '"/>';
       statusBadge = offlineBadge;
       pageURL = '';
     } else {
-      marqueeImage = '<img src="' + marqueeImage + '" />';
+      marqueeImage = '<img src="' + marqueeImage + '" lightbox="' + marqueeLightbox + '"/>';
       statusBadge = mockupBadge;
       pageURL = '';
     }

@@ -587,11 +587,6 @@ em {
     margin-top: 1rem;
   }
 }
-#laura .laura-logo img {
-  max-width: 23rem;
-  display: block;
-}
-
 @media only screen and (min-width: 75rem) {
   #resizely .resizely-bottom-image img {
     max-width: 55rem;
