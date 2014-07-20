@@ -26,7 +26,5 @@ $Color-Rainbow-Yellow: #FFFF00;
 $Color-Rainbow-Green: #008000;
 $Color-Rainbow-Blue: #0000FF;
 
-$CSS-slideUpDown: 1000ms;  // Needs to match 'slideTransitionLength' var in main.js
-$CSS-fadeInOut: 100ms;    // Needs to match 'fadeTransitionLength' var in main.js
-
-// Write a max-width variable
+$CSS-slideUpDown: 500ms;  // Needs to match 'slideTransitionLength' var in main.js
+$CSS-fadeInOut: 250ms;    // Needs to match 'fadeTransitionLength' var in main.js

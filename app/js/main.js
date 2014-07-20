@@ -1,398 +1,407 @@
-$(document).ready(function() {
+(function($, Contact, undefined) {
 
-/*==========================================================================
-  Modernizr Feature Test
-==========================================================================*/
 
-  yepnope({
-    load: 'js/feature-test.min.js',
-  });
-
-/*==========================================================================
-  VARIABLES
-==========================================================================*/
-
-  var injectedHtml;
-  var galleryInfos = '';
-  var cachedGalleries = {};
-  var messageDelay = 2000;
-  var slideTransitionLength = 1000;
-  var fadeTransitionLength = 100;
-  var $guts = $('#guts');
-  var subGalleries = ["papn", "csh", "fb", "sns", "petershambora", "wtfdrink", "laura", "resizely", "cpsolutions"];
-
-/*==========================================================================
-  ON INITIAL PAGE LOAD
-==========================================================================*/
-
-  $.when(
-    $.get("injected-html.html", function(data) {
-      injectedHtml = $(data);
-    }),
-    $.getJSON('/js/galleryInfos.json', function(data) {
-      galleryInfos = data;
-    })
-  ).then(function() {
-    initialLoad();
-  });
-
-  var initialLoad = function() {
-    var hash = window.location.hash.substring(1);
-    if (hash === "") {
-      hash = "entrance";
+  function submitFinished(response) {
+    response = $.trim(response);
+    if (response === 'success') {
+      $('.status-message, .success-message').fadeIn().delay(messageDelay).fadeOut();
+      $('#sender-name').val( '' );
+      $('#sender-email').val( '' );
+      $('#sender-message').val( '' );
+      sessionStorage.removeItem('sender-name');
+      sessionStorage.removeItem('sender-email');
+      sessionStorage.removeItem('sender-message');
+    } else {
+      $('.status-message, .failure-message').fadeIn().delay(messageDelay).fadeOut();
     }
-    $('#main-header .' + hash).addClass('is-active');
-    $('#main-header .' + hash + ' a').attr('disabled', 'disabled');  // Prevents further clicks on active link in IE
-    loadPageContent(hash, function() {
-      $guts.toggleClass('slideUp slideDown');
-      setTimeout(function(){$('.content').toggleClass('fadeOut fadeIn');}, slideTransitionLength);
+  }
+
+  function submitForm() {
+    var $contactForm = $(this);
+    if (!$('#sender-name').val() || !$('#sender-email').val() || !$('#sender-message').val()) {
+      $('.status-message, .incomplete-message').fadeIn().delay(messageDelay).fadeOut();
+    } else {
+      $.ajax( {
+        url: $contactForm.attr( 'action' ) + '?ajax=true',
+        type: $contactForm.attr( 'method' ),
+        data: $contactForm.serialize(),
+        success: submitFinished
+      });
+    }
+    return false;
+  }
+
+  var bindUIActivity = function() {
+    $guts.on('keyup', '.stored', function() {
+      var fieldName = this.id;
+      sessionStorage.setItem(fieldName, this.value);
     });
+    $guts.on('submit', '#contact-form', submitForm);
   };
 
-/*==========================================================================
-  LOADING PAGE CONTENT
-==========================================================================*/
+  Contact.repopulateForm = function() {
+    for (var i = 0; i < sessionStorage.length; i++) {
+      var storedValue = sessionStorage.getItem(sessionStorage.key(i));
+      $('#' + sessionStorage.key(i).val(storedValue));
+    }
+  };
 
-  var loadPageContent = function(pageName, callback) {
+  Contact.init = function() {
+    bindUIActivity();
+  };
+
+  var messageDelay = 2000;
+
+  var $guts = $('#guts');
+
+}(jQuery, window.Contact = window.Contact || {}));
+
+(function($, Content, undefined) {
+
+  var removeOldContent = function() {
     $guts.children('section').remove();
-    var newPage = pageName;
-    switch (newPage) {
-      case "resume":
-      case "papn":
-      case "csh":
-      case "fb":
-      case "sns":
-      case "petershambora":
-      case "wtfdrink":
-      case "laura":
-      case "resizely":
-      case "cpsolutions":
-        buildUpGallery(newPage);
+  };
+
+  var loadNewContent = function(hash) {
+    $guts.prepend(Resources.injectedHtml.closest('#' + hash));
+  };
+
+  Content.loadPage = function(hash, callback) {
+    removeOldContent();
+    switch (hash) {
+      case 'resume':
+      case 'papn':
+      case 'csh':
+      case 'fb':
+      case 'sns':
+      case 'petershambora':
+      case 'wtfdrink':
+      case 'laura':
+      case 'resizely':
+      case 'cpsolutions':
+        // Gallery Module
         break;
-      case "contact":
-        repopulateForm();
+      case 'contact':
+        // Contact Module
       default:
-        $guts.prepend(injectedHtml.closest('#' + newPage));
+        loadNewContent(hash);
     }
     if (callback) {
       callback();
     }
   };
 
-/*==========================================================================
-  GALLERY BUILDING
-==========================================================================*/
+  var $guts = $('#guts');
+  //var injectedHtml = Resources.injectedHtml;
 
-  // Build and setup whatever gallery's been loaded
-  var buildUpGallery = function(galleryName) {
+}(jQuery, window.Content = window.Content || {}));
 
-    // If the gallery has already been built, don't rebuild it
-    if (galleryName in cachedGalleries) {
-      $guts.prepend(cachedGalleries[galleryName]);
-      return;
+(function($, Gallery, undefined) {
+
+
+
+}(jQuery, window.Gallery = window.Gallery || {}));
+
+(function($, Hashchange, undefined) {
+
+  var sendGoogleAnalyticsEvent = function(label, value) {
+    ga('send', 'event', 'Navigation', label, value);
+  };
+  var subGalleryTest = function(hash) {
+    if($.inArray(hash, subGallery) >= 0) {
+
     }
-
-    var galleryStatus = galleryInfos[galleryName]["galleryStatus"];
-    var onlineBadge = '<svg xmlns="http://www.w3.org/2000/svg" width="88" height="18"><linearGradient id="a" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".1" stop-color="#aaa" stop-opacity=".1"/><stop offset=".9" stop-opacity=".3"/><stop offset="1" stop-opacity=".5"/></linearGradient><rect rx="4" width="88" height="18" fill="#555"/><rect rx="4" x="44" width="44" height="18" fill="#4c1"/><path fill="#4c1" d="M44 0h4v18h-4z"/><rect rx="4" width="88" height="18" fill="url(#a)"/><g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11"><text x="23" y="13" fill="#010101" fill-opacity=".3">status</text><text x="23" y="12">status</text><text x="65" y="13" fill="#010101" fill-opacity=".3">online</text><text x="65" y="12">online</text></g></svg>';
-    var offlineBadge = '<svg xmlns="http://www.w3.org/2000/svg" width="89" height="18"><linearGradient id="a" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".1" stop-color="#aaa" stop-opacity=".1"/><stop offset=".9" stop-opacity=".3"/><stop offset="1" stop-opacity=".5"/></linearGradient><rect rx="4" width="89" height="18" fill="#555"/><rect rx="4" x="44" width="45" height="18" fill="#e05d44"/><path fill="#e05d44" d="M44 0h4v18h-4z"/><rect rx="4" width="89" height="18" fill="url(#a)"/><g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11"><text x="23" y="13" fill="#010101" fill-opacity=".3">status</text><text x="23" y="12">status</text><text x="65.5" y="13" fill="#010101" fill-opacity=".3">offline</text><text x="65.5" y="12">offline</text></g></svg>';
-    var mockupBadge = '<svg xmlns="http://www.w3.org/2000/svg" width="99" height="18"><linearGradient id="a" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".1" stop-color="#aaa" stop-opacity=".1"/><stop offset=".9" stop-opacity=".3"/><stop offset="1" stop-opacity=".5"/></linearGradient><rect rx="4" width="99" height="18" fill="#555"/><rect rx="4" x="44" width="55" height="18" fill="#dfb317"/><path fill="#dfb317" d="M44 0h4v18h-4z"/><rect rx="4" width="99" height="18" fill="url(#a)"/><g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11"><text x="23" y="13" fill="#010101" fill-opacity=".3">status</text><text x="23" y="12">status</text><text x="70.5" y="13" fill="#010101" fill-opacity=".3">' + galleryStatus + '</text><text x="70.5" y="12">' + galleryStatus + '</text></g></svg>';
-
-    var pageTitle = galleryInfos[galleryName]["galleryTitle"];
-    var pageDescription = galleryInfos[galleryName]["galleryDescription"];
-    var marqueeImage = galleryInfos[galleryName]["marqueeImage"];
-    var marqueeLightbox = galleryInfos[galleryName]["marqueeLightbox"];
-    var pageURL = galleryInfos[galleryName]["galleryURL"];
-    var pageURLAppearance = galleryInfos[galleryName]["galleryURLAppearance"];
-    var statusBadge = '';
-    if (galleryStatus === 'online') {
-      marqueeImage = '<a href="' + pageURL + '" target="_blank"><img src="' + marqueeImage + '" lightbox="' + marqueeLightbox + '"/></a>';
-      statusBadge = onlineBadge;
-      pageURL = '<p><strong><a href="' + pageURL + '" target="_blank">' + pageURLAppearance + '</a></strong></p>';
-    } else if (galleryStatus === 'offline') {
-      marqueeImage = '<img src="' + marqueeImage + '" lightbox="' + marqueeLightbox + '"/>';
-      statusBadge = offlineBadge;
-      pageURL = '';
-    } else {
-      marqueeImage = '<img src="' + marqueeImage + '" lightbox="' + marqueeLightbox + '"/>';
-      statusBadge = mockupBadge;
-      pageURL = '';
+  };
+  var navigateTo = function(hash) {
+    switch (hash) {
+      case 'papn':
+      case 'csh':
+      case 'fb':
+      case 'sns':
+      case 'petershambora':
+      case 'wtfdrink':
+      case 'laura':
+      case 'resizely':
+      case 'cpsolutions':
+        Navigation.removeActiveAttributeAndClass();
+      case 'portfolio':
+        Transition.fadeOutFadeIn(hash);
+        break;
+      default:
+        Transition.fadeThenSlide();
+        setTimeout(function() {
+          Content.loadPage(hash, function() {
+            Transition.slideThenFade(hash);
+          });
+        }, Transition.fadeTransitionLength + Transition.slideTransitionLength);
     }
-
-    var baseGallery = '';
-    if (galleryInfos[galleryName]["subGallery"]) {
-      baseGallery += '<section id="' + galleryName + '" class="fadeOut content sub gallery">';
-    } else {
-      baseGallery += '<section id="' + galleryName + '" class="fadeOut content gallery">';
-    }
-
-      baseGallery += '<nav>';
-        baseGallery += '<div class="gallery-control previous"></div>';
-        baseGallery += '<div class="gallery-control next"></div>';
-      baseGallery += '</nav>';
-      baseGallery += '<div class="slide" style="left:0%;">';
-        baseGallery += '<div class="gallery-panel marquee">';
-          baseGallery += '<div class="marquee-image">';
-            baseGallery += marqueeImage;
-          baseGallery += '</div>';
-          baseGallery += '<div class="gallery-title">';
-            baseGallery += '<h2 class="hyphenate">' + pageTitle + '</h2>';
-          baseGallery += '</div>';
-          baseGallery += '<div class="gallery-url">';
-            baseGallery += pageURL;
-          baseGallery += '</div>';
-          baseGallery += '<div class="gallery-status">';
-            baseGallery += statusBadge;
-          baseGallery += '</div>';
-          baseGallery += '<div class="gallery-description">';
-            baseGallery += '<p>' + pageDescription + '</p>';
-          baseGallery += '</div>';
-        baseGallery += '</div>';
-      baseGallery += '</div>';
-
-    var additionalGalleries = galleryInfos[galleryName]["additionalGalleries"];
-    var additionalGalleryPanels = '';
-    for (i = 0; i < additionalGalleries.length; i++) {
-      var activeGallery = additionalGalleries[i];
-      var lightboxExists = activeGallery[0];
-      var extraClasses = activeGallery[1];
-      var imageLocation = activeGallery[2];
-      var imageDescription = activeGallery[3];
-      var n = i + 1;
-
-      additionalGalleryPanels += '<div class="slide" style="left:' + n + '00%;">';
-        additionalGalleryPanels += '<div class="gallery-panel repeat ' + extraClasses + '">';
-          additionalGalleryPanels += '<div class="gallery-image"><img src="img/sites/' + imageLocation + '" lightbox="' + lightboxExists + '" /></div>';
-          additionalGalleryPanels += '<div class="gallery-text"><p>' + imageDescription + '</p></div>';
-        additionalGalleryPanels += '</div>';
-      additionalGalleryPanels += '</div>';
-    }
-
-    var fullGallery = baseGallery + additionalGalleryPanels + '</section>';
-    cachedGalleries[galleryName] = fullGallery;
-    $guts.prepend(fullGallery);
-
-    $('.gallery .slide:first-of-type').addClass('first');
-    $('.gallery .slide:last-of-type').addClass('last');
-    $('.previous').addClass('is-disabled');
-
+  };
+  var bindUIActivity = function() {
+    $(window).on('hashchange', function() {
+      var hash = window.location.hash.substring(1);
+      sendGoogleAnalyticsEvent('Click', 'hashchange');
+      subGalleryTest(hash);
+      navigateTo(hash);
+    });
   };
 
-/*==========================================================================
-  GALLERY ANIMATION
-==========================================================================*/
+  Hashchange.init =  function() {
+    bindUIActivity();
+  };
 
-  // Global isAnimating variable
-  var isAnimating = false;
+  var subGallery = ['papn', 'csh', 'fb', 'sns', 'petershambora', 'wtfdrink', 'laura', 'resizely', 'cpsolutions'];
 
-  // Move backwards through gallery
-  $guts.on('click', '.previous', function() {
-    if ($('.first').css('left') === "0px") {
-      return false;
+}(jQuery, window.Hashchange = window.Hashchange || {}));
+
+(function($, Init, undefined) {
+
+  var setHash = function() {
+    var hash = window.location.hash.substring(1);
+    if (hash === '') {
+      return 'entrance';
+    } else {
+      return hash;
     }
-    if (isAnimating === true) {
-      return false;
-    }
-    isAnimating = true;
-    $('.gallery .slide').animate({left: "+=100%"}, 750, function() {
-      isAnimating = false;
-      if ($('.first').css('left') === "0px") {
-        $('.previous').addClass('is-disabled');
-      }
+  };
+
+  Init.init = function() {
+    var hash = setHash();
+    Navigation.updateActiveClass('.' + hash);
+    Navigation.updateDisabledAttribute('.' + hash + ' a');
+    Content.loadPage(hash, function() {
+      Transition.slideThenFade(hash);
     });
-    if ($('.next').hasClass('is-disabled')) {
-      $('.next').removeClass('is-disabled');
-    }
-  });
+  };
 
-  // Move forwards through gallery
-  $guts.on('click', '.next', function() {
-    if ($('.last').css('left') === "0px") {
-      return false;
-    }
-    if (isAnimating === true) {
-      return false;
-    }
-    isAnimating = true;
-    $('.gallery .slide').animate({left: "-=100%"}, 750, function() {
-      isAnimating = false;
-      if ($('.last').css('left') === "0px") {
-        $('.next').addClass('is-disabled');
-      }
-    });
-    if ($('.previous').hasClass('is-disabled')) {
-      $('.previous').removeClass('is-disabled');
-    }
-  });
+}(jQuery, window.Init = window.Init || {}));
 
-/*==========================================================================
-  LIGHTBOX BINDINGS
-==========================================================================*/
+(function($, Lightbox, undefined) {
 
-  $guts.on('click', '.gallery img[lightbox="true"]', function() {
-    if (!$('.nav-toggle').is(':visible')) {
-      var imgSrc = $(this).attr('src');
-      $('#lightbox-image').attr('src', imgSrc);
-      $('#lightbox').show();
-    }
-  });
-  $('#lightbox-image').click(function(e) {
-    e.stopPropagation();
-  });
-  $('#lightbox').click(function() {
-    $('#lightbox').hide();
-  });
-  $guts.on('click', '#resume .gallery-image', function() {
-    window.open('/resume.pdf', 'Tyler Shambora\'s Resume');
-  });
-
-/*==========================================================================
-  NAVIGATION
-==========================================================================*/
-
-  // Clicking on the nav-toggle button reveals the nav menu
-  $('.nav-toggle').click(function() {
-    $('#main-header .nav-item:not(.logo)').toggle();
-  });
-
-  // After navigating to a new location, the nav menu hides
-  $('#main-header a').click(function() {
+  var isMobile = function() {
     if ($('.nav-toggle').is(':visible')) {
-      $('#main-header .nav-item:not(.logo)').hide();
-    }
-  });
-
-  // Update the is active class on site navigation
-  $('#main-header .nav-item a').on('click', function() {
-    $('#main-header .nav-item').removeClass('is-active');
-    $('#main-header a').removeAttr('disabled');
-    if ($(this).is("#main-header .nav-item a")) {
-      $(this).parent().addClass('is-active');
-      $(this).find('a').attr('disabled', 'disabled');  // Prevents further clicks on active link in IE
-    }
-  });
-
-/*==========================================================================
-  STATES
-==========================================================================*/
-
-  // If the user hasn't consented or them saying ok wasn't stored on this computer, show them the warning
-  if (sessionStorage.wtfdrinkPermission !== true) {
-    $guts.on('click', '.portfolio-item.wtfdrink a', function(e) {
-      $('#wtf-overlay').show();
-      e.preventDefault();
-    });
-  }
-
-  // If they click no, store their answer in sessionStorage and return them to the portfolio
-  $('#no-way').click(function() {
-    sessionStorage.setItem('wtfdrinkPermission', false);
-    $('#wtf-overlay').hide();
-  });
-  // If they click yes, store that answer also and send them on their way. Also unbind the event to enter the wtfdrink subgallery.
-  $('#yes-way').click(function() {
-    sessionStorage.setItem('wtfdrinkPermission', true);
-    $('#wtf-overlay').hide();
-    window.location.hash = 'wtfdrink';
-    $guts.off('click', '.portfolio-item.wtfdrink a');
-  });
-
-  $(window).on('hashchange', function() {
-    // This counts only when the hash changes, it does not count if the initial
-    // page also initially included a hash, either way, record a hashchange
-    ga('Navigation', 'Click', 'hashchange');
-    // Collect information about current states
-    var newHash = window.location.hash.substring(1);  // Where we are headed...
-    // Are we going into a sub gallery?
-    if ($.inArray(newHash, subGalleries) >= 0) {
-      $('#main-header .nav-item').removeClass('is-active');
-      $('#main-header a').removeAttr('disabled');
-      $('#portfolio').toggleClass('fadeIn fadeOut');
-      setTimeout(function() {
-        loadPageContent(newHash, function() {
-          $('.content').toggleClass('fadeIn fadeOut');
-          $('html, body').animate({ scrollTop: 0 }, 400);
-          ga('Navigation', 'Event', '#' + newHash);
-          ga('Navigation', 'Event', 'Portfolio => Sub-Gallery');
-        });
-      }, fadeTransitionLength);
-    }
-    // Are we leaving a sub gallery and going back to Portfolio?
-    else if ($(".content").hasClass('sub') && newHash === "portfolio") {
-      $('.content').toggleClass('fadeIn fadeOut');
-      setTimeout(function(){
-        loadPageContent(newHash, function() {
-          $('.content').toggleClass('fadeIn fadeOut');
-          $('html, body').animate({ scrollTop: 0 }, 400);
-          ga('Navigation', 'Event', '#' + newHash);
-          ga('Navigation', 'Event', 'Portfolio <= Sub-Gallery');
-        });
-      }, fadeTransitionLength);
-    // Just moving from one content section to another
+      return true;
     } else {
-      $('.content').toggleClass('fadeIn fadeOut');
-      setTimeout(function(){$guts.toggleClass('slideDown slideUp');}, fadeTransitionLength);
-      setTimeout(function() {
-        loadPageContent(newHash, function() {
-          $guts.toggleClass('slideUp slideDown');
-          setTimeout(function(){
-            $('.content').toggleClass('fadeOut fadeIn');
-            $('html, body').animate({ scrollTop: 0 }, 400);
-            ga('Navigation', 'Event', '#' + newHash);
-            ga('Navigation', 'Event', 'Generic Navigation');
-          }, slideTransitionLength);
-        });
-      }, fadeTransitionLength + slideTransitionLength);
-    }
-  });
-
-/*==========================================================================
-  CONTACT FORM
-==========================================================================*/
-
-  // This captures and stores the value of each input when you write something
-  $guts.on('keyup', '.stored', function() {
-    var fieldName = this.id;
-    sessionStorage.setItem(fieldName, this.value);
-  });
-
-  // This function repopulates the inputs if there is something stored in sessionStorage
-  var repopulateForm = function() {
-    for (var i = 0; i < sessionStorage.length; i++) {
-      var storedValue = sessionStorage.getItem(sessionStorage.key(i));
-      $("#" + sessionStorage.key(i)).val(storedValue);
+      return false;
     }
   };
-
-  // This handles the form submit (dur)
-  function submitForm() {
-    var $contactForm = $(this);
-    if ( !$('#sender-name').val() || !$('#sender-email').val() || !$('#sender-message').val() ) {  // Are all the fields filled in?
-      $('.status-message, .incomplete-message').fadeIn().delay(messageDelay).fadeOut();  // (this is required for browsers without HTML5 validation)
+  var populateLightbox = function(clickedImage) {
+    var imgSrc = $(clickedImage).attr('src');
+    $lightboxImage.attr('src', imgSrc);
+  };
+  var openResume = function() {
+    window.open('/resume.pdf', 'Tyler Shambora\'s Resume');
+  };
+  var openLightbox = function() {
+    if (!isMobile()) {
+      $lightbox.show();
     }
-    else {  // You did it!
-      $.ajax( {
-        url: $contactForm.attr( 'action' ) + "?ajax=true",
-        type: $contactForm.attr( 'method' ),
-        data: $contactForm.serialize(),
-        success: submitFinished
+  };
+  var closeLightbox = function() {
+    $lightbox.hide();
+  };
+  var bindUIActions = function() {
+    $guts.on('click', $hasLightbox, function() {
+      populateLightbox(this);
+      openLightbox();
+    });
+    $guts.on('click', $resumeGalleryImage, function() {
+      openResume();
+    });
+    $lightbox.click(function() {
+      closeLightbox();
+    });
+    $lightboxImage.click(function(e) {
+      e.stopPropagation();
+    });
+  };
+
+  Lightbox.init = function() {
+    bindUIActions();
+  };
+
+  var $guts = $('#guts');
+  var $hasLightbox = $('.gallery img[lightbox="true"]');
+  var $resumeGalleryImage = $('#resume .gallery-image');
+  var $lightbox = $('#lightbox');
+  var $lightboxImage = $('#lightbox-image');
+
+}(jQuery, window.Lightbox = window.Lightbox || {}));
+
+(function($, Navigation, undefined) {
+
+  var navToggleIsVisible = function() {
+    if ($navToggle.is(':visible')) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  var toggleNavMenu = function() {
+    $navItemExcludingLogo.toggle();
+  };
+  var hideNavMenu = function() {
+    if (navToggleIsVisible()) {
+      $navItemExcludingLogo.hide();
+    }
+  };
+  var bindUIActivity = function() {
+    $navToggle.click(function() {
+      toggleNavMenu();
+    });
+    $mainHeaderLink.click(function() {
+      hideNavMenu();
+    });
+    $mainHeaderLink.click(function() {
+      Navigation.updateActiveClass(this);
+      Navigation.updateDisabledAttribute(this);
+    });
+  };
+
+  Navigation.updateActiveClass = function(activeNavLink) {
+    $mainHeaderNavItem.removeClass('is-active');
+    $(activeNavLink).parent().addClass('is-active');
+  };
+  Navigation.updateDisabledAttribute = function(activeNavLink) {
+    $mainHeaderLink.removeAttr('disabled');
+    $(activeNavLink).attr('disabled', 'disabled');
+  };
+  Navigation.removeActiveAttributeAndClass = function() {
+    $navItem.removeClass('is-active');
+    $navItem.children('a').removeAttr('disabled');
+  };
+  Navigation.init = function() {
+    bindUIActivity();
+  };
+
+  var $mainHeader = $('#main-header');
+  var $mainHeaderNavItem = $mainHeader.find('.nav-item');
+  var $mainHeaderLink = $mainHeader.find('a');
+  var $navItemExcludingLogo = $mainHeader.find('.nav-item:not(.logo)');
+  var $navToggle = $('.nav-toggle');
+
+}(jQuery, window.Navigation = window.Navigation || {}));
+
+(function($, Permission, undefined) {
+
+  var bindUIActivity = function() {
+    if (sessionStorage.wtfdrinkPermission !== true) {
+      $guts.on('click', '.wtfdrink a', function(e) {
+        e.preventDefault();
+        $wtf.show();
       });
     }
-    return false;  // As always, lets prevent what's supposed to happen from happening...
-  }
-  $guts.on('submit', '#contact-form', submitForm);
+    $('#no-way').click(function() {
+      sessionStorage.setItem('wtfdrinkPermission', false);
+      $wtf.hide();
+    });
+    $('#yes-way').click(function() {
+      sessionStorage.setItem('wtfdrinkPermission', true);
+      $wtf.hide();
+      $guts.off('click', '.wtfdrink a');
+      window.location.hash = 'wtfdrink';
+    });
+  };
 
-  // Mr. AJAX's response...
-  function submitFinished(response) {
-    response = $.trim(response);
-    if (response === "success") {  // Great success!
-      $('.status-message, .success-message').fadeIn().delay(messageDelay).fadeOut();  // 1. Display the success message
-      $('#sender-name').val( "" );  // 2. Clear the name
-      $('#sender-email').val( "" );  // 3. Clear the email
-      $('#sender-message').val( "" );  // 4. Clear the message
-      sessionStorage.clear();  // 5. Clear sessionStorage
-    }
-    else {  // No great success... :(
-      $('.status-message, .failure-message').fadeIn().delay(messageDelay).fadeOut();  // Redisplay the failure form!
-    }
-  }
-});
+  Permission.init = function() {
+    bindUIActivity();
+  };
+
+  var $guts = $('#guts');
+  var $wtf = $('#wtf-overlay');
+
+}(jQuery, window.Permission = window.Permission || {}));
+
+(function($, Resources, undefined) {
+
+  var loadFeatureTest = function() {
+    yepnope({
+      load: 'js/feature-test.min.js',
+    });
+  };
+
+  var loadResources = function() {
+    $.when(
+      $.get('injected-html.html', function(data) {
+        Resources.injectedHtml = $(data);
+      }),
+      $.getJSON('/js/gallery-info.json', function(data) {
+        Resources.galleryInfo = data;
+      })
+    ).then(function() {
+      Init.init();
+    });
+  };
+
+  Resources.init = function() {
+    loadFeatureTest();
+    loadResources();
+  };
+
+  Resources.injectedHtml = '';
+  Resources.galleryInfo = '';
+
+}(jQuery, window.Resources = window.Resources || {}));
+
+(function($, Transition, undefined) {
+
+  var sendGoogleAnalyticsEvent = function(label, value) {
+    ga('send', 'event', 'Navigation', label, value);
+  };
+  var toggleContentFade = function() {
+    $('.content').toggleClass('fadeIn fadeOut');
+  };
+  var toggleGutsSlide = function() {
+    $guts.toggleClass('slideUp slideDown');
+  };
+  var scrollReset = function() {
+    $root.animate({ scrollTop: 0 }, scrollSpeed);
+  };
+
+  Transition.fadeOutFadeIn = function(hash) {
+    toggleContentFade();
+    setTimeout(function() {
+      Content.loadPage(hash, function() {
+        toggleContentFade();
+        scrollReset();
+        sendGoogleAnalyticsEvent('Event', '#' + hash);
+      });
+    }, Transition.fadeTransitionLength);
+  };
+  Transition.slideThenFade = function(hash) {
+    toggleGutsSlide();
+    setTimeout(function() {
+      toggleContentFade();
+      scrollReset();
+      sendGoogleAnalyticsEvent('Event', '#' + hash);
+    }, Transition.slideTransitionLength);
+  };
+  Transition.fadeThenSlide = function() {
+    toggleContentFade();
+    setTimeout(function() {
+      toggleGutsSlide();
+    }, Transition.fadeTransitionLength);
+  };
+
+  var scrollSpeed = 400;
+
+  var $guts = $('#guts');
+  var $root = $('html, body');
+
+  Transition.fadeTransitionLength = 100;
+  Transition.slideTransitionLength = 1000;
+
+}(jQuery, window.Transition = window.Transition || {}));
+
+(function($) {
+
+  Resources.init();
+  // Content.init();
+  Navigation.init();
+  Hashchange.init();
+  // Transition.init();
+  // Gallery.init();
+  Contact.init();
+  Lightbox.init();
+  Permission.init();
+
+})(jQuery);

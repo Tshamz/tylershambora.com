@@ -19,6 +19,16 @@ module.exports = function(grunt) {
       }
     },
 
+    concat: {
+      options: {
+        separator: '\n\n'
+      },
+      all: {
+        src: ['app/js/modules/**/*-module.js', 'app/js/modules/main.js'],
+        dest: 'app/js/main.js'
+      }
+    },
+
     uglify: {
       all: {
         files: grunt.file.expandMapping(["app/js/main.js", "app/js/feature-test.js"], "", {
@@ -71,8 +81,8 @@ module.exports = function(grunt) {
         },
       },
       scripts: {
-        files: ["app/js/main.js", "!app/js/main.min.js"],
-        tasks: ["uglify"]
+        files: ["app/js/main.js", "!app/js/main.min.js", "app/js/modules/**/*.js"],
+        tasks: ["concat", "uglify"]
       },
       sass: {
         files: ["app/css/scss/*.scss"],
@@ -106,6 +116,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'concat',
     'uglify',
     'sass',
     'copy'

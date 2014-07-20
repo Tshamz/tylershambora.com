@@ -128,20 +128,5 @@
       [true, "right-image border push-down-text", "cpsolutions/cpsolutions-mock.jpg", "I used Adobe Photoshop to produce the mockup. I'm pretty comfortable with the program and in my mind, it's the best application for producing visually intense items like high-fidelity mockups."],
       [true, "left-image border push-down-text", "cpsolutions/cpsolutions-page.jpg",  "After we agreed that the mocks looked alright, I set out to build a rapid prototype of the home page, in order to show my sister exactly how the site would look online.<br><br>The resulting page ended up looking pretty good. It really is unfortunate that this site was never able to come to fruition. Maybe one day..."]
     ]
-  },
-  "resume": {
-    "subGallery": false,
-    "marqueeImage": "img/marquee/resume.jpg",
-    "marqueeLightbox": false,
-    "galleryTitle": "Resume",
-    "galleryURL": "http://tylershambora.com/resume.pdf",
-    "galleryURLAppearance": "resume.pdf",
-    "galleryStatus": "online",
-     "galleryDescription": "I've spent a great deal of time designing and redesigning my resume, going over numerous iterations until I finally got it into the state it's in today. Initially, it was designed using Adobe Photoshop, however halfway through I thankfully switched to Adobe InDesign, a fantastic tool for working with text heavy documents.",
-    "additionalGalleries": [
-      [false, "right-image push-down-text", "resume/resume1.jpg", "One of my favorite features in InDesign, is the fact that text is preserved when saving as a PDF. Unlike Photoshop, which flattens text into an image when saved, documents created in InDesign keep text as text when saved, which means it can be selected, copied, read by screen readers, and even include hyperlinks."],
-      [false, "left-image", "resume/resume3.jpg", "In the end, my resume has served as an opportunity for me to flex some of my design skills, show off my sense of humor, and ultimately allowed me to display my creative side."],
-      [false, "box-shadow", "resume/resume-bare.jpg", ""]
-    ]
   }
 }

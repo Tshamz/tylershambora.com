@@ -43,4 +43,5 @@ if (unsupportedFeatures.length > 0) {
   $(".download-safari a").html('<img src="img/icons/safari.png" />');
   $(".download-opera a").html('<img src="img/icons/opera.png" />');
   $("#no-support").show();
+  ga('send', 'event', 'Compatibility', 'Load', 'Unsupported Browser');
 }
