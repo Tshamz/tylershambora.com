@@ -7,7 +7,7 @@ Check out [tylershambora.com](http://tylershambora.com) for an up to date, live 
 
 ## About ##
 
-No full page reloads, loads new content in via ajax, most of the animations are done using CSS3 transitions/animations, stylesheets are written using SCSS, fully responsive and built mobile-first, uses Grunt to: work locally with livereload, minify CSS and JavaScript, optimize images, and create ready to go dist directory.
+No full page reloads, loads new content in via ajax, most of the animations are done using CSS3 transitions/animations, stylesheets are written using SCSS, fully responsive and built mobile-first, modular javascript, uses Grunt to: work locally with livereload, minify CSS and JavaScript, optimize images, and create ready to go dist directory.
 
 ## Goals/TODO ##
 
