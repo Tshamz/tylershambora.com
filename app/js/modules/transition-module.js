@@ -1,49 +1,58 @@
 (function($, Transition, undefined) {
 
-  var sendGoogleAnalyticsEvent = function(label, value) {
-    ga('send', 'event', 'Navigation', label, value);
-  };
   var toggleContentFade = function() {
     $('.content').toggleClass('fadeIn fadeOut');
   };
   var toggleGutsSlide = function() {
     $guts.toggleClass('slideUp slideDown');
   };
-  var scrollReset = function() {
-    $root.animate({ scrollTop: 0 }, scrollSpeed);
-  };
 
-  Transition.fadeOutFadeIn = function(hash) {
-    toggleContentFade();
-    setTimeout(function() {
+  var eventsControler = function(originalEvent) {
+    var hash = window.location.hash.substring(1);
+    var $target = $(originalEvent.target);
+    var propertyName = originalEvent.propertyName;
+    var fadeOut = $target.hasClass('fadeOut');
+    var fadeIn = $target.hasClass('fadeIn');
+    var slideDown = $target.hasClass('slideDown');
+    var slideUp = $target.hasClass('slideUp');
+    var subGallery = $target.hasClass('sub');
+
+    if (fadeOut && propertyName === "opacity") {
+      if ((subGallery && hash === 'portfolio') || (subGalleries.indexOf(hash) > -1)) {
+        Content.loadPage(hash, function() {
+          setTimeout(function() {
+            toggleContentFade();
+          }, 100);
+        });
+      } else {
+        toggleGutsSlide();
+      }
+    } else if (slideUp) {
       Content.loadPage(hash, function() {
-        toggleContentFade();
-        scrollReset();
-        sendGoogleAnalyticsEvent('Event', '#' + hash);
+        toggleGutsSlide();
       });
-    }, Transition.fadeTransitionLength);
-  };
-  Transition.slideThenFade = function(hash) {
-    toggleGutsSlide();
-    setTimeout(function() {
+    } else if (slideDown) {
       toggleContentFade();
-      scrollReset();
-      sendGoogleAnalyticsEvent('Event', '#' + hash);
-    }, Transition.slideTransitionLength);
+    }
   };
-  Transition.fadeThenSlide = function() {
-    toggleContentFade();
-    setTimeout(function() {
-      toggleGutsSlide();
-    }, Transition.fadeTransitionLength);
+  var bindUIActions = function() {
+    $guts.on('transitionend webkitTransitionEnd', function(event) {
+      var originalEvent = event.originalEvent;
+      eventsControler(originalEvent);
+    });
   };
 
-  var scrollSpeed = 400;
+  Transition.firstLoad = function() {
+    toggleGutsSlide();
+  };
+  Transition.kickOffTransition = function() {
+    toggleContentFade();
+  };
+  Transition.init = function() {
+    bindUIActions();
+  };
 
   var $guts = $('#guts');
-  var $root = $('html, body');
-
-  Transition.fadeTransitionLength = 100;
-  Transition.slideTransitionLength = 1000;
+  var subGalleries = ["papn", "csh", "fb", "sns", "petershambora", "wtfdrink", "laura", "resizely", "cpsolutions"];
 
 }(jQuery, window.Transition = window.Transition || {}));

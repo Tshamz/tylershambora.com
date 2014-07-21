@@ -23,11 +23,11 @@
     $lightbox.hide();
   };
   var bindUIActions = function() {
-    $guts.on('click', $hasLightbox, function() {
+    $guts.on('click', '.gallery img[lightbox="true"]', function() {
       populateLightbox(this);
       openLightbox();
     });
-    $guts.on('click', $resumeGalleryImage, function() {
+    $guts.on('click', '#resume .gallery-image', function() {
       openResume();
     });
     $lightbox.click(function() {
@@ -43,8 +43,6 @@
   };
 
   var $guts = $('#guts');
-  var $hasLightbox = $('.gallery img[lightbox="true"]');
-  var $resumeGalleryImage = $('#resume .gallery-image');
   var $lightbox = $('#lightbox');
   var $lightboxImage = $('#lightbox-image');
 

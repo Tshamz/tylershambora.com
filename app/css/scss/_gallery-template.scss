@@ -1,4 +1,7 @@
 .gallery {
+  .gallery-control {
+    display: none;
+  }
   .slide:last-child .gallery-panel {
     border-bottom: none;
     margin-bottom: 0;

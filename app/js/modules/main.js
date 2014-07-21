@@ -1,11 +1,10 @@
 (function($) {
 
   Resources.init();
-  // Content.init();
   Navigation.init();
   Hashchange.init();
-  // Transition.init();
-  // Gallery.init();
+  Transition.init();
+  GalleryAnimation.init();
   Contact.init();
   Lightbox.init();
   Permission.init();

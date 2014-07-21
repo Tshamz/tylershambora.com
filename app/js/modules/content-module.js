@@ -3,15 +3,13 @@
   var removeOldContent = function() {
     $guts.children('section').remove();
   };
-
-  var loadNewContent = function(hash) {
-    $guts.prepend(Resources.injectedHtml.closest('#' + hash));
+  var loadNewContent = function(content) {
+    $guts.prepend(content);
   };
 
   Content.loadPage = function(hash, callback) {
     removeOldContent();
     switch (hash) {
-      case 'resume':
       case 'papn':
       case 'csh':
       case 'fb':
@@ -21,12 +19,13 @@
       case 'laura':
       case 'resizely':
       case 'cpsolutions':
-        // Gallery Module
+        loadNewContent(Gallery.loadGallery(hash));
         break;
       case 'contact':
-        // Contact Module
+        Contact.repopulateForm();
       default:
-        loadNewContent(hash);
+        loadNewContent(Resources.injectedHtml.closest('#' + hash));
+        break;
     }
     if (callback) {
       callback();
@@ -34,6 +33,5 @@
   };
 
   var $guts = $('#guts');
-  //var injectedHtml = Resources.injectedHtml;
 
 }(jQuery, window.Content = window.Content || {}));

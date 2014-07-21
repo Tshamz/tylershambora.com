@@ -53,14 +53,14 @@
   }
   .logo-image {
     border-radius: 51%;
-    height: 52px;
-    width: 52px;
+    height: 62px;
+    width: 62px;
     @media only screen and (min-width: 70rem) {
       height: 71px;
       width: 71px;
     }
     img {  /* Image must be at least +1px than container so background colors don't bleed */
-      width: 55px;
+      width: 65px;
       @include transition(width 300ms ease-in-out);
       @media only screen and (min-width: 70rem) {
         width: 74px;
@@ -68,6 +68,7 @@
     }
   }
   .logo-text {
+    display: none;  /* Experimenting with no text for a while */
     margin-top: 0;
     h1 {
       color: $Color-Dark-Grey;

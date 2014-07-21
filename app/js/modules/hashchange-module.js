@@ -3,11 +3,6 @@
   var sendGoogleAnalyticsEvent = function(label, value) {
     ga('send', 'event', 'Navigation', label, value);
   };
-  var subGalleryTest = function(hash) {
-    if($.inArray(hash, subGallery) >= 0) {
-
-    }
-  };
   var navigateTo = function(hash) {
     switch (hash) {
       case 'papn':
@@ -20,31 +15,23 @@
       case 'resizely':
       case 'cpsolutions':
         Navigation.removeActiveAttributeAndClass();
-      case 'portfolio':
-        Transition.fadeOutFadeIn(hash);
-        break;
       default:
-        Transition.fadeThenSlide();
-        setTimeout(function() {
-          Content.loadPage(hash, function() {
-            Transition.slideThenFade(hash);
-          });
-        }, Transition.fadeTransitionLength + Transition.slideTransitionLength);
+        Transition.kickOffTransition();
+        break;
     }
   };
-  var bindUIActivity = function() {
+  var bindUIActions = function() {
     $(window).on('hashchange', function() {
+      $('html, body').animate({ scrollTop: 0 }, 400);
       var hash = window.location.hash.substring(1);
       sendGoogleAnalyticsEvent('Click', 'hashchange');
-      subGalleryTest(hash);
+      sendGoogleAnalyticsEvent('Event', '#' + hash);
       navigateTo(hash);
     });
   };
 
   Hashchange.init =  function() {
-    bindUIActivity();
+    bindUIActions();
   };
-
-  var subGallery = ['papn', 'csh', 'fb', 'sns', 'petershambora', 'wtfdrink', 'laura', 'resizely', 'cpsolutions'];
 
 }(jQuery, window.Hashchange = window.Hashchange || {}));

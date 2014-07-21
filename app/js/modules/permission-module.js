@@ -1,6 +1,6 @@
 (function($, Permission, undefined) {
 
-  var bindUIActivity = function() {
+  var bindUIActions = function() {
     if (sessionStorage.wtfdrinkPermission !== true) {
       $guts.on('click', '.wtfdrink a', function(e) {
         e.preventDefault();
@@ -20,7 +20,7 @@
   };
 
   Permission.init = function() {
-    bindUIActivity();
+    bindUIActions();
   };
 
   var $guts = $('#guts');

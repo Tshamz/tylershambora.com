@@ -11,10 +11,10 @@
 
   Init.init = function() {
     var hash = setHash();
-    Navigation.updateActiveClass('.' + hash);
+    Navigation.updateActiveClass('.' + hash + ' a');
     Navigation.updateDisabledAttribute('.' + hash + ' a');
     Content.loadPage(hash, function() {
-      Transition.slideThenFade(hash);
+      Transition.firstLoad();
     });
   };
 

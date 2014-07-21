@@ -137,7 +137,7 @@ img {
 
 html {
   background-color: white;
-  background-image: url(../img/the-gug.jpg);
+  background-image: url(../img/paper.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -442,14 +442,15 @@ input, button, select, textarea {
   padding: 3.35rem 10% 0;
   /* 3.35rem needed to push #guts below the nav */
   text-align: center;
-  -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: max-height 1000ms linear;
+  -moz-transition: max-height 1000ms linear;
+  -ms-transition: max-height 1000ms linear;
+  -o-transition: max-height 1000ms linear;
+  transition: max-height 1000ms linear;
 }
 #guts.slideDown {
-  max-height: 400rem;
+  max-height: 320rem;
   overflow: hidden;
 }
 #guts.slideUp {
@@ -458,25 +459,26 @@ input, button, select, textarea {
 }
 #guts .content {
   margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  -webkit-transform: translate3d(0, 0, 0);
 }
 #guts .content.fadeIn {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity 250ms linear;
-  -moz-transition: opacity 250ms linear;
-  -ms-transition: opacity 250ms linear;
-  -o-transition: opacity 250ms linear;
-  transition: opacity 250ms linear;
+  -webkit-transition: opacity 500ms linear;
+  -moz-transition: opacity 500ms linear;
+  -ms-transition: opacity 500ms linear;
+  -o-transition: opacity 500ms linear;
+  transition: opacity 500ms linear;
 }
 #guts .content.fadeOut {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: visibility 0ms linear 250ms, opacity 250ms linear;
-  -moz-transition: visibility 0ms linear 250ms, opacity 250ms linear;
-  -ms-transition: visibility 0ms linear 250ms, opacity 250ms linear;
-  -o-transition: visibility 0ms linear 250ms, opacity 250ms linear;
-  transition: visibility 0ms linear 250ms, opacity 250ms linear;
+  -webkit-transition: visibility 0ms linear 500ms, opacity 500ms linear;
+  -moz-transition: visibility 0ms linear 500ms, opacity 500ms linear;
+  -ms-transition: visibility 0ms linear 500ms, opacity 500ms linear;
+  -o-transition: visibility 0ms linear 500ms, opacity 500ms linear;
+  transition: visibility 0ms linear 500ms, opacity 500ms linear;
 }
 #guts .content.resume {
   margin-top: 1.5rem;
@@ -486,7 +488,7 @@ input, button, select, textarea {
   font-size: 0.85rem;
   background-color: #FFF;
   border-top: 1px solid #aaaaaa;
-  padding: 1rem 0 2rem;
+  padding: 1.5rem 0 2.5rem;
 }
 #guts-footer .footer-copy {
   float: left;
@@ -614,7 +616,7 @@ input, button, select, textarea {
   flex-basis: 100%;
 }
 #contact .submit-button {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   text-align: right;
 }
 #contact .status-message {
@@ -727,6 +729,9 @@ input, button, select, textarea {
   box-shadow: 0 0 0.5rem #353d48 inset;
 }
 
+.gallery .gallery-control {
+  display: none;
+}
 .gallery .slide:last-child .gallery-panel {
   border-bottom: none;
   margin-bottom: 0;

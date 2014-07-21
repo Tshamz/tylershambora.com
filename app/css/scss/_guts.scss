@@ -3,10 +3,10 @@
   border-bottom: 2px solid $Color-Light-Grey;
   padding: 3.35rem 10% 0;  /* 3.35rem needed to push #guts below the nav */
   text-align: center;
-  //-webkit-transform: translateZ(0);
-  @include transition(all $CSS-slideUpDown ease-in-out);
+  -webkit-transform: translate3d(0, 0, 0);
+  @include transition(max-height $CSS-slideUpDown linear);
   &.slideDown {
-    max-height: 400rem;
+    max-height: 320rem;
     overflow: hidden;
   }
   &.slideUp {
@@ -15,7 +15,8 @@
   }
   .content {
     margin-top: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    -webkit-transform: translate3d(0, 0, 0);
     &.fadeIn {
       opacity: 1;
       visibility: visible;

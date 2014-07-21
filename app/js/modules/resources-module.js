@@ -5,7 +5,6 @@
       load: 'js/feature-test.min.js',
     });
   };
-
   var loadResources = function() {
     $.when(
       $.get('injected-html.html', function(data) {

@@ -15,25 +15,28 @@
       $navItemExcludingLogo.hide();
     }
   };
-  var bindUIActivity = function() {
+  var bindUIActions = function() {
     $navToggle.click(function() {
       toggleNavMenu();
     });
-    $mainHeaderLink.click(function() {
+    $navItemLink.click(function() {
       hideNavMenu();
     });
-    $mainHeaderLink.click(function() {
+    $navItemLink.click(function() {
+      if (this.pathname === '/resume.pdf') {
+        return;
+      }
       Navigation.updateActiveClass(this);
       Navigation.updateDisabledAttribute(this);
     });
   };
 
   Navigation.updateActiveClass = function(activeNavLink) {
-    $mainHeaderNavItem.removeClass('is-active');
+    $navItem.removeClass('is-active');
     $(activeNavLink).parent().addClass('is-active');
   };
   Navigation.updateDisabledAttribute = function(activeNavLink) {
-    $mainHeaderLink.removeAttr('disabled');
+    $navItemLink.removeAttr('disabled');
     $(activeNavLink).attr('disabled', 'disabled');
   };
   Navigation.removeActiveAttributeAndClass = function() {
@@ -41,13 +44,12 @@
     $navItem.children('a').removeAttr('disabled');
   };
   Navigation.init = function() {
-    bindUIActivity();
+    bindUIActions();
   };
 
-  var $mainHeader = $('#main-header');
-  var $mainHeaderNavItem = $mainHeader.find('.nav-item');
-  var $mainHeaderLink = $mainHeader.find('a');
-  var $navItemExcludingLogo = $mainHeader.find('.nav-item:not(.logo)');
+  var $navItem = $('.nav-item');
+  var $navItemLink = $('.nav-item a');
+  var $navItemExcludingLogo = $('.nav-item:not(.logo)');
   var $navToggle = $('.nav-toggle');
 
 }(jQuery, window.Navigation = window.Navigation || {}));
