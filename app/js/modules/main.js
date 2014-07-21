@@ -8,5 +8,6 @@
   Contact.init();
   Lightbox.init();
   Permission.init();
+  Preload.init();
 
 })(jQuery);

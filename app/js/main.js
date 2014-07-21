@@ -157,7 +157,7 @@
       } else {
         additionalGalleriesString += '<div class="slide last" ';
       }
-       additionalGalleriesString += 'style="left: ' + galleryStartingPosition + ';"><div class="gallery-panel repeat ' + additionalClasses + '"><div class="gallery-image"><img src="img/sites/' + galleryImageLocation + '" lightbox="' + galleryHasLightbox + '" /></div><div class="gallery-text"><p>' + galleryImageDescription + '</p></div></div></div>';
+       additionalGalleriesString += 'style="left: ' + galleryStartingPosition + ';"><div class="gallery-panel repeat ' + additionalClasses + '"><div class="gallery-image"><img src="' + galleryImageLocation + '" lightbox="' + galleryHasLightbox + '" /></div><div class="gallery-text"><p>' + galleryImageDescription + '</p></div></div></div>';
     }
     additionalGalleriesString += '</section>';
     return additionalGalleriesString;
@@ -421,6 +421,46 @@
 
 }(jQuery, window.Permission = window.Permission || {}));
 
+(function($, Preload, undefined) {
+
+  var gatherImageLocations = function() {
+    var imageLocationsArray = [];
+    for (var gallery in Resources.galleryInfo) {
+      var galleryObject = Resources.galleryInfo[gallery];
+      var marqueeImageLocation = galleryObject.marqueeImageLocation;
+      var additionalGalleriesArray = galleryObject.additionalGalleries;
+      imageLocationsArray.push(marqueeImageLocation);
+      for (var i in additionalGalleriesArray) {
+        var galleryItem = additionalGalleriesArray[i];
+        var galleryItemImageLocation = galleryItem.imageLocation;
+        imageLocationsArray.push(galleryItemImageLocation);
+      }
+    }
+    return imageLocationsArray;
+  };
+  var buildImageObjects = function(imageLocations) {
+    var images = [];
+    for (i = 0; i < imageLocations.length; i++) {
+      images[i] = new Image();
+      images[i].src = imageLocations[i];
+    }
+  };
+  var preLoadImages = function() {
+    var imageLocations = gatherImageLocations();
+    buildImageObjects(imageLocations);
+  };
+  var bindOnLoadEvents = function() {
+    $(window).load(function() {
+      preLoadImages();
+    });
+  };
+
+  Preload.init = function() {
+    bindOnLoadEvents();
+  };
+
+}(jQuery, window.Preload = window.Preload || {}));
+
 (function($, Resources, undefined) {
 
   var loadFeatureTest = function() {
@@ -520,5 +560,6 @@
   Contact.init();
   Lightbox.init();
   Permission.init();
+  Preload.init();
 
 })(jQuery);

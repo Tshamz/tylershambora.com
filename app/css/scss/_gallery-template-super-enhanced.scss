@@ -92,6 +92,9 @@
     &.half-push-down-text .gallery-text {
       margin-top: 1rem;
     }
+    &.pull-up-text .gallery-text {
+      margin-top: 0;
+    }
   }
 
 }

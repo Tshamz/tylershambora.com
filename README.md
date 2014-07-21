@@ -14,7 +14,7 @@ No full page reloads, loads new content in via ajax, most of the animations are 
 *  ~~Would like to minify CSS & JS~~
 *  ~~Convert all CSS to SCSS~~
 *  ~~Trying to get all resources as small as possible in order to reduce amount of bandwidth used on mobile~~
-*  Lazy load or intelligently load images
+*  ~~PreLoad Images~~
 *  ~~Shift my attention to work-flow~~
 *  ~~Add content for the #entrance hash~~
 *  ~~Update each portfolio gallery item~~
@@ -24,6 +24,6 @@ No full page reloads, loads new content in via ajax, most of the animations are 
 *  ~~Build a better light box~~
 *  ~~Look into more about support for pointer-events~~
 *  Improve a11y
-*  Lots of rivers in text
+*  Rivers in text
 
 kbye.

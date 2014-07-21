@@ -299,8 +299,6 @@ input, button, select, textarea {
   margin: 2rem 2.5rem 0;
 }
 #lightbox .lightbox-image-inner-container {
-  max-width: 45rem;
-  margin: 0 auto;
   position: relative;
 }
 #lightbox .lightbox-close {
@@ -308,8 +306,7 @@ input, button, select, textarea {
   font-size: 1.5rem;
   cursor: pointer;
   position: absolute;
-  margin: 0.75rem 0.75rem 0 0;
-  top: 0;
+  margin: 1rem 1rem 0 0;
   right: 0;
 }
 #lightbox #lightbox-image {

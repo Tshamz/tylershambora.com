@@ -592,6 +592,9 @@ em {
   .gallery-panel.half-push-down-text .gallery-text {
     margin-top: 1rem;
   }
+  .gallery-panel.pull-up-text .gallery-text {
+    margin-top: 0;
+  }
 }
 @media only screen and (min-width: 75rem) {
   #resizely .resizely-bottom-image img {
