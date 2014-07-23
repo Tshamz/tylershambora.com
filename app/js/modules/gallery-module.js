@@ -25,7 +25,7 @@
     var statusBadgeString;
     if (galleryInfo.galleryStatus === 'online') {
       marqueeImageString = '<a href="' + galleryInfo.galleryUrl + '" target="_blank"><img src="' + galleryInfo.marqueeImageLocation + '" lightbox="' + galleryInfo.marqueeImageHasLightbox + '" /></a>';
-      galleryLinkString = '<p><strong><a href="' + galleryInfo.galleryUrl + '" target="_blank">' + galleryInfo.galleryUrlAppearance + '</a></strong></p>';
+      galleryLinkString = '<a href="' + galleryInfo.galleryUrl + '" target="_blank"><p><strong>' + galleryInfo.galleryUrlAppearance + '</strong></p></a>';
       statusBadgeString = buildGalleryStatusBadge('88', '44', '#4c1', galleryInfo.galleryStatus, '65');
     } else {
       marqueeImageString = '<img src="' + galleryInfo.marqueeImageLocation + '" lightbox="' + galleryInfo.marqueeImageHasLightbox + '" />';

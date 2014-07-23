@@ -9,9 +9,6 @@
   height: 100%;
   width: 100%;
   z-index: 999;
-  i {
-    font-size: 1.1rem;
-  }
 }
 
 .no-support-inner {
@@ -26,8 +23,11 @@
 .no-support-text {
   display: inline-block;
   margin: 0 2rem;
-  p:first-child,
-  p:last-child {
+  > i {
+    font-size: 1.1rem;
+  }
+  > p:first-child,
+  > p:last-child {
     margin: 1.25rem 0;
   }
 }
@@ -35,14 +35,14 @@
 #unsupported-features {
   list-style-type: disc;
   margin-left: 2rem;
-  li {
+  > li {
     font-weight: 800;
   }
 }
 
 .no-support-downloads {
   display: inline-block;
-  .download {
+  > .download {
     float: left;
     width: 25%;
     background-color: #FFF;

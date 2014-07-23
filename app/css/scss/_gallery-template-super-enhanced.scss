@@ -35,16 +35,16 @@
     width: 41px;
     z-index: 99;
     @include transition(opacity 200ms ease-in-out);
-    &[disabled] {
-      opacity: 0.3;
-      @include transition(opacity 200ms ease-in-out);
-    }
     &.next {
       right: 0;
     }
     &.previous {
       left: 0;
       @include transform(rotate(180deg));
+    }
+    &[disabled] {
+      opacity: 0.3;
+      @include transition(opacity 200ms ease-in-out);
     }
   }
 
@@ -92,7 +92,7 @@
   .gallery-description {
     margin: 0;
     padding: 0 2.5% 0 5%;
-    p {
+    > p {
       text-align: justify;
       font-size: 1.15rem;
       line-height: 1.35;
@@ -101,7 +101,7 @@
 
   .gallery-text {
     margin-top: 0.5rem;
-    p {
+    > p {
       font-size: 1.15rem;
       line-height: 1.35;
     }

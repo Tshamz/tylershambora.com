@@ -7,25 +7,25 @@
 }
 
 .portfolio-item {
-  img {
-    padding: 0;
-  }
-  a {
+  > a {
     padding: 7.5%;
   }
-  h3 {
-    display: block;
-    margin-bottom: 0.75rem;
+  img {
+    padding: 0;
   }
   h3,
   em {
     @include transition(color 250ms ease-in-out);
   }
-  @media only screen and (min-width: 60rem) {
-    h3 {
+  h3 {
+    display: block;
+    margin-bottom: 0.75rem;
+    @media only screen and (min-width: 60rem) {
       font: 200 1.35rem/1 $Font-Source-Sans-Pro;
     }
-    em {
+  }
+  em {
+    @media only screen and (min-width: 60rem) {
       display: block;
       padding-bottom: 0.5rem;
     }

@@ -38,10 +38,10 @@
   width: 90%;
   text-align: center;
   @include box-shadow(0 0 0.5rem $Color-Grey);
-  .sending-message,
-  .success-message,
-  .failure-message,
-  .incomplete-message {
+  > .sending-message,
+  > .success-message,
+  > .failure-message,
+  > .incomplete-message {
     display: none;
   }
 }

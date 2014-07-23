@@ -21,15 +21,15 @@
     display: inline;
     float: right;
   }
-  i {
-    margin-left: 0.4rem;
-    margin-right: 0.2rem;
-  }
-  a {
+  > a {
     color: $Color-Dark-Grey;
     text-decoration: underline;
     &:hover {
       color: $Color-Light-Blue;
     }
+  }
+  i {
+    margin-left: 0.4rem;
+    margin-right: 0.2rem;
   }
 }

@@ -41,14 +41,14 @@
   }
 }
 
-.gallery-url a {
+.gallery-url > a {
   font-size: 1.5rem;
 }
 
 .gallery-description {
   margin-left: 5%;
   margin-right: 5%;
-  p {
+  > p {
     font-size: 1.4rem;
   }
 }

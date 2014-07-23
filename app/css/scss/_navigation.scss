@@ -26,13 +26,13 @@
   &.entrance.is-active {
     background-color: transparent;
   }
-  &:not(.nav-logo) a {
-    display: block;
-    padding-left: 1.875rem;
-  }
   &:not(.nav-logo):hover {
     background-color: $Color-Lighter-Grey;
     cursor: pointer;
+  }
+  &:not(.nav-logo) a {
+    display: block;
+    padding-left: 1.875rem;
   }
 }
 
