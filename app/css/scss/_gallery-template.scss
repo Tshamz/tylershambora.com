@@ -36,6 +36,11 @@
   text-align: center;
 }
 
+.gallery-text,
+.gallery-description {
+  text-align: justify;
+}
+
 .gallery-marquee-image {
   border: 2px solid #CCC;
   margin-bottom: 2rem;
@@ -54,15 +59,6 @@
   margin-bottom: 1.25rem;
 }
 
-.gallery-description {
-  font-size: 1.1rem;
-  text-align: justify;
-}
-
 .gallery-image {
   margin-bottom: 2rem;
-}
-
-.gallery-text {
-  text-align: justify;
 }

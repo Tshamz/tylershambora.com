@@ -288,13 +288,13 @@ em {
   border-bottom: 5px solid #9fbcdf;
   color: #aaaaaa;
 }
-.nav-item:not(.nav-logo) a {
-  padding-left: 0;
-}
 .nav-item:not(.nav-logo):hover {
   background-color: transparent;
   border-bottom: 5px solid #9fbcdf;
   color: #aaaaaa;
+}
+.nav-item:not(.nav-logo) a {
+  padding-left: 0;
 }
 .nav-item > a {
   color: inherit;
@@ -446,15 +446,11 @@ em {
   padding: 1rem 0;
 }
 
-.portfolio-item img {
-  padding: 0;
-}
-.portfolio-item a {
+.portfolio-item > a {
   padding: 7.5%;
 }
-.portfolio-item h3 {
-  display: block;
-  margin-bottom: 0.75rem;
+.portfolio-item img {
+  padding: 0;
 }
 .portfolio-item h3,
 .portfolio-item em {
@@ -464,10 +460,16 @@ em {
   -o-transition: color 250ms ease-in-out;
   transition: color 250ms ease-in-out;
 }
+.portfolio-item h3 {
+  display: block;
+  margin-bottom: 0.75rem;
+}
 @media only screen and (min-width: 60rem) {
   .portfolio-item h3 {
     font: 200 1.35rem/1 "source sans pro", sans-serif;
   }
+}
+@media only screen and (min-width: 60rem) {
   .portfolio-item em {
     display: block;
     padding-bottom: 0.5rem;
@@ -541,7 +543,7 @@ em {
   cursor: pointer;
 }
 
-.gallery-url a {
+.gallery-url > a {
   font-size: 1.5rem;
 }
 
@@ -549,7 +551,7 @@ em {
   margin-left: 5%;
   margin-right: 5%;
 }
-.gallery-description p {
+.gallery-description > p {
   font-size: 1.4rem;
 }
 
@@ -594,14 +596,6 @@ em {
     -o-transition: opacity 200ms ease-in-out;
     transition: opacity 200ms ease-in-out;
   }
-  .gallery-control[disabled] {
-    opacity: 0.3;
-    -webkit-transition: opacity 200ms ease-in-out;
-    -moz-transition: opacity 200ms ease-in-out;
-    -ms-transition: opacity 200ms ease-in-out;
-    -o-transition: opacity 200ms ease-in-out;
-    transition: opacity 200ms ease-in-out;
-  }
   .gallery-control.next {
     right: 0;
   }
@@ -612,6 +606,14 @@ em {
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
+  }
+  .gallery-control[disabled] {
+    opacity: 0.3;
+    -webkit-transition: opacity 200ms ease-in-out;
+    -moz-transition: opacity 200ms ease-in-out;
+    -ms-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
   }
 
   .gallery-panel {
@@ -659,7 +661,7 @@ em {
     margin: 0;
     padding: 0 2.5% 0 5%;
   }
-  .gallery-description p {
+  .gallery-description > p {
     text-align: justify;
     font-size: 1.15rem;
     line-height: 1.35;
@@ -668,7 +670,7 @@ em {
   .gallery-text {
     margin-top: 0.5rem;
   }
-  .gallery-text p {
+  .gallery-text > p {
     font-size: 1.15rem;
     line-height: 1.35;
   }
@@ -677,7 +679,7 @@ em {
     GALLERY EXCEPTIONS - ENHANCED
 =============================================================================*/
 @media only screen and (min-width: 75rem) {
-  #resizely .resizely-bottom-image img {
+  .resizely-bottom-image img {
     max-width: 55rem;
   }
 }

@@ -189,10 +189,10 @@ img {
 
 .hyphenate {
   -ms-word-break: break-all;
-  word-break: break-all;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
+  -ms-hyphens: auto;
   hyphens: auto;
 }
 
@@ -279,9 +279,6 @@ textarea {
   width: 100%;
   z-index: 999;
 }
-#no-support i {
-  font-size: 1.1rem;
-}
 
 .no-support-inner {
   position: relative;
@@ -296,8 +293,11 @@ textarea {
   display: inline-block;
   margin: 0 2rem;
 }
-.no-support-text p:first-child,
-.no-support-text p:last-child {
+.no-support-text > i {
+  font-size: 1.1rem;
+}
+.no-support-text > p:first-child,
+.no-support-text > p:last-child {
   margin: 1.25rem 0;
 }
 
@@ -305,14 +305,14 @@ textarea {
   list-style-type: disc;
   margin-left: 2rem;
 }
-#unsupported-features li {
+#unsupported-features > li {
   font-weight: 800;
 }
 
 .no-support-downloads {
   display: inline-block;
 }
-.no-support-downloads .download {
+.no-support-downloads > .download {
   float: left;
   width: 25%;
   background-color: #FFF;
@@ -390,6 +390,7 @@ textarea {
 .wtf-warning-yes-way {
   margin: 0 0.5rem 0.5rem;
   padding: 0.5rem 1rem;
+  -moz-appearance: none;
 }
 
 /*=============================================================================
@@ -457,13 +458,13 @@ textarea {
 .nav-item.entrance.is-active {
   background-color: transparent;
 }
-.nav-item:not(.nav-logo) a {
-  display: block;
-  padding-left: 1.875rem;
-}
 .nav-item:not(.nav-logo):hover {
   background-color: #cccccc;
   cursor: pointer;
+}
+.nav-item:not(.nav-logo) a {
+  display: block;
+  padding-left: 1.875rem;
 }
 
 .nav-logo {
@@ -580,16 +581,16 @@ textarea {
     float: right;
   }
 }
-.footer-links i {
-  margin-left: 0.4rem;
-  margin-right: 0.2rem;
-}
-.footer-links a {
+.footer-links > a {
   color: #353d48;
   text-decoration: underline;
 }
-.footer-links a:hover {
+.footer-links > a:hover {
   color: #9fbcdf;
+}
+.footer-links i {
+  margin-left: 0.4rem;
+  margin-right: 0.2rem;
 }
 
 /*=============================================================================
@@ -660,7 +661,7 @@ textarea {
 .portfolio-item:nth-last-child(3), .portfolio-item:nth-last-child(2), .portfolio-item:nth-last-child(1) {
   border-bottom: none;
 }
-.portfolio-item a {
+.portfolio-item > a {
   display: block;
   -webkit-transition: margin 300ms ease-in-out;
   -moz-transition: margin 300ms ease-in-out;
@@ -668,7 +669,7 @@ textarea {
   -o-transition: margin 300ms ease-in-out;
   transition: margin 300ms ease-in-out;
 }
-.portfolio-item a:hover {
+.portfolio-item > a:hover {
   margin-bottom: -0.175rem;
   margin-top: 0.175rem;
 }
@@ -734,10 +735,10 @@ textarea {
   -moz-box-shadow: 0 0 0.5rem #6d7e94;
   box-shadow: 0 0 0.5rem #6d7e94;
 }
-.contact-status-message .sending-message,
-.contact-status-message .success-message,
-.contact-status-message .failure-message,
-.contact-status-message .incomplete-message {
+.contact-status-message > .sending-message,
+.contact-status-message > .success-message,
+.contact-status-message > .failure-message,
+.contact-status-message > .incomplete-message {
   display: none;
 }
 
@@ -851,6 +852,11 @@ textarea {
   text-align: center;
 }
 
+.gallery-text,
+.gallery-description {
+  text-align: justify;
+}
+
 .gallery-marquee-image {
   border: 2px solid #CCC;
   margin-bottom: 2rem;
@@ -869,15 +875,6 @@ textarea {
   margin-bottom: 1.25rem;
 }
 
-.gallery-description {
-  font-size: 1.1rem;
-  text-align: justify;
-}
-
 .gallery-image {
   margin-bottom: 2rem;
-}
-
-.gallery-text {
-  text-align: justify;
 }
