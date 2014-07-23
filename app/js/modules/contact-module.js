@@ -3,7 +3,7 @@
   function submitFinished(response) {
     response = $.trim(response);
     if (response === 'success') {
-      $('.status-message, .success-message').fadeIn().delay(messageDelay).fadeOut();
+      $('.contact-status-message, .success-message').fadeIn().delay(messageDelay).fadeOut();
       $('#sender-name').val( '' );
       $('#sender-email').val( '' );
       $('#sender-message').val( '' );
@@ -11,13 +11,13 @@
       sessionStorage.removeItem('sender-email');
       sessionStorage.removeItem('sender-message');
     } else {
-      $('.status-message, .failure-message').fadeIn().delay(messageDelay).fadeOut();
+      $('.contact-status-message, .failure-message').fadeIn().delay(messageDelay).fadeOut();
     }
   }
   function submitForm() {
     var $contactForm = $(this);
     if (!$('#sender-name').val() || !$('#sender-email').val() || !$('#sender-message').val()) {
-      $('.status-message, .incomplete-message').fadeIn().delay(messageDelay).fadeOut();
+      $('.contact-status-message, .incomplete-message').fadeIn().delay(messageDelay).fadeOut();
     } else {
       $.ajax( {
         url: $contactForm.attr('action') + '?ajax=true',

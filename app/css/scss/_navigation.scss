@@ -1,3 +1,7 @@
+/*=============================================================================
+    NAVIGATION
+=============================================================================*/
+
 #main-header {
   background-color: #FFF;
   border-bottom: 2px solid $Color-Light-Grey;
@@ -6,48 +10,54 @@
   top: 0;
   left: 0;
   right: 0;
-  .nav-item {
-    display: none;
-    background-color: #FFF;
-    border-top: 1px solid $Color-Light-Grey;
-    font-size: 1.25rem;
-    line-height: 2;
-    &.is-active {
-      background-color: $Color-Lighter-Grey;
-      cursor: default;
-      pointer-events: none;
-    }
-    &.entrance.is-active {
-      background-color: transparent;
-    }
-    &:not(.logo) a {
-      display: block;
-      padding-left: 1.875rem;
-    }
-    &:not(.logo):hover {
-      background-color: $Color-Lighter-Grey;
-      cursor: pointer;
-    }
+}
+
+.nav-item {
+  display: none;
+  background-color: #FFF;
+  border-top: 1px solid $Color-Light-Grey;
+  font-size: 1.25rem;
+  line-height: 2;
+  &.is-active {
+    background-color: $Color-Lighter-Grey;
+    cursor: default;
+    pointer-events: none;
   }
-  .logo {
-    line-height: 1;
-    padding: 0.5rem 0 0.25rem 0.5rem;
+  &.entrance.is-active {
+    background-color: transparent;
   }
-  .logo-image {
-    display: inline-block;
-    width: 37px;
-  }
-  .logo-text {
-    display: inline-block;
-    margin-top: 0.3rem;
-    vertical-align: top;
-  }
-  .handheld.logo {
+  &:not(.nav-logo) a {
     display: block;
+    padding-left: 1.875rem;
   }
-  .screen.logo {
-    display: none;
+  &:not(.nav-logo):hover {
+    background-color: $Color-Lighter-Grey;
+    cursor: pointer;
   }
+}
+
+.nav-logo {
+  line-height: 1;
+  padding: 0.5rem 0 0.25rem 0.5rem;
+}
+
+.logo-image {
+  display: inline-block;
+  width: 37px;
+}
+
+.logo-text {
+  display: inline-block;
+  margin-top: 0.3rem;
+  vertical-align: top;
+}
+
+.handheld.nav-logo {
+  display: block;
+}
+
+.screen.nav-logo {
+  display: none;
 }
 
 .nav-toggle {

@@ -1,30 +1,27 @@
-#portfolio {
-  .portfolio-items {
-    padding: 1rem 0;
-  }
-  .portfolio-item {
-    img {
-      padding: 0;
-    }
-    a {
-      padding: 7.5%;
-    }
-    h3 {
-      margin-bottom: 0.75rem;
-    }
-    h3,
-    em {
-      @include transition(color 250ms ease-in-out);
-    }
-    &:hover h3,
-    &:hover em {
-      color: #fff;
-    }
-  }
+/*=============================================================================
+    PORTFOLIO-ENHANCED
+=============================================================================*/
+
+.portfolio-items {
+  padding: 1rem 0;
 }
 
-@media only screen and (min-width: 60rem) {
-  #portfolio .portfolio-item {
+.portfolio-item {
+  img {
+    padding: 0;
+  }
+  a {
+    padding: 7.5%;
+  }
+  h3 {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  h3,
+  em {
+    @include transition(color 250ms ease-in-out);
+  }
+  @media only screen and (min-width: 60rem) {
     h3 {
       font: 200 1.35rem/1 $Font-Source-Sans-Pro;
     }
@@ -32,5 +29,9 @@
       display: block;
       padding-bottom: 0.5rem;
     }
+  }
+  &:hover h3,
+  &:hover em {
+    color: #FFF;
   }
 }

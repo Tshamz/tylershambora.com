@@ -1,3 +1,7 @@
+/*=============================================================================
+    FONTS-ENHANCED
+=============================================================================*/
+
 h1,
 h2,
 h3,
@@ -11,12 +15,11 @@ h2 {
 }
 
 h3 {
-  display: block;
   font: 1.25rem/1 $Font-Source-Sans-Pro;
   text-transform: uppercase;
 }
 
 em {
   color: $Color-Light-Grey;
-  font: 0.75rem $Font-Georgia;
+  font: 0.8rem $Font-Georgia;
 }

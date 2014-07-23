@@ -24,7 +24,7 @@
       case 'contact':
         Contact.repopulateForm();
       default:
-        loadNewContent(Resources.injectedHtml.closest('#' + hash));
+        loadNewContent(Resources.pageFragments.closest('#' + hash));
         break;
     }
     if (callback) {

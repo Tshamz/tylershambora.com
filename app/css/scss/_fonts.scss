@@ -1,3 +1,7 @@
+/*=============================================================================
+    FONTS
+=============================================================================*/
+
 @font-face {
   font-family: 'Akzidenz-Grotesk-BQ';
   src: url('../font/Akzidenz-Grotesk-BQ-Condensed.woff') format('woff'),
@@ -10,16 +14,11 @@
   src: url('../font/icon-font.woff?v=4.1.0') format('woff'),
        url('../font/icon-font.ttf?v=4.1.0') format('truetype'),
        url('../font/icon-font.svg?v=4.1.0') format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
 
 .fa {
   display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
+  font: normal 100%/1 FontAwesome;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -45,18 +44,13 @@ p {
 }
 
 h1 {
-  font: 200 1.5rem $Font-Akzidenz-Grotesk;
+  font: 200 1.5rem/normal $Font-Akzidenz-Grotesk;
   text-transform: uppercase;
 }
 
 h2 {
-  font: 3.2rem/1 $Font-DIN-Heavy;
+  font: normal 3.2rem/1 $Font-DIN-Heavy;
   text-transform: uppercase;
-}
-
-h3,
-em {
-  display: none;
 }
 
 p {
@@ -67,6 +61,9 @@ label {
   font-family: $Font-DIN-Bold;
 }
 
-input, button, select, textarea {
+input,
+button,
+select,
+textarea {
   font-family: $Font-Lucida-Grande;
 }

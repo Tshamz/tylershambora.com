@@ -49,7 +49,7 @@
     var galleryLink = mainGalleryConditionalStrings.galleryLink;
     var galleryStatusBadge = mainGalleryConditionalStrings.statusBadge;
     var galleryDescription = '<p>' + galleryInfo.galleryDescription + '</p>';
-    return '<section id="' + galleryName + '" class="fadeOut content sub gallery"><nav><button class="gallery-control previous" disabled="disabled"></button><button class="gallery-control next"></button></nav><div class="slide first" style="left:0%;"><div class="gallery-panel marquee"><div class="marquee-image">' + marqueeImage + '</div><div class="gallery-title">' + galleryTitle + '</div><div class="gallery-url">' + galleryLink + '</div><div class="gallery-status">' + galleryStatusBadge + '</div><div class="gallery-description">' + galleryDescription + '</div></div></div>';
+    return '<section id="' + galleryName + '" class="fadeOut content sub gallery"><nav><button class="gallery-control previous" disabled="disabled"></button><button class="gallery-control next"></button></nav><div class="slide first" style="left:0%;"><div class="gallery-panel marquee"><div class="gallery-marquee-image">' + marqueeImage + '</div><div class="gallery-title">' + galleryTitle + '</div><div class="gallery-url">' + galleryLink + '</div><div class="gallery-status">' + galleryStatusBadge + '</div><div class="gallery-description">' + galleryDescription + '</div></div></div>';
   };
   var buildAdditionalGalleries = function(galleryInfo) {
     var additionalGalleries = galleryInfo.additionalGalleries;

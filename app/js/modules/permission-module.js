@@ -7,11 +7,11 @@
         $wtf.show();
       });
     }
-    $('#no-way').click(function() {
+    $('.wtf-warning-no-way').click(function() {
       sessionStorage.setItem('wtfdrinkPermission', false);
       $wtf.hide();
     });
-    $('#yes-way').click(function() {
+    $('.wtf-warning-yes-way').click(function() {
       sessionStorage.setItem('wtfdrinkPermission', true);
       $wtf.hide();
       $guts.off('click', '.wtfdrink a');
@@ -24,6 +24,6 @@
   };
 
   var $guts = $('#guts');
-  var $wtf = $('#wtf-overlay');
+  var $wtf = $('#wtf-warning');
 
 }(jQuery, window.Permission = window.Permission || {}));

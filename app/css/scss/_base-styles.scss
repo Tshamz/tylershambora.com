@@ -1,6 +1,6 @@
-/*===============================================================================
+/*=============================================================================
     CUSTOM NORMALIZE BASED OFF HTML5 NORMALIZE
-===============================================================================*/
+=============================================================================*/
 
 html,body,div,span,h1,h2,h3,p,em,img,strong,b,i,ul,li,form,label,tr,th,article,figcaption,figure,header,nav,section{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
@@ -15,11 +15,12 @@ a:focus{outline:0}
 a:active,a:hover{outline:0}
 b,strong{font-weight:bold}
 input,select{vertical-align:middle}
+label{display:block}
 img{border:0}
 
-/*===============================================================================
+/*=============================================================================
     BASE STYLES
-===============================================================================*/
+=============================================================================*/
 
 *,
 *:before,
@@ -28,7 +29,7 @@ img{border:0}
 }
 
 html {
-  background-color: white;
+  background-color: #FFF;
   background-image: url(../img/paper.png);
   background-repeat: no-repeat;
   background-position: center center;
@@ -53,8 +54,8 @@ img {
           hyphens: auto;
 }
 
-// I continue to pay for a plan that includes "no badge", but when I ask support for help I
-// get the opposite of help. So I take matters into my own hands...
+// I pay for a fonts.net plan that includes "no badge"
+// Except, without this rule, there's a badge...
 #mti_wfs_colophon {
   display: none !important;
 }

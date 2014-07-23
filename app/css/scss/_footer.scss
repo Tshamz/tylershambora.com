@@ -1,37 +1,35 @@
+/*=============================================================================
+    FOOTER
+=============================================================================*/
+
 #guts-footer {
   font-size: 0.85rem;
   background-color: #FFF;
   border-top: 1px solid $Color-Light-Grey;
+  margin: 0 auto;
   padding: 1.5rem 0 2.5rem;
-  .footer-copy {
-    float: left;
-    text-align: left;
-  }
-  .footer-links {
-    display: none;
-  }
 }
 
-@media only screen and (min-width: 35rem) {
-  #guts-footer .footer-links {
+.footer-copy {
+  float: left;
+  text-align: left;
+}
+
+.footer-links {
+  display: none;
+  @media only screen and (min-width: 35rem) {
     display: inline;
     float: right;
-    i {
-      margin-left: 0.4rem;
-      margin-right: 0.2rem;
-    }
-    a {
-      color: $Color-Dark-Grey;
-      text-decoration: underline;
-      &:hover {
-        color: $Color-Light-Blue;
-      }
+  }
+  i {
+    margin-left: 0.4rem;
+    margin-right: 0.2rem;
+  }
+  a {
+    color: $Color-Dark-Grey;
+    text-decoration: underline;
+    &:hover {
+      color: $Color-Light-Blue;
     }
   }
-}
-
-.non-gallery + #guts-footer {
-  max-width: 47.5rem;
-  margin: 0 auto;
-  width: 100%;
 }

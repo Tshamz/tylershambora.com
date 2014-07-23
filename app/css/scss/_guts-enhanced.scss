@@ -1,15 +1,23 @@
+/*=============================================================================
+    GUTS - ENHANCED
+=============================================================================*/
+
 #guts {
-  background-color: #fff;
   padding: 0 5%;  /* Needed to remove the css used to push #guts below the fixed header */
-  .gallery {
-    position: relative;
-    max-width: 75rem;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-  .non-gallery {
+  text-align: center;
+}
+
+.gallery {
+  position: relative;
+  max-width: 75rem;
+  overflow: hidden;
+}
+
+.non-gallery {
+  max-width: 47.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  + #guts-footer {
     max-width: 47.5rem;
-    margin-left: auto;
-    margin-right: auto;
   }
 }

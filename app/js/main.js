@@ -3,7 +3,7 @@
   function submitFinished(response) {
     response = $.trim(response);
     if (response === 'success') {
-      $('.status-message, .success-message').fadeIn().delay(messageDelay).fadeOut();
+      $('.contact-status-message, .success-message').fadeIn().delay(messageDelay).fadeOut();
       $('#sender-name').val( '' );
       $('#sender-email').val( '' );
       $('#sender-message').val( '' );
@@ -11,13 +11,13 @@
       sessionStorage.removeItem('sender-email');
       sessionStorage.removeItem('sender-message');
     } else {
-      $('.status-message, .failure-message').fadeIn().delay(messageDelay).fadeOut();
+      $('.contact-status-message, .failure-message').fadeIn().delay(messageDelay).fadeOut();
     }
   }
   function submitForm() {
     var $contactForm = $(this);
     if (!$('#sender-name').val() || !$('#sender-email').val() || !$('#sender-message').val()) {
-      $('.status-message, .incomplete-message').fadeIn().delay(messageDelay).fadeOut();
+      $('.contact-status-message, .incomplete-message').fadeIn().delay(messageDelay).fadeOut();
     } else {
       $.ajax( {
         url: $contactForm.attr('action') + '?ajax=true',
@@ -77,7 +77,7 @@
       case 'contact':
         Contact.repopulateForm();
       default:
-        loadNewContent(Resources.injectedHtml.closest('#' + hash));
+        loadNewContent(Resources.pageFragments.closest('#' + hash));
         break;
     }
     if (callback) {
@@ -140,7 +140,7 @@
     var galleryLink = mainGalleryConditionalStrings.galleryLink;
     var galleryStatusBadge = mainGalleryConditionalStrings.statusBadge;
     var galleryDescription = '<p>' + galleryInfo.galleryDescription + '</p>';
-    return '<section id="' + galleryName + '" class="fadeOut content sub gallery"><nav><button class="gallery-control previous" disabled="disabled"></button><button class="gallery-control next"></button></nav><div class="slide first" style="left:0%;"><div class="gallery-panel marquee"><div class="marquee-image">' + marqueeImage + '</div><div class="gallery-title">' + galleryTitle + '</div><div class="gallery-url">' + galleryLink + '</div><div class="gallery-status">' + galleryStatusBadge + '</div><div class="gallery-description">' + galleryDescription + '</div></div></div>';
+    return '<section id="' + galleryName + '" class="fadeOut content sub gallery"><nav><button class="gallery-control previous" disabled="disabled"></button><button class="gallery-control next"></button></nav><div class="slide first" style="left:0%;"><div class="gallery-panel marquee"><div class="gallery-marquee-image">' + marqueeImage + '</div><div class="gallery-title">' + galleryTitle + '</div><div class="gallery-url">' + galleryLink + '</div><div class="gallery-status">' + galleryStatusBadge + '</div><div class="gallery-description">' + galleryDescription + '</div></div></div>';
   };
   var buildAdditionalGalleries = function(galleryInfo) {
     var additionalGalleries = galleryInfo.additionalGalleries;
@@ -386,7 +386,7 @@
 
   var $navItem = $('.nav-item');
   var $navItemLink = $('.nav-item a');
-  var $navItemExcludingLogo = $('.nav-item:not(.logo)');
+  var $navItemExcludingLogo = $('.nav-item:not(.nav-logo)');
   var $navToggle = $('.nav-toggle');
 
 }(jQuery, window.Navigation = window.Navigation || {}));
@@ -400,11 +400,11 @@
         $wtf.show();
       });
     }
-    $('#no-way').click(function() {
+    $('.wtf-warning-no-way').click(function() {
       sessionStorage.setItem('wtfdrinkPermission', false);
       $wtf.hide();
     });
-    $('#yes-way').click(function() {
+    $('.wtf-warning-yes-way').click(function() {
       sessionStorage.setItem('wtfdrinkPermission', true);
       $wtf.hide();
       $guts.off('click', '.wtfdrink a');
@@ -417,7 +417,7 @@
   };
 
   var $guts = $('#guts');
-  var $wtf = $('#wtf-overlay');
+  var $wtf = $('#wtf-warning');
 
 }(jQuery, window.Permission = window.Permission || {}));
 
@@ -470,8 +470,8 @@
   };
   var loadResources = function() {
     $.when(
-      $.get('injected-html.html', function(data) {
-        Resources.injectedHtml = $(data);
+      $.get('page-fragments.html', function(data) {
+        Resources.pageFragments = $(data);
       }),
       $.getJSON('/js/gallery-info.json', function(data) {
         Resources.galleryInfo = data;
@@ -486,7 +486,7 @@
     loadResources();
   };
 
-  Resources.injectedHtml = '';
+  Resources.pageFragments = '';
   Resources.galleryInfo = '';
 
 }(jQuery, window.Resources = window.Resources || {}));
@@ -499,39 +499,62 @@
   var toggleGutsSlide = function() {
     $guts.toggleClass('slideUp slideDown');
   };
-
-  var eventsControler = function(originalEvent) {
+  var whatJustHappened = function(originalEvent) {
+    var completedTransition = '';
     var hash = window.location.hash.substring(1);
     var $target = $(originalEvent.target);
     var propertyName = originalEvent.propertyName;
-    var fadeOut = $target.hasClass('fadeOut');
-    var fadeIn = $target.hasClass('fadeIn');
-    var slideDown = $target.hasClass('slideDown');
-    var slideUp = $target.hasClass('slideUp');
-    var subGallery = $target.hasClass('sub');
-
-    if (fadeOut && propertyName === "opacity") {
-      if ((subGallery && hash === 'portfolio') || (subGalleries.indexOf(hash) > -1)) {
+    var enteringSubGallery = subGalleries.indexOf(hash) > -1;
+    var leavingSubGallery = $target.hasClass('sub');
+    var enteringPortfolio = hash === 'portfolio';
+    if ($target.hasClass('fadeOut') && propertyName === "opacity") {
+      completedTransition = 'fadeOut';
+    } else if ($target.hasClass('slideDown')) {
+      completedTransition = 'slideDown';
+    } else if ($target.hasClass('slideUp')) {
+      completedTransition = 'slideUp';
+    }
+    return {
+      "completedTransition": completedTransition,
+      "hash": hash,
+      "enteringSubGallery": enteringSubGallery,
+      "leavingSubGallery": leavingSubGallery,
+      "enteringPortfolio": enteringPortfolio
+    };
+  };
+  var eventsControler = function(transitionInformation) {
+    var hash = transitionInformation.hash;
+    var completedTransition = transitionInformation.completedTransition;
+    var enteringSubGallery = transitionInformation.enteringSubGallery;
+    var leavingSubGallery = transitionInformation.leavingSubGallery;
+    var enteringPortfolio = transitionInformation.enteringPortfolio;
+    switch (completedTransition) {
+      case 'fadeOut':
+        if (enteringSubGallery || (leavingSubGallery && enteringPortfolio)) {
+          Content.loadPage(hash, function() {
+            setTimeout(function() {
+              toggleContentFade();
+            }, 100);
+          });
+        } else {
+          toggleGutsSlide();
+        }
+        break;
+      case 'slideUp':
         Content.loadPage(hash, function() {
-          setTimeout(function() {
-            toggleContentFade();
-          }, 100);
+          toggleGutsSlide();
         });
-      } else {
-        toggleGutsSlide();
-      }
-    } else if (slideUp) {
-      Content.loadPage(hash, function() {
-        toggleGutsSlide();
-      });
-    } else if (slideDown) {
-      toggleContentFade();
+        break;
+      case 'slideDown':
+        toggleContentFade();
+        break;
     }
   };
   var bindUIActions = function() {
     $guts.on('transitionend webkitTransitionEnd', function(event) {
       var originalEvent = event.originalEvent;
-      eventsControler(originalEvent);
+      var transitionInformation = whatJustHappened(originalEvent);
+      eventsControler(transitionInformation);
     });
   };
 

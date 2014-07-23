@@ -1,45 +1,76 @@
 /*
 
-===================================================================================================
+===============================================================================
     NOTES
-===================================================================================================
+===============================================================================
 
-1.  IDs should only used on the outermost elements (one level below body, e.g. that contain
-    significant portions of content (the mini-pages injected into the <main id="guts"> container),
-    or elements that are used often as hooks in regards to scripting (again, the <main id="guts">
-    container). The reason for this is: a) Because I feel that IDs are good at indicating what is
-    and isn't a large, macro level container of content, and b) to easily target a specific
-    instance of reused content (for example, instead of creating a ".no-border" class with
-    "border: none;", only using it in one instance, and introducing presentation into the
-    structure, the same, single-serving style may be applied with, #resume .marquee-image, put in
-    a "_resume.scss" partial, and eventually imported into a styles.scss file, which is then
-    later minified).
+1.  IDs should only be used:
+      a. When it follows the spec (e.g. only one instance on page)
+      b. To describe unsemantic markup, when appropriate (see above)
+      c. On elements that serve as containers for a section (e.g. #no-support)
+      d. As hooks for JavaScript (e.g. #unsupported-features)
+      e. To target a specific instance of a class (#resume .marquee-image)
 
-2.  I'm not a very good speller, so there might be some spelling errors everywhere.
+2.  I'm not a very good speller
 
-3.  Most/All (depending when you read this) of the css selectors begin with either an ID or a
-    class name describing the subpage or module that they are a part of. IMO, when reading the
-    compressed css, this makes finding what you're looking for, or making sense of what you're
-    reading much easier. At the moment, Generic css rules are not proceeded with anything.
+3.  Selectors begin with a descriptive ID or class for easy debugging purposes
 
 4.  Use of !important is frowned upon, but at times necessary
 
 5.  All measurements are in REM or %
 
-6.  An exception to the that last rule is in measurements of very small size, e.g. border, border-
-    radius, line-spacing, etc.
+6.  An exception to the that last rule is on tiny measurements (e.g. border)
 
-7.  Use data:uris on plain images (data:uris hurt on mobile)
+7.  Use data:uris on small, plain images
 
-8.  Use spritesheets on more complex images
+8.  Readability is favored over performance
 
+9. I try not to target elements using tag selectors as much as possible
 
---- SCSS & CSS STYLING/FORMATTING ---
+10. Exceptions to that last rule will be preceded with an ID or class
 
+11. Exceptions will be tags that are already pretty semantic (e.g. img, h1, p)
+
+12. I try not to add classes just for the sake of styling as much as possible
+
+13. When rules 10 and 12 conflict, I try to choose what's best
+
+14. Occasionally, I like to use joined class selectors (.a.b) for readability
+
+15. Nesting beyond 3 levels is frowned upon, and even beyond 2 is ill advised
+
+16. Decimals are preceded with a 0 (e.g. 0.85 not .85)
+
+17. Hex codes are in all uppercase (e.g. #1A2B3C not #1a2b3C)
 
 n.  This is a living document
 
+--- SCSS & CSS STYLING/FORMATTING ---
+
+CSS
+---------
+h2,
+.class-name,
+#id-name {
+  property: attribute;  /comment/
+}
+
+SCSS
+----------
+#.selector/.selector {
+  @extends
+  property: attribute;
+  @includes
+  @media
+  &.adjoined-selector/:pseudo-selector
+  >.child-selector
+  .nested-selector
+}
+
 */
+/*=============================================================================
+    BASE STYLES - ENHANCED
+=============================================================================*/
 @-webkit-keyframes super-rainbow {
   0% {
     background-color: transparent;
@@ -156,6 +187,9 @@ n.  This is a living document
     background-color: transparent;
   }
 }
+/*=============================================================================
+    FONTS-ENHANCED
+=============================================================================*/
 h1,
 h2,
 h3,
@@ -169,27 +203,33 @@ h2 {
 }
 
 h3 {
-  display: block;
   font: 1.25rem/1 "source sans pro", sans-serif;
   text-transform: uppercase;
 }
 
 em {
   color: #aaaaaa;
-  font: 0.75rem georgia, serif;
+  font: 0.8rem georgia, serif;
 }
 
+/*=============================================================================
+    ENTRANCE - ENHANCED
+=============================================================================*/
 #entrance {
   padding: 2rem 0;
 }
-#entrance .what-i-am {
+
+.entrance-body-container {
   width: 28rem;
-  margin: 0 auto;
 }
-#entrance .what-i-am h2 {
+
+.entrance-body {
   font-size: 2.5rem;
 }
 
+/*=============================================================================
+    NAVIGATION - ENHANCED
+=============================================================================*/
 #main-header {
   height: 7.5rem;
   position: relative;
@@ -220,7 +260,8 @@ em {
   -ms-justify-content: space-between;
   justify-content: space-between;
 }
-#main-header .nav-item {
+
+.nav-item {
   border-top: none;
   border-bottom: 5px solid #FFF;
   font-family: "DIN Next W01 light", sans-serif;
@@ -234,52 +275,54 @@ em {
   transition: border-bottom 200ms ease-in-out;
 }
 @media only screen and (min-width: 70rem) {
-  #main-header .nav-item {
+  .nav-item {
     font-size: 1.35rem;
   }
 }
-#main-header .nav-item a {
-  color: inherit;
-}
-#main-header .nav-item:not(.logo) {
+.nav-item:not(.nav-logo) {
   display: block !important;
   /* Have to use !important because jQuery inline styles */
 }
-#main-header .nav-item:not(.logo).is-active {
+.nav-item:not(.nav-logo).is-active {
   background-color: transparent;
   border-bottom: 5px solid #9fbcdf;
   color: #aaaaaa;
 }
-#main-header .nav-item:not(.logo) a {
+.nav-item:not(.nav-logo) a {
   padding-left: 0;
 }
-#main-header .nav-item:not(.logo):hover {
+.nav-item:not(.nav-logo):hover {
   background-color: transparent;
   border-bottom: 5px solid #9fbcdf;
   color: #aaaaaa;
 }
-#main-header .logo {
+.nav-item > a {
+  color: inherit;
+}
+
+.nav-logo {
   border-bottom: none;
 }
-#main-header .logo:hover .color-fader {
+.nav-logo:hover .color-fader {
   -webkit-animation: super-rainbow 10s infinite linear;
   -moz-animation: super-rainbow 10s infinite linear;
   -o-animation: super-rainbow 10s infinite linear;
   animation: super-rainbow 10s infinite linear;
 }
-#main-header .logo-image {
+
+.logo-image {
   border-radius: 51%;
   height: 62px;
   width: 62px;
 }
 @media only screen and (min-width: 70rem) {
-  #main-header .logo-image {
+  .logo-image {
     height: 71px;
     width: 71px;
   }
 }
-#main-header .logo-image img {
-  /* Image must be at least +1px than container so background colors don't bleed */
+.logo-image > img {
+  /* Image must be +1px larger than container so background colors don't bleed */
   width: 65px;
   -webkit-transition: width 300ms ease-in-out;
   -moz-transition: width 300ms ease-in-out;
@@ -288,30 +331,33 @@ em {
   transition: width 300ms ease-in-out;
 }
 @media only screen and (min-width: 70rem) {
-  #main-header .logo-image img {
+  .logo-image > img {
     width: 74px;
   }
 }
-#main-header .logo-text {
+
+.logo-text {
   display: none;
   /* Experimenting with no text for a while */
   margin-top: 0;
 }
-#main-header .logo-text h1 {
+.logo-text > h1 {
   color: #353d48;
   font-size: 1.5rem;
 }
 @media only screen and (min-width: 70rem) {
-  #main-header .logo-text h1 {
+  .logo-text > h1 {
     font-size: 2rem;
   }
 }
-#main-header .screen.logo {
+
+.screen.nav-logo {
   display: block;
   line-height: 0;
   padding: 0 0 1rem;
 }
-#main-header .handheld.logo {
+
+.handheld.nav-logo {
   display: none;
 }
 
@@ -319,146 +365,149 @@ em {
   display: none;
 }
 
+/*=============================================================================
+    GUTS - ENHANCED
+=============================================================================*/
 #guts {
-  background-color: #fff;
   padding: 0 5%;
   /* Needed to remove the css used to push #guts below the fixed header */
+  text-align: center;
 }
-#guts .gallery {
+
+.gallery {
   position: relative;
   max-width: 75rem;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
 }
-#guts .non-gallery {
+
+.non-gallery {
   max-width: 47.5rem;
   margin-left: auto;
   margin-right: auto;
 }
+.non-gallery + #guts-footer {
+  max-width: 47.5rem;
+}
 
+/*=============================================================================
+    ABOUT - ENHANCED
+=============================================================================*/
 #about {
   display: inline-block;
 }
-#about .about-image {
+
+.about-image-container {
   float: left;
   width: 42%;
   margin-top: 2rem;
 }
 @media only screen and (min-width: 56.5rem) {
-  #about .about-image {
+  .about-image-container {
     margin-top: 1.25rem;
   }
 }
 @media only screen and (min-width: 65rem) {
-  #about .about-image {
+  .about-image-container {
     margin-top: 0.5rem;
   }
 }
-#about .about-image img {
+
+.about-image {
   max-height: 380px;
 }
-#about .about-words {
+
+.about-body-container {
   float: right;
   width: 55%;
   margin-left: 2.5%%;
 }
-#about .about-words header {
+
+.about-header {
   margin-top: 0;
 }
-#about .about-words p {
-  text-align: justify;
-}
-#about .about-words .about-body {
+
+.about-body {
   word-spacing: -2px;
 }
-#about .about-words .about-specialties {
+
+.about-specialties-header {
   margin-top: 0.75rem;
 }
-#about .about-words ul {
+
+.about-specialties {
   list-style: disc;
   padding-left: 2.5rem;
 }
 
-#portfolio .portfolio-items {
+/*=============================================================================
+    PORTFOLIO-ENHANCED
+=============================================================================*/
+.portfolio-items {
   padding: 1rem 0;
 }
-#portfolio .portfolio-item img {
+
+.portfolio-item img {
   padding: 0;
 }
-#portfolio .portfolio-item a {
+.portfolio-item a {
   padding: 7.5%;
 }
-#portfolio .portfolio-item h3 {
+.portfolio-item h3 {
+  display: block;
   margin-bottom: 0.75rem;
 }
-#portfolio .portfolio-item h3,
-#portfolio .portfolio-item em {
+.portfolio-item h3,
+.portfolio-item em {
   -webkit-transition: color 250ms ease-in-out;
   -moz-transition: color 250ms ease-in-out;
   -ms-transition: color 250ms ease-in-out;
   -o-transition: color 250ms ease-in-out;
   transition: color 250ms ease-in-out;
 }
-#portfolio .portfolio-item:hover h3, #portfolio .portfolio-item:hover em {
-  color: #fff;
-}
-
 @media only screen and (min-width: 60rem) {
-  #portfolio .portfolio-item h3 {
+  .portfolio-item h3 {
     font: 200 1.35rem/1 "source sans pro", sans-serif;
   }
-  #portfolio .portfolio-item em {
+  .portfolio-item em {
     display: block;
     padding-bottom: 0.5rem;
   }
 }
-#contact {
-  text-align: left;
+.portfolio-item:hover h3, .portfolio-item:hover em {
+  color: #FFF;
 }
-#contact .form-inputs {
+
+/*=============================================================================
+    CONTACT FORM - ENHANCED
+=============================================================================*/
+.contact-form-inputs {
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   -ms-justify-content: space-between;
   justify-content: space-between;
 }
-#contact .name-entry,
-#contact .email-entry {
+
+.contact-form-name-entry,
+.contact-form-email-entry {
   -webkit-flex-basis: 47%;
   -moz-flex-basis: 47%;
   -ms-flex-basis: 47%;
   flex-basis: 47%;
 }
-#contact .status-message {
-  top: 18.125rem;
+
+.contact-status-message {
+  top: 3rem;
   width: 22.5rem;
 }
-#contact p {
+
+.contact-body {
   font: 1.15rem/1.4 "DIN Next W01 Regular", sans-serif;
   margin-bottom: 0;
 }
-#contact form {
-  margin: 0 auto;
-}
 
-.gallery-panel .gallery-url a {
-  font-size: 1.5rem;
-}
-.gallery-panel .gallery-description {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-.gallery-panel .gallery-description p {
-  font-size: 1.3rem;
-}
-.gallery-panel .lengthy-url {
-  font-size: inherit;
-}
-.gallery-panel p {
-  font-size: 1.25rem;
-}
-.gallery-panel img[lightbox="true"] {
-  cursor: pointer;
-}
+/*=============================================================================
+    GALLERY-ENHANCED
+=============================================================================*/
 .gallery-panel.top-image .gallery-image {
   margin-bottom: 1rem;
   width: 100%;
@@ -485,14 +534,48 @@ em {
   text-align: justify;
   width: 40%;
 }
+.gallery-panel p {
+  font-size: 1.15rem;
+}
+.gallery-panel img[lightbox="true"] {
+  cursor: pointer;
+}
 
+.gallery-url a {
+  font-size: 1.5rem;
+}
+
+.gallery-description {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.gallery-description p {
+  font-size: 1.4rem;
+}
+
+/*=============================================================================
+    GALLERY-SUPER-ENHANCED
+=============================================================================*/
 @media only screen and (min-width: 75rem) {
   .gallery {
     height: 26.5rem;
     margin-left: auto;
     margin-right: auto;
   }
-  .gallery .gallery-control {
+  .gallery + #guts-footer {
+    display: none;
+  }
+  .gallery .slide {
+    margin-top: 2rem;
+    position: absolute;
+    padding: 0 5rem;
+    width: 100%;
+  }
+  .gallery .slide.first {
+    margin-top: 0;
+  }
+
+  .gallery-control {
     display: block;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAApCAMAAACfvvDEAAAAh1BMVEUAAACfvOCfvN+fvOCfvN+fvOCfvOCcvN+OntegvN+gvd2eud+fu+Cfvd+fvOCfu9+fvN+fvN+fvN+fveCfvOCfveChudyfvN+YuN2jvuCnxeqkwuapyO3S3u+3y+ary/Da4/HI1+ufvN+StNyvxuTP3O2+0Ojz9vqfvN+fvN+fvN+fvN+fvN8veROXAAAAF3RSTlMAudjgwWYxAwFgEwcsk3lyWv736/yaIOxJEhwAAAGqSURBVDjLjZWBbqMwDIadkACBdkOtJhMnvYDWu3v/N5zbhga6hO0TqGr66U9twMCTpgVoD+YoZHWupDiaw22hgS2PpW4QSMET430gFKa7BzCbwN5ICg4TLpDU/Ussf6kFeXzFk6j51404nALmCDhENYrv6DEP2Xc2kugclnBuUdsWBstiWbUDS/fIGgn3IKzZ4qMRAfcJomevBZNNHDepmj3oZLbsq125XnYApch5sqNNoYZLF4VO/p0wqUE0cMBCh8a16vAApiDaqKaajmnzvdRwBLWY9hs4Xp5leQWSYsDnN3hpvuAY+wTnaF7/ZJmmR6Y7wSlW9O+SY57+X+P+cI6mzYHXacYlU9JS6Q1MB5+fOM1j7JLcq320T5FrL/czibGfhvbFCOnidd+KDuviveSSyATVlO9PFu16c4Cu8vn/iQlfdcBowh1SZAO9+vHZVD00v37eHzPEuN0Z4gxLcS69kSuL9HZ3FtVRaWsXxUU1WJqf5nXU1io3k71KMznNeV2R38x5T5Xuk7h+d2iF5D05dLcPVDrz7mCa21nrDyXRYqU+dN3AOvALyf99MRLlviwAAAAASUVORK5CYII=);
     border: none;
@@ -511,7 +594,7 @@ em {
     -o-transition: opacity 200ms ease-in-out;
     transition: opacity 200ms ease-in-out;
   }
-  .gallery .gallery-control[disabled] {
+  .gallery-control[disabled] {
     opacity: 0.3;
     -webkit-transition: opacity 200ms ease-in-out;
     -moz-transition: opacity 200ms ease-in-out;
@@ -519,10 +602,10 @@ em {
     -o-transition: opacity 200ms ease-in-out;
     transition: opacity 200ms ease-in-out;
   }
-  .gallery .next {
+  .gallery-control.next {
     right: 0;
   }
-  .gallery .previous {
+  .gallery-control.previous {
     left: 0;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -530,58 +613,11 @@ em {
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-  .gallery .slide {
-    margin-top: 2rem;
-    position: absolute;
-    padding: 0 5rem;
-    width: 100%;
-  }
-  .gallery .slide.first {
-    margin-top: 0;
-  }
-  .gallery + #guts-footer {
-    display: none;
-  }
 
   .gallery-panel {
     border: none;
     margin-bottom: 0;
     padding-bottom: 0;
-  }
-  .gallery-panel .marquee-image,
-  .gallery-panel .gallery-title,
-  .gallery-panel .gallery-url,
-  .gallery-panel .gallery-status,
-  .gallery-panel .gallery-description {
-    width: 47.5%;
-  }
-  .gallery-panel .gallery-title,
-  .gallery-panel .gallery-url,
-  .gallery-panel .gallery-description {
-    float: left;
-  }
-  .gallery-panel .marquee-image {
-    float: right;
-    margin-top: 3rem;
-  }
-  .gallery-panel .gallery-title {
-    margin-top: 2rem;
-  }
-  .gallery-panel .gallery-description {
-    margin: 0;
-    padding: 0 2.5% 0 5%;
-  }
-  .gallery-panel .gallery-description p {
-    text-align: justify;
-    font-size: 1.1rem;
-    line-height: 1.35;
-  }
-  .gallery-panel .gallery-text {
-    margin-top: 0.5rem;
-  }
-  .gallery-panel p {
-    font-size: 1.1rem;
-    line-height: 1.35;
   }
   .gallery-panel.push-down-text .gallery-text {
     margin-top: 1.5rem;
@@ -595,7 +631,51 @@ em {
   .gallery-panel.pull-up-text .gallery-text {
     margin-top: 0;
   }
+
+  .gallery-marquee-image,
+  .gallery-title,
+  .gallery-url,
+  .gallery-status,
+  .gallery-description {
+    width: 47.5%;
+  }
+
+  .gallery-title,
+  .gallery-url,
+  .gallery-description {
+    float: left;
+  }
+
+  .gallery-marquee-image {
+    float: right;
+    margin-top: 3rem;
+  }
+
+  .gallery-title {
+    margin-top: 2rem;
+  }
+
+  .gallery-description {
+    margin: 0;
+    padding: 0 2.5% 0 5%;
+  }
+  .gallery-description p {
+    text-align: justify;
+    font-size: 1.15rem;
+    line-height: 1.35;
+  }
+
+  .gallery-text {
+    margin-top: 0.5rem;
+  }
+  .gallery-text p {
+    font-size: 1.15rem;
+    line-height: 1.35;
+  }
 }
+/*=============================================================================
+    GALLERY EXCEPTIONS - ENHANCED
+=============================================================================*/
 @media only screen and (min-width: 75rem) {
   #resizely .resizely-bottom-image img {
     max-width: 55rem;

@@ -7,8 +7,8 @@
   };
   var loadResources = function() {
     $.when(
-      $.get('injected-html.html', function(data) {
-        Resources.injectedHtml = $(data);
+      $.get('page-fragments.html', function(data) {
+        Resources.pageFragments = $(data);
       }),
       $.getJSON('/js/gallery-info.json', function(data) {
         Resources.galleryInfo = data;
@@ -23,7 +23,7 @@
     loadResources();
   };
 
-  Resources.injectedHtml = '';
+  Resources.pageFragments = '';
   Resources.galleryInfo = '';
 
 }(jQuery, window.Resources = window.Resources || {}));

@@ -1,21 +1,22 @@
-#contact {
-  text-align: left;
-  .form-inputs {
-    @include flex-justify-content(space-between);
-  }
-  .name-entry,
-  .email-entry {
-    @include flex-basis(47%);
-  }
-  .status-message {
-    top: 18.125rem;
-    width: 22.5rem;
-  }
-  p {
-    font: 1.15rem/1.4 $Font-DIN-Regular;
-    margin-bottom: 0;
-  }
-  form {
-    margin: 0 auto;
-  }
+/*=============================================================================
+    CONTACT FORM - ENHANCED
+=============================================================================*/
+
+.contact-form-inputs {
+  @include flex-justify-content(space-between);
+}
+
+.contact-form-name-entry,
+.contact-form-email-entry {
+  @include flex-basis(47%);
+}
+
+.contact-status-message {
+  top: 3rem;
+  width: 22.5rem;
+}
+
+.contact-body {
+  font: 1.15rem/1.4 $Font-DIN-Regular;
+  margin-bottom: 0;
 }

@@ -6,39 +6,62 @@
   var toggleGutsSlide = function() {
     $guts.toggleClass('slideUp slideDown');
   };
-
-  var eventsControler = function(originalEvent) {
+  var whatJustHappened = function(originalEvent) {
+    var completedTransition = '';
     var hash = window.location.hash.substring(1);
     var $target = $(originalEvent.target);
     var propertyName = originalEvent.propertyName;
-    var fadeOut = $target.hasClass('fadeOut');
-    var fadeIn = $target.hasClass('fadeIn');
-    var slideDown = $target.hasClass('slideDown');
-    var slideUp = $target.hasClass('slideUp');
-    var subGallery = $target.hasClass('sub');
-
-    if (fadeOut && propertyName === "opacity") {
-      if ((subGallery && hash === 'portfolio') || (subGalleries.indexOf(hash) > -1)) {
+    var enteringSubGallery = subGalleries.indexOf(hash) > -1;
+    var leavingSubGallery = $target.hasClass('sub');
+    var enteringPortfolio = hash === 'portfolio';
+    if ($target.hasClass('fadeOut') && propertyName === "opacity") {
+      completedTransition = 'fadeOut';
+    } else if ($target.hasClass('slideDown')) {
+      completedTransition = 'slideDown';
+    } else if ($target.hasClass('slideUp')) {
+      completedTransition = 'slideUp';
+    }
+    return {
+      "completedTransition": completedTransition,
+      "hash": hash,
+      "enteringSubGallery": enteringSubGallery,
+      "leavingSubGallery": leavingSubGallery,
+      "enteringPortfolio": enteringPortfolio
+    };
+  };
+  var eventsControler = function(transitionInformation) {
+    var hash = transitionInformation.hash;
+    var completedTransition = transitionInformation.completedTransition;
+    var enteringSubGallery = transitionInformation.enteringSubGallery;
+    var leavingSubGallery = transitionInformation.leavingSubGallery;
+    var enteringPortfolio = transitionInformation.enteringPortfolio;
+    switch (completedTransition) {
+      case 'fadeOut':
+        if (enteringSubGallery || (leavingSubGallery && enteringPortfolio)) {
+          Content.loadPage(hash, function() {
+            setTimeout(function() {
+              toggleContentFade();
+            }, 100);
+          });
+        } else {
+          toggleGutsSlide();
+        }
+        break;
+      case 'slideUp':
         Content.loadPage(hash, function() {
-          setTimeout(function() {
-            toggleContentFade();
-          }, 100);
+          toggleGutsSlide();
         });
-      } else {
-        toggleGutsSlide();
-      }
-    } else if (slideUp) {
-      Content.loadPage(hash, function() {
-        toggleGutsSlide();
-      });
-    } else if (slideDown) {
-      toggleContentFade();
+        break;
+      case 'slideDown':
+        toggleContentFade();
+        break;
     }
   };
   var bindUIActions = function() {
     $guts.on('transitionend webkitTransitionEnd', function(event) {
       var originalEvent = event.originalEvent;
-      eventsControler(originalEvent);
+      var transitionInformation = whatJustHappened(originalEvent);
+      eventsControler(transitionInformation);
     });
   };
 

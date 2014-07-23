@@ -49,7 +49,7 @@
 
   var $navItem = $('.nav-item');
   var $navItemLink = $('.nav-item a');
-  var $navItemExcludingLogo = $('.nav-item:not(.logo)');
+  var $navItemExcludingLogo = $('.nav-item:not(.nav-logo)');
   var $navToggle = $('.nav-toggle');
 
 }(jQuery, window.Navigation = window.Navigation || {}));

@@ -38,10 +38,10 @@ if (unsupportedFeatures.length > 0) {
     n = n + "<li>" + t + "</li>";
   });
   $("#unsupported-features").append(n);
-  $(".download-chrome a").html('<img src="img/icons/chrome.png" />');
-  $(".download-firefox a").html('<img src="img/icons/firefox.png" />');
-  $(".download-safari a").html('<img src="img/icons/safari.png" />');
-  $(".download-opera a").html('<img src="img/icons/opera.png" />');
+  $(".chrome a").html('<img src="img/icons/chrome.png" />');
+  $(".firefox a").html('<img src="img/icons/firefox.png" />');
+  $(".safari a").html('<img src="img/icons/safari.png" />');
+  $(".opera a").html('<img src="img/icons/opera.png" />');
   $("#no-support").show();
   ga('send', 'event', 'Compatibility', 'Load', 'Unsupported Browser');
 }

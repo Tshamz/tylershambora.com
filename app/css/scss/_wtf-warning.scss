@@ -1,4 +1,8 @@
-#wtf-overlay {
+/*=============================================================================
+    WTF-WARNING
+=============================================================================*/
+
+#wtf-warning {
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -7,20 +11,23 @@
   z-index: 999;
 }
 
-#wtf-warning {
+.wtf-warning-inner {
   text-align: center;
-  background-color: #ccc;
+  background-color: #CCC;
   position: fixed;
   margin: 1.5rem auto 0;
   left: 1rem;
   right: 1rem;
   max-width: 50rem;
   padding: 1.5rem;
-  p {
-    margin-bottom: 1rem;
-  }
-  button {
-    margin: 0 0.5rem 0.5rem;
-    padding: 0.5rem 1rem;
-  }
+}
+
+.wtf-warning-body {
+  margin-bottom: 1rem;
+}
+
+.wtf-warning-no-way,
+.wtf-warning-yes-way {
+  margin: 0 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
 }

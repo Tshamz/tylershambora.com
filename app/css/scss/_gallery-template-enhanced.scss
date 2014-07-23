@@ -1,23 +1,8 @@
+/*=============================================================================
+    GALLERY-ENHANCED
+=============================================================================*/
+
 .gallery-panel {
-  .gallery-url a {
-    font-size: 1.5rem;
-  }
-  .gallery-description {
-    margin-left: 5%;
-    margin-right: 5%;
-    p {
-      font-size: 1.3rem;
-    }
-  }
-  .lengthy-url {
-    font-size: inherit;
-  }
-  p {
-    font-size: 1.25rem;
-  }
-  img[lightbox="true"] {
-    cursor: pointer;
-  }
   &.top-image .gallery-image {
     margin-bottom: 1rem;
     width: 100%;
@@ -47,5 +32,23 @@
     margin-left: 2.5%;
     text-align: justify;
     width: 40%;
+  }
+  p {
+    font-size: 1.15rem;
+  }
+  img[lightbox="true"] {
+    cursor: pointer;
+  }
+}
+
+.gallery-url a {
+  font-size: 1.5rem;
+}
+
+.gallery-description {
+  margin-left: 5%;
+  margin-right: 5%;
+  p {
+    font-size: 1.4rem;
   }
 }
