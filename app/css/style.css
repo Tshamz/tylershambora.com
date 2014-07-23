@@ -517,11 +517,11 @@ textarea {
   padding: 3.35rem 10% 0;
   /* 3.35rem needed to push #guts below the nav */
   -webkit-transform: translate3d(0, 0, 0);
-  -webkit-transition: max-height 1000ms linear;
-  -moz-transition: max-height 1000ms linear;
-  -ms-transition: max-height 1000ms linear;
-  -o-transition: max-height 1000ms linear;
-  transition: max-height 1000ms linear;
+  -webkit-transition: max-height 750ms linear;
+  -moz-transition: max-height 750ms linear;
+  -ms-transition: max-height 750ms linear;
+  -o-transition: max-height 750ms linear;
+  transition: max-height 750ms linear;
 }
 #guts.slideDown {
   max-height: 320rem;
@@ -540,20 +540,20 @@ textarea {
 .content.fadeIn {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity 500ms linear;
-  -moz-transition: opacity 500ms linear;
-  -ms-transition: opacity 500ms linear;
-  -o-transition: opacity 500ms linear;
-  transition: opacity 500ms linear;
+  -webkit-transition: opacity 250ms linear;
+  -moz-transition: opacity 250ms linear;
+  -ms-transition: opacity 250ms linear;
+  -o-transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
 }
 .content.fadeOut {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: visibility 0ms linear 500ms, opacity 500ms linear;
-  -moz-transition: visibility 0ms linear 500ms, opacity 500ms linear;
-  -ms-transition: visibility 0ms linear 500ms, opacity 500ms linear;
-  -o-transition: visibility 0ms linear 500ms, opacity 500ms linear;
-  transition: visibility 0ms linear 500ms, opacity 500ms linear;
+  -webkit-transition: visibility 0ms linear 250ms, opacity 250ms linear;
+  -moz-transition: visibility 0ms linear 250ms, opacity 250ms linear;
+  -ms-transition: visibility 0ms linear 250ms, opacity 250ms linear;
+  -o-transition: visibility 0ms linear 250ms, opacity 250ms linear;
+  transition: visibility 0ms linear 250ms, opacity 250ms linear;
 }
 
 /*=============================================================================
