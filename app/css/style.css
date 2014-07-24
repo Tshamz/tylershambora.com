@@ -27,9 +27,9 @@
 
 9. I try not to target elements using tag selectors as much as possible
 
-10. Exceptions to that last rule will be preceded with an ID or class
+10. Exceptions to that last rule will be preceded with a descriptive ID or class
 
-11. Exceptions will be tags that are already pretty semantic (e.g. img, h1, p)
+11. Exceptions are tags that are pretty semantic (e.g. img, p, nav)
 
 12. I try not to add classes just for the sake of styling as much as possible
 
@@ -357,6 +357,7 @@ textarea {
   border: 5px solid #AAA;
   background-color: #FFF;
   padding: 2rem;
+  max-height: 90%;
 }
 
 /*=============================================================================
@@ -517,14 +518,14 @@ textarea {
   padding: 3.35rem 10% 0;
   /* 3.35rem needed to push #guts below the nav */
   -webkit-transform: translate3d(0, 0, 0);
-  -webkit-transition: max-height 750ms linear;
-  -moz-transition: max-height 750ms linear;
-  -ms-transition: max-height 750ms linear;
-  -o-transition: max-height 750ms linear;
-  transition: max-height 750ms linear;
+  -webkit-transition: max-height 1000ms linear;
+  -moz-transition: max-height 1000ms linear;
+  -ms-transition: max-height 1000ms linear;
+  -o-transition: max-height 1000ms linear;
+  transition: max-height 1000ms linear;
 }
 #guts.slideDown {
-  max-height: 320rem;
+  max-height: 350rem;
   overflow: hidden;
 }
 #guts.slideUp {
@@ -835,7 +836,7 @@ textarea {
   padding-bottom: 3rem;
   width: 100%;
 }
-.gallery-panel.border > .gallery-image {
+.gallery-panel.border .gallery-image {
   padding: 10px 10px 5px;
   border: 2px solid #CCC;
 }
@@ -858,8 +859,10 @@ textarea {
 }
 
 .gallery-marquee-image {
-  border: 2px solid #CCC;
   margin-bottom: 2rem;
+}
+.gallery-marquee-image img {
+  border: 2px solid #CCC;
   padding: 10px 10px 7px;
 }
 
@@ -869,6 +872,9 @@ textarea {
 
 .gallery-url {
   margin-bottom: 0.35rem;
+}
+.gallery-url p {
+  font-size: 1.3rem;
 }
 
 .gallery-status {

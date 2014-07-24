@@ -23,7 +23,7 @@ No full page reloads, loads new content in via ajax, most of the animations are 
 *  ~~Build a better light box~~
 *  ~~Look into more about support for pointer-events~~
 *  Improve a11y
-*  Rivers in text
-*  Vertically align gallery images in portrait mode
+*  ~~Rivers in text~~
+*  ~~Vertically align gallery images in portrait mode~~
 
 kbye.

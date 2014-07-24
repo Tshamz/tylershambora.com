@@ -18,7 +18,7 @@
   margin-bottom: 3.5rem;
   padding-bottom: 3rem;
   width: 100%;
-  &.border > .gallery-image {
+  &.border .gallery-image {
     padding: 10px 10px 5px;
     border: 2px solid #CCC;
   }
@@ -42,9 +42,11 @@
 }
 
 .gallery-marquee-image {
-  border: 2px solid #CCC;
   margin-bottom: 2rem;
-  padding: 10px 10px 7px;
+  img {
+    border: 2px solid #CCC;
+    padding: 10px 10px 7px;
+  }
 }
 
 .gallery-title {
@@ -53,6 +55,9 @@
 
 .gallery-url {
   margin-bottom: 0.35rem;
+  p {
+    font-size: 1.3rem;
+  }
 }
 
 .gallery-status {

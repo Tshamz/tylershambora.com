@@ -66,7 +66,7 @@
       } else {
         additionalGalleriesString += '<div class="slide last" ';
       }
-       additionalGalleriesString += 'style="left: ' + galleryStartingPosition + ';"><div class="gallery-panel repeat ' + additionalClasses + '"><div class="gallery-image"><img src="' + galleryImageLocation + '" lightbox="' + galleryHasLightbox + '" /></div><div class="gallery-text"><p>' + galleryImageDescription + '</p></div></div></div>';
+       additionalGalleriesString += 'style="left: ' + galleryStartingPosition + ';"><div class="gallery-panel repeat ' + additionalClasses + '"><div class="gallery-panel-inner"><div class="gallery-image"><img src="' + galleryImageLocation + '" lightbox="' + galleryHasLightbox + '" /></div><div class="gallery-text"><p>' + galleryImageDescription + '</p></div></div></div></div>';
     }
     additionalGalleriesString += '</section>';
     return additionalGalleriesString;

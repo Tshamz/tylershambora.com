@@ -38,13 +38,13 @@
     "galleryDescription": "<a href='http://resize.ly' target='_blank'>Resize.ly</a> was my capstone project for my master's at The George Washington University. Resize.ly is a web service that resizes any image you host simply by providing a custom URL. It's great for developers who want retina ready, resized images, but don't want to be continually opening Photoshop simply to adjust the size of their images.",
     "additionalGalleries": [
       {
-        "hasLightbox": false,
+        "hasLightbox": true,
         "additionalClasses": "top-image resizely-bottom-image",
         "imageLocation": "img/sites/resize.ly/resize.ly-bottom.jpg",
         "imageDescription": "I was responsible for the visual design and the front-end development of the site. The site is built upon the Twitter Bootstrap framework, which was a great experience for me as I was introduced to two very important web development concepts: grids and responsive web design."
       },
       {
-        "hasLightbox": false,
+        "hasLightbox": true,
         "additionalClasses": "top-image",
         "imageLocation": "img/sites/resize.ly/test.jpg",
         "imageDescription": "This was an idea I had while mocking up the site that we eventually decided to implement. It's an in-page tool that allows you to test out the service and resize any image online to the specified dimensions."
@@ -79,9 +79,9 @@
     "additionalGalleries": [
       {
         "hasLightbox": true,
-        "additionalClasses": "right-image border double-push-down-text",
+        "additionalClasses": "right-image border",
         "imageLocation": "img/sites/petershambora/petershambora-about.jpg",
-        "imageDescription": "Like most of my other sites, in addition to giving me an opportunity to practicing writing markup, the site also gave me an opportunity to work on my design skills.<br><br>The paper boats in the logo are an homage to my dad's fondness for boating."
+        "imageDescription": "Like most of my other sites, I went into this project with multiple goals in mind. First, this project served as an opportunity to practicing writing markup. Second, the site also gave me an opportunity to work on my design skills.<br><br>This was the first where I thought about the colors I was using. I knew boating was a favorite pastime of Peter's, so blue and the paper boats in the logo became an homage to the hobby."
       }
     ]
   },
@@ -115,7 +115,7 @@
         "hasLightbox": true,
         "additionalClasses": "right-image border half-push-down-text",
         "imageLocation": "img/sites/papn/papn2.jpg",
-        "imageDescription": "The site featured announcements about upcoming parties, photo galleries showcasing past parties, and even a way to buy tickets online using Shopify as the e-commerce platform.<br><br>In addition to the website, Palo Alto Party Network also had an accompanying Facebook Page and Twitter feed, both of which were constantly updated to keep people up to date."
+        "imageDescription": "The site featured news updates & announcements about upcoming parties, photo galleries showcasing past parties, and even a way to buy tickets online using Shopify as the e-commerce platform.<br><br>In addition to the website, Palo Alto Party Network (PAPN) also had an accompanying Facebook Page and Twitter feed, both of which were constantly updated to keep people up to date."
       },
       {
         "hasLightbox": true,
@@ -138,11 +138,11 @@
         "hasLightbox": true,
         "additionalClasses": "right-image border push-down-text",
         "imageLocation": "img/sites/csh/csh-bio.jpg",
-        "imageDescription": "I didn't realize it at the time, but because you could get to all the content on the site without a full page reload, the site sorta has an ajaxy feel to it.<br><br>However, because no asynchronous requests are actually sent or received, calling this true ajax would be a stretch."
+        "imageDescription": "I didn't realize it at the time, but because you could get to all the content on the site without a full page reload, the site sorta has an ajaxy feel.<br><br>However, because no asynchronous requests are actually sent or received, calling this true ajax would be a stretch."
       },
       {
         "hasLightbox": true,
-        "additionalClasses": "left-image border",
+        "additionalClasses": "left-image border half-push-down-text",
         "imageLocation": "img/sites/csh/csh-music.jpg",
         "imageDescription": "One of the slides features embedded Soundcloud players with music produced by each members of the group. Despite this being one of my earlier sites, working with Soundcloud was pretty easy. I've also worked with the Soundcloud API, since completing this project, and that too was an enjoyable experience."
       },
@@ -167,7 +167,7 @@
         "hasLightbox": true,
         "additionalClasses": "right-image border push-down-text hyphenate",
         "imageLocation": "img/sites/wtfdrink/wtfdrink1.jpg",
-        "imageDescription": "<a href='http://whatthefuckshouldidrinktonight.com' target='_blank'class='lengthy-url'>WhatTheFuckShouldIDrinkTonight.com</a> was initially the URL for the site, but I figured that was probably too offensive, way too long, and too difficult for people to remember.<br><br>In order to address this, I purchased <a href='http://wtfdrink.com' target='_blank'>wtfdrink.com</a>, set it up to direct users towards the long URL, and re-branded the site as <a href='http://wtfdrink.com' target='_blank'>wtfdrink.com</a>."
+        "imageDescription": "<a href='http://whatthefuckshouldidrinktonight.com' target='_blank'class='lengthy-url'>WhatTheFuckShouldIDrinkTonight.com</a> was what the URL for the site initially was. However, I figured that was probably too offensive, way too long, and too difficult for people to remember.<br><br>In order to solve these issues, I bought <a href='http://wtfdrink.com' target='_blank'>wtfdrink.com</a>, set it up to direct users towards the long URL, and re-branded the site as <a href='http://wtfdrink.com' target='_blank'>wtfdrink.com</a>."
       },
       {
         "hasLightbox": true,
@@ -177,7 +177,7 @@
       },
       {
         "hasLightbox": true,
-        "additionalClasses": "right-image border push-down-text hyphenate",
+        "additionalClasses": "right-image border pull-up-text hyphenate",
         "imageLocation": "img/sites/wtfdrink/wtfdrink5.jpg",
         "imageDescription": "Love wtfdrink? Love attempting to speak Spanish? Would you love a combination of the two? Well have I got news for you.<br><br><a href='http://whatthefuckshouldIdrinkestanoche.com' target='_blank'class='massive-url'>WhatTheFuckShouldIDrinkEstaNoche.com</a> was my attempt to take wtfdrink. international. It's the Spanish variant of the site and was all custom translated by me, using all the Spanish I can remember from high school. If only Señor Duffy could see me now, he'd be so proud."
       },
@@ -218,9 +218,9 @@
     "additionalGalleries": [
       {
         "hasLightbox": true,
-        "additionalClasses": "right-image border push-down-text",
+        "additionalClasses": "right-image border double-push-down-text",
         "imageLocation": "img/sites/cpsolutions/cpsolutions-mock.jpg",
-        "imageDescription": "I used Adobe Photoshop to produce the mockup. I'm pretty comfortable with the program and in my mind, it's the best application for producing visually intense items like high-fidelity mockups."
+        "imageDescription": "I used Adobe Photoshop to produce the mock-up. I've worked with the program for at ten years now and I'm pretty comfortable with it.<br><br>It's great for a number of different things and in my mind, it's the best application for producing visually intense items like high-fidelity mock-ups."
       },
       {
         "hasLightbox": true,

@@ -9,7 +9,7 @@
   -webkit-transform: translate3d(0, 0, 0);
   @include transition(max-height $CSS-slideUpDown linear);
   &.slideDown {
-    max-height: 320rem;
+    max-height: 350rem;
     overflow: hidden;
   }
   &.slideUp {

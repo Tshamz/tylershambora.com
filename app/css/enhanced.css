@@ -27,9 +27,9 @@
 
 9. I try not to target elements using tag selectors as much as possible
 
-10. Exceptions to that last rule will be preceded with an ID or class
+10. Exceptions to that last rule will be preceded with a descriptive ID or class
 
-11. Exceptions will be tags that are already pretty semantic (e.g. img, h1, p)
+11. Exceptions are tags that are pretty semantic (e.g. img, p, nav)
 
 12. I try not to add classes just for the sake of styling as much as possible
 
@@ -518,23 +518,32 @@ em {
   margin: 0 auto;
   width: 80%;
 }
-.gallery-panel.left-image .gallery-image, .gallery-panel.left-image .gallery-text, .gallery-panel.right-image .gallery-text {
+.gallery-panel.left-image .gallery-image {
+  left: 0;
+}
+.gallery-panel.left-image .gallery-text {
+  float: right;
+}
+.gallery-panel.right-image .gallery-text {
   float: left;
 }
 .gallery-panel.right-image .gallery-image {
-  float: right;
+  right: 0;
+}
+.gallery-panel.left-image .gallery-image, .gallery-panel.right-image .gallery-image {
+  width: 35%;
+}
+.gallery-panel.left-image .gallery-text, .gallery-panel.right-image .gallery-text {
+  text-align: justify;
+  width: 40%;
 }
 .gallery-panel.left-image .gallery-image, .gallery-panel.right-image .gallery-text {
   margin-right: 2.5%;
   margin-left: 7.5%;
-  text-align: justify;
-  width: 40%;
 }
 .gallery-panel.left-image .gallery-text, .gallery-panel.right-image .gallery-image {
   margin-right: 7.5%;
   margin-left: 2.5%;
-  text-align: justify;
-  width: 40%;
 }
 .gallery-panel p {
   font-size: 1.15rem;
@@ -543,8 +552,17 @@ em {
   cursor: pointer;
 }
 
-.gallery-url > a {
-  font-size: 1.5rem;
+.last.slide > .gallery-panel {
+  padding-bottom: 1.5rem;
+}
+
+.gallery-panel-inner {
+  position: relative;
+  display: inline-block;
+}
+
+.gallery-url p {
+  font-size: 1.6rem;
 }
 
 .gallery-description {
@@ -553,6 +571,14 @@ em {
 }
 .gallery-description > p {
   font-size: 1.4rem;
+}
+
+.left-image .gallery-image,
+.right-image .gallery-image {
+  margin-bottom: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /*=============================================================================
@@ -597,10 +623,10 @@ em {
     transition: opacity 200ms ease-in-out;
   }
   .gallery-control.next {
-    right: 0;
+    right: 1px;
   }
   .gallery-control.previous {
-    left: 0;
+    left: 1px;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -621,6 +647,9 @@ em {
     margin-bottom: 0;
     padding-bottom: 0;
   }
+  .gallery-panel.left-image .gallery-image, .gallery-panel.right-image .gallery-image {
+    width: 40%;
+  }
   .gallery-panel.push-down-text .gallery-text {
     margin-top: 1.5rem;
   }
@@ -634,18 +663,28 @@ em {
     margin-top: 0;
   }
 
+  .gallery-panel-inner {
+    display: block;
+  }
+
   .gallery-marquee-image,
   .gallery-title,
   .gallery-url,
   .gallery-status,
   .gallery-description {
-    width: 47.5%;
+    width: 50%;
   }
 
   .gallery-title,
   .gallery-url,
+  .gallery-status,
   .gallery-description {
     float: left;
+  }
+
+  .gallery-marquee-image,
+  .gallery-description {
+    padding: 0 2.5%;
   }
 
   .gallery-marquee-image {
@@ -659,7 +698,6 @@ em {
 
   .gallery-description {
     margin: 0;
-    padding: 0 2.5% 0 5%;
   }
   .gallery-description > p {
     text-align: justify;
@@ -673,6 +711,12 @@ em {
   .gallery-text > p {
     font-size: 1.15rem;
     line-height: 1.35;
+  }
+
+  .left-image .gallery-image,
+  .right-image .gallery-image {
+    top: 0;
+    transform: translateY(0);
   }
 }
 /*=============================================================================
