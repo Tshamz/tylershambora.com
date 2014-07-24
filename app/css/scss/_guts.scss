@@ -6,15 +6,14 @@
   background-color: #FFF;
   border-bottom: 2px solid $Color-Light-Grey;
   padding: 3.35rem 10% 0;  /* 3.35rem needed to push #guts below the nav */
-  -webkit-transform: translate3d(0, 0, 0);
-  @include transition(max-height $CSS-slideUpDown linear);
+  overflow: hidden;
+  // @include transition(transform $CSS-slideUpDown cubic-bezier(0, 1, 0.5, 1));
+  @include transition(transform $CSS-slideUpDown ease-in-out);
   &.slideDown {
-    max-height: 350rem;
-    overflow: hidden;
+    @include transform(translateY(0));
   }
   &.slideUp {
-    max-height: 0;
-    overflow: hidden;
+    @include transform(translateY(-100%));
   }
 }
 

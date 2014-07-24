@@ -44,7 +44,9 @@
             }, 100);
           });
         } else {
-          toggleGutsSlide();
+          setTimeout(function() {
+            toggleGutsSlide();
+          }, 100);
         }
         break;
       case 'slideUp':

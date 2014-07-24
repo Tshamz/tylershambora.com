@@ -1,6 +1,6 @@
 (function($, Contact, undefined) {
 
-  function submitFinished(response) {
+  var submitFinished = function(response) {
     response = $.trim(response);
     if (response === 'success') {
       $('.contact-status-message, .success-message').fadeIn().delay(messageDelay).fadeOut();
@@ -13,8 +13,8 @@
     } else {
       $('.contact-status-message, .failure-message').fadeIn().delay(messageDelay).fadeOut();
     }
-  }
-  function submitForm() {
+  };
+  var submitForm = function() {
     var $contactForm = $(this);
     if (!$('#sender-name').val() || !$('#sender-email').val() || !$('#sender-message').val()) {
       $('.contact-status-message, .incomplete-message').fadeIn().delay(messageDelay).fadeOut();
@@ -27,7 +27,7 @@
       });
     }
     return false;
-  }
+  };
   var bindUIActions = function() {
     $guts.on('keyup', '.stored', function() {
       var fieldName = this.id;
@@ -537,7 +537,9 @@
             }, 100);
           });
         } else {
-          toggleGutsSlide();
+          setTimeout(function() {
+            toggleGutsSlide();
+          }, 100);
         }
         break;
       case 'slideUp':

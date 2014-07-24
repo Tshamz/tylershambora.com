@@ -517,20 +517,26 @@ textarea {
   border-bottom: 2px solid #aaaaaa;
   padding: 3.35rem 10% 0;
   /* 3.35rem needed to push #guts below the nav */
-  -webkit-transform: translate3d(0, 0, 0);
-  -webkit-transition: max-height 1000ms linear;
-  -moz-transition: max-height 1000ms linear;
-  -ms-transition: max-height 1000ms linear;
-  -o-transition: max-height 1000ms linear;
-  transition: max-height 1000ms linear;
+  overflow: hidden;
+  -webkit-transition: transform 400ms ease-in-out;
+  -moz-transition: transform 400ms ease-in-out;
+  -ms-transition: transform 400ms ease-in-out;
+  -o-transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
 #guts.slideDown {
-  max-height: 350rem;
-  overflow: hidden;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
 }
 #guts.slideUp {
-  max-height: 0;
-  overflow: hidden;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
 .content {

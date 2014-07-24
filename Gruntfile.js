@@ -94,9 +94,9 @@ module.exports = function(grunt) {
       main: {
         files: [
           { expand: true, cwd: 'app/', src: '*.{html,pdf,php,manifest}', dest: 'app/dist/' },
-          { expand: true, cwd: 'app/css/', src: '*.css', dest: 'app/dist/css/' },
-          { expand: true, cwd: 'app/js/', src: '*.{js,json}', dest: 'app/dist/js/' },
-          { expand: true, cwd: 'app/font/', src: '*.{ttf,woff,eot,svg}', dest: 'app/dist/font/' }
+          { expand: true, cwd: 'app/css/', src: '**/*', dest: 'app/dist/css/' },
+          { expand: true, cwd: 'app/js/', src: '**/*', dest: 'app/dist/js/' },
+          { expand: true, cwd: 'app/font/', src: '*', dest: 'app/dist/font/' }
         ]
       }
     },
