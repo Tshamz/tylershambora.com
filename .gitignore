@@ -1,3 +1,5 @@
-app/Old Files/
-app/dist
 .sass-cache/
+node_modules
+app/graveyard
+app/dist/
+app/img/

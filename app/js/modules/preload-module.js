@@ -1,5 +1,12 @@
 (function($, Preload, undefined) {
 
+  var isMobile = function() {
+    if ($('.nav-toggle').is(':visible')) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   var gatherImageLocations = function() {
     var imageLocationsArray = [];
     for (var gallery in Resources.galleryInfo) {
@@ -28,7 +35,9 @@
   };
   var bindOnLoadEvents = function() {
     $(window).load(function() {
-      preLoadImages();
+      if (!isMobile()) {
+        preLoadImages();
+      }
     });
   };
 

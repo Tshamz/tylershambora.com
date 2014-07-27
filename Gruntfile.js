@@ -68,7 +68,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'app/img',
           src: ['**/*.{png,jpg}'],
-          dest: 'app/dist/img'
+          dest: 'app/dist/img/'
         }]
       }
     },
@@ -93,10 +93,10 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          { expand: true, cwd: 'app/', src: '*.{html,pdf,php,manifest}', dest: 'app/dist/' },
-          { expand: true, cwd: 'app/css/', src: '**/*', dest: 'app/dist/css/' },
-          { expand: true, cwd: 'app/js/', src: '**/*', dest: 'app/dist/js/' },
-          { expand: true, cwd: 'app/font/', src: '*', dest: 'app/dist/font/' }
+          {expand: true, cwd: 'app/', src: ['*.{html,pdf,php,manifest}'], dest: 'app/dist/'},
+          {expand: true, cwd: 'app/css/', src: ['*.css'], dest: 'app/dist/css/'},
+          {expand: true, cwd: 'app/js/', src: ['*.{js,json}'], dest: 'app/dist/js/'},
+          {expand: true, cwd: 'app/font/', src: ['*'], dest: 'app/dist/font/'}
         ]
       }
     },
@@ -116,7 +116,6 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'imagemin',
     'concat',
     'uglify',
     'sass',
