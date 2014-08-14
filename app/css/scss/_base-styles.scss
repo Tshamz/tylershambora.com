@@ -36,8 +36,6 @@ html {
   background-attachment: fixed;
   color: $Color-Dark-Grey;
   font: normal normal normal 100%/1 $Font-DIN-Regular;
-  overflow: -moz-scrollbars-vertical;
-  overflow: scroll;
   @include background-size(cover);
 }
 

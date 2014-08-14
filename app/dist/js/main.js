@@ -516,7 +516,7 @@
     var enteringSubGallery = subGalleries.indexOf(hash) > -1;
     var leavingSubGallery = $target.hasClass('sub');
     var enteringPortfolio = hash === 'portfolio';
-    if ($target.hasClass('fadeOut') && propertyName === "opacity") {
+    if ($target.hasClass('fadeOut') && propertyName === 'opacity') {
       completedTransition = 'fadeOut';
     } else if ($target.hasClass('slideDown')) {
       completedTransition = 'slideDown';
@@ -569,15 +569,16 @@
     });
   };
 
+  Transition.init = function() {
+    bindUIActions();
+  };
   Transition.firstLoad = function() {
     toggleGutsSlide();
   };
   Transition.kickOffTransition = function() {
     toggleContentFade();
   };
-  Transition.init = function() {
-    bindUIActions();
-  };
+
 
   var $guts = $('#guts');
   var subGalleries = ["papn", "csh", "fb", "sns", "petershambora", "wtfdrink", "laura", "resizely", "cpsolutions"];

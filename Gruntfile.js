@@ -108,7 +108,6 @@ module.exports = function(grunt) {
     }
   });
 
-  // Creates the `server` task
   grunt.registerTask('server', [
     'express',
     'open',

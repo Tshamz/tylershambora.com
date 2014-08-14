@@ -7,7 +7,13 @@
   border-bottom: 2px solid $Color-Light-Grey;
   padding: 3.35rem 10% 0;  /* 3.35rem needed to push #guts below the nav */
   overflow: hidden;
-  @include transition(transform $CSS-slideUpDown cubic-bezier(1, 0, 0, 1));
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -ms-transition-property: -ms-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  transition-duration: $CSS-slideUpDown;
+  transition-timing-function: cubic-bezier(1, 0, 0, 1);
   &.slideDown {
     @include transform(translateY(0));
   }

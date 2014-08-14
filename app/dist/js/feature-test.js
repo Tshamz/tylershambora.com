@@ -6,7 +6,7 @@ var unsupportedFeatures = [];
 var fullFeatureNameMap = {
   js: "JavaScript",
   flexbox: "CSS Flex-Box",
-  flexboxlegacy: "Legacy CSS Flex-Box",
+  flexboxlegacy: "Legacy CSS Flex-Box",  // Need to remove support for this
   hashchange: "JavaScript Hashchange Event",
   backgroundsize: "CSS Background-Size",
   borderradius: "CSS Border-Radius",

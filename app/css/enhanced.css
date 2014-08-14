@@ -73,7 +73,7 @@ SCSS
 =============================================================================*/
 @-webkit-keyframes super-rainbow {
   0% {
-    background-color: transparent;
+    background-color: Transparent;
   }
 
   16.66% {
@@ -97,12 +97,13 @@ SCSS
   }
 
   100% {
-    background-color: transparent;
+    background-color: Transparent;
   }
 }
+
 @-moz-keyframes super-rainbow {
   0% {
-    background-color: transparent;
+    background-color: Transparent;
   }
 
   16.66% {
@@ -126,12 +127,13 @@ SCSS
   }
 
   100% {
-    background-color: transparent;
+    background-color: Transparent;
   }
 }
+
 @-o-keyframes super-rainbow {
   0% {
-    background-color: transparent;
+    background-color: Transparent;
   }
 
   16.66% {
@@ -155,12 +157,13 @@ SCSS
   }
 
   100% {
-    background-color: transparent;
+    background-color: Transparent;
   }
 }
+
 @keyframes super-rainbow {
   0% {
-    background-color: transparent;
+    background-color: Transparent;
   }
 
   16.66% {
@@ -184,9 +187,10 @@ SCSS
   }
 
   100% {
-    background-color: transparent;
+    background-color: Transparent;
   }
 }
+
 /*=============================================================================
     FONTS-ENHANCED
 =============================================================================*/
