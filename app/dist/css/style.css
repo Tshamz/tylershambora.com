@@ -174,7 +174,12 @@ html {
   background-position: center center;
   background-attachment: fixed;
   color: #353d48;
-  font: normal normal normal 100%/1 "DIN Next W01 Regular", sans-serif;
+  font-family: "DIN Next W01 Regular", sans-serif;
+  font-size: 100%;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
