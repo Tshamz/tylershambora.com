@@ -1,0 +1,103 @@
+/*=============================================================================
+    NAVIGATION - ENHANCED
+=============================================================================*/
+
+#main-header {
+  height: 7.5rem;
+  position: relative;
+  > nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 3rem;
+    @include flex-box;
+    @include flex-align-items(center);
+    @include flex-flow(row nowrap);
+    @include flex-justify-content(space-between);
+  }
+}
+
+.nav-item {
+  border-top: none;
+  border-bottom: 5px solid #FFF;
+  font-family: $Font-DIN-Light;;
+  font-size: 1.15rem;
+  line-height: 4.5;
+  text-transform: uppercase;
+  @include transition(border-bottom 200ms ease-in-out);
+  @media only screen and (min-width: 70rem) {
+    font-size: 1.35rem;
+  }
+  &:not(.nav-logo) {
+    display: block !important;  /* Have to use !important because jQuery inline styles */
+  }
+  &:not(.nav-logo).is-active {
+    background-color: transparent;
+    border-bottom: 5px solid $Color-Light-Blue;
+    color: $Color-Light-Grey;
+  }
+  &:not(.nav-logo):hover {
+    background-color: transparent;
+    border-bottom: 5px solid $Color-Light-Blue;
+    color: $Color-Light-Grey;
+  }
+  &:not(.nav-logo) a {
+    padding-left: 0;
+  }
+  > a {
+    color: inherit;
+  }
+}
+
+.nav-logo {
+  border-bottom: none;
+  &:hover .color-fader {
+    @include animation(super-rainbow 10s infinite linear);
+  }
+}
+
+.logo-image {
+  border-radius: 51%;
+  height: 62px;
+  width: 62px;
+  @media only screen and (min-width: 70rem) {
+    height: 71px;
+    width: 71px;
+  }
+  > img {  /* Image must be +1px larger than container so background colors don't bleed */
+    width: 65px;
+    @include transition(width 300ms ease-in-out);
+    @media only screen and (min-width: 70rem) {
+      width: 74px;
+    }
+  }
+}
+
+.logo-text {
+  display: none;  /* Experimenting with no text for a while */
+  margin-top: 0;
+  > h1 {
+    color: $Color-Dark-Grey;
+    font-size: 1.5rem;
+    @media only screen and (min-width: 70rem) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.screen.nav-logo {
+  display: block;
+  line-height: 0;
+  padding: 0 0 1rem;
+}
+
+.handheld.nav-logo {
+  display: none;
+}
+
+.nav-toggle {
+  display: none;
+}

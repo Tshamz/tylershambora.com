@@ -1,0 +1,233 @@
+{
+  "laura": {
+    "marqueeImageLocation": "images/marquee/laura.jpg",
+    "marqueeImageHasLightbox": false,
+    "galleryTitle": "HeyLaura",
+    "galleryUrl": "http://tylershambora.com/dev/laura/",
+    "galleryUrlAppearance": "www.heylaura.com",
+    "galleryStatus": "online",
+    "galleryDescription": "I worked with Author/Editor, Laura McClure to help design and develop her portfolio website in order to showcase her work and her involvement helping Africans. The site features no page reloads, jQuery animations to transition between content, and a number of other cool features.",
+    "additionalGalleries": [
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image border",
+        "imageLocation": "images/sites/laura/laura-about.jpg",
+        "imageDescription": "This project was my first exposure to using JavaScript as an integral part of the site. In addition to the page transitions, other JS features include: auto-looping slide show on the <a href='http://tylershambora.com/dev/laura/#articles.html' target='_blank'>Articles</a> page, randomly generated tag-line above the footer, and a <a href='http://tylershambora.com/dev/laura/#contact.html' target='_blank'>contact</a> form that passes along its data via. ajax.<br><br><strong>Fun Fact:</strong> While my portfolio is inspired by this site, the animations you see on my site are done using CSS3, not JavaScript."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "left-image push-down-text laura-logo",
+        "imageLocation": "images/sites/laura/logo.jpg",
+        "imageDescription": "Besides gaining a grasp on JavaScript, another goal in completing this project was develop my visual design ability, and to ultimately produce something that looked nice. It was also my first experience working with a client and trying to interpret and develop their vision into a website.<br><br>It ended up being a more difficult process than I had initially anticipated, but it was a great learning experience and taught me that design is harder than it looks, and working with a client is very different from working by yourself."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image border half-push-down-text",
+        "imageLocation": "images/sites/laura/laura-contact.jpg",
+        "imageDescription": "Unfortunately, the site is no longer alive at it's original domain. Laura recently decided to renew her web offering, which meant my site had to be replaced. Luckily for you and me, I had an extra copy lying around that I put up on my server. While there are a few gaps where content should be, and maybe one or two dead links, I think the general idea remains intact. Head on over to <a href='http://tylershambora.com/dev/laura/' target='_blank'>heylaura.com</a> to see the site live on forever, in all its glory."
+      }
+    ]
+  },
+  "resizely": {
+    "marqueeImageLocation": "images/marquee/resize.ly.jpg",
+    "marqueeImageHasLightbox": false,
+    "galleryTitle": "resize.ly",
+    "galleryUrl": "http://resize.ly",
+    "galleryUrlAppearance": "www.resize.ly",
+    "galleryStatus": "online",
+    "galleryDescription": "<a href='http://resize.ly' target='_blank'>Resize.ly</a> was my capstone project for my master's at The George Washington University. Resize.ly is a web service that resizes any image you host simply by providing a custom URL. It's great for developers who want retina ready, resized images, but don't want to be continually opening Photoshop simply to adjust the size of their images.",
+    "additionalGalleries": [
+      {
+        "hasLightbox": true,
+        "additionalClasses": "top-image resizely-bottom-image",
+        "imageLocation": "images/sites/resize.ly/resize.ly-bottom.jpg",
+        "imageDescription": "I was responsible for the visual design and the front-end development of the site. The site is built upon the Twitter Bootstrap framework, which was a great experience for me as I was introduced to two very important web development concepts: grids and responsive web design."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "top-image",
+        "imageLocation": "images/sites/resize.ly/test.jpg",
+        "imageDescription": "This was an idea I had while mocking up the site that we eventually decided to implement. It's an in-page tool that allows you to test out the service and resize any image online to the specified dimensions."
+      }
+    ]
+  },
+  "sns": {
+    "marqueeImageLocation": "images/marquee/sns.jpg",
+    "marqueeImageHasLightbox": true,
+    "galleryTitle": "Speaker Noise Society",
+    "galleryUrl": null,
+    "galleryUrlAppearance": null,
+    "galleryStatus": "offline",
+    "galleryDescription": "Speaker Noise Society was one of two music blogs that I helped admin over the course of two or three years. The site was built on top of a Wordpress installation deployed on my server, and used a custom Wordpress theme that I both designed and developed. While the blog is no longer online, it has since evolved into <a href='https://www.facebook.com/makeitfunkysf' target='_blank'>Make it Funky</a> over on Facebook.",
+    "additionalGalleries": [
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image double-push-down-text",
+        "imageLocation": "images/sites/sns/sns-logo.jpg",
+        "imageDescription": "Never missing an opportunity to do a little creative work, I decided would also design the Speaker Noise Society Logo.<br><br>While I initially saw this as an opportunity to learn Adobe Illustrator, the whole process quickly turned into a disaster and the experience was so traumatizing to me that I haven't opened the application since."
+      }
+    ]
+  },
+  "petershambora": {
+    "marqueeImageLocation": "images/marquee/petershambora.jpg",
+    "marqueeImageHasLightbox": false,
+    "galleryTitle": "Peter Shambora.com",
+    "galleryUrl": "http://petershambora.com",
+    "galleryUrlAppearance": "www.petershambora.com",
+    "galleryStatus": "online",
+    "galleryDescription": "<a href='http://petershambora.com' target='_blank'>PeterShambora.com</a> was one of my first websites, and was really just an excuse to practice writing markup. In spite of that, I still think this is one of my better sites. My favorite part are the resume links that jump you to associated content on the page.",
+    "additionalGalleries": [
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image border",
+        "imageLocation": "images/sites/petershambora/petershambora-about.jpg",
+        "imageDescription": "Like most of my other sites, I went into this project with multiple goals in mind. First, this project served as an opportunity to practicing writing markup. Second, the site also gave me an opportunity to work on my design skills.<br><br>This was the first where I thought about the colors I was using. I knew boating was a favorite pastime of Peter's, so blue and the paper boats in the logo became an homage to the hobby."
+      }
+    ]
+  },
+  "fb": {
+    "marqueeImageLocation": "images/marquee/fb.jpg",
+    "marqueeImageHasLightbox": false,
+    "galleryTitle": "Fresh B33ts",
+    "galleryUrl": "http://freshb33ts.com",
+    "galleryUrlAppearance": "www.freshb33ts.com",
+    "galleryStatus": "online",
+    "galleryDescription": "<a href='http://freshb33ts.com' target='_blank'>FreshB33ts.com</a> is the second of two music blogs that I helped admin and make sure didn't explode. The site actually had a pretty good run and even has posts dating back to 2009. I had a really good time keeping watch over FreshB33ts and because of my soft spot for the site, I've tried to keep it up and running as long as possible.",
+    "additionalGalleries": [
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image",
+        "imageLocation": "images/sites/fb/fb-logo.jpg",
+        "imageDescription": "As you may have noticed by now, I like to think of myself as a very capable logo designer (still up for debate). This apparently makes me qualified to design every logo for every website I author.<br><br>While I didn't actually author the FreshB33ts theme, that didn't stop me from designing the blog's logo."
+      }
+    ]
+  },
+  "papn": {
+    "marqueeImageLocation": "images/marquee/papn.jpg",
+    "marqueeImageHasLightbox": true,
+    "galleryTitle": "Palo Alto Party Network",
+    "galleryUrl": null,
+    "galleryUrlAppearance": null,
+    "galleryStatus": "offline",
+    "galleryDescription": "Palo Alto Party Network was the first website I ever built. What originally started out as a project integrating WYSIWYG editors with the CMS developed at the company I was interning, eventually turned into my introduction to web development.",
+    "additionalGalleries": [
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image border half-push-down-text",
+        "imageLocation": "images/sites/papn/papn2.jpg",
+        "imageDescription": "The site featured news updates & announcements about upcoming parties, photo galleries showcasing past parties, and even a way to buy tickets online using Shopify as the e-commerce platform.<br><br>In addition to the website, Palo Alto Party Network (PAPN) also had an accompanying Facebook Page and Twitter feed, both of which were constantly updated to keep people up to date."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "left-image border push-down-text",
+        "imageLocation": "images/sites/papn/papn1.jpg",
+        "imageDescription": "Because the site was built using Softpress' Freeway editor, I wasn't exposed to writing or editing any markup. That meant for this site, I was able to focus exclusively on the visual aspect.<br><br>Looking back on it, I had no idea what I was doing. Even though the site may have looked nice, from a usability standpoint it was a nightmare."
+      }
+    ]
+  },
+  "csh": {
+    "marqueeImageLocation": "images/marquee/csh.jpg",
+    "marqueeImageHasLightbox": false,
+    "galleryTitle": "Casa Street Hooligans",
+    "galleryUrl": "http://casastreethooligans.com",
+    "galleryUrlAppearance": "www.casastreethooligans.com",
+    "galleryStatus": "online",
+    "galleryDescription": "Casa Street Hooligans was another site I built as an excuse to practice writing markup. It's based on a carousel tutorial I found and tried to rebuild. Despite being one of my earlier sites, to this day I'm still pretty pleased with the results.",
+    "additionalGalleries": [
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image border push-down-text",
+        "imageLocation": "images/sites/csh/csh-bio.jpg",
+        "imageDescription": "I didn't realize it at the time, but because you could get to all the content on the site without a full page reload, the site sorta has an ajaxy feel.<br><br>However, because no asynchronous requests are actually sent or received, calling this true ajax would be a stretch."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "left-image border half-push-down-text",
+        "imageLocation": "images/sites/csh/csh-music.jpg",
+        "imageDescription": "One of the slides features embedded Soundcloud players with music produced by each members of the group. Despite this being one of my earlier sites, working with Soundcloud was pretty easy. I've also worked with the Soundcloud API, since completing this project, and that too was an enjoyable experience."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image border double-push-down-text",
+        "imageLocation": "images/sites/csh/csh-contact.jpg",
+        "imageDescription": "The contact grid with the four square buttons was borrowed from another site I had came across. I liked the four different colors that were used, and those colors, along with the logo, ultimately set the tone for the rest of the site."
+      }
+    ]
+  },
+  "wtfdrink": {
+    "marqueeImageLocation": "images/marquee/wtfdrink.jpg",
+    "marqueeImageHasLightbox": false,
+    "galleryTitle": "WTFDrink",
+    "galleryUrl": "http://wtfdrink.com",
+    "galleryUrlAppearance": "www.wtfdrink.com",
+    "galleryStatus": "online",
+    "galleryDescription": "WTFDrink.com has been my pet project since I started developing websites. Initially, the site started out as a basic HTML/CSS/Javascript site, however I've since done some refactoring and the site now runs on PHP with a MySQL database. Additionally, the site has been integrated with Facebook's new OpenGraph API.",
+    "additionalGalleries": [
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image border push-down-text hyphenate",
+        "imageLocation": "images/sites/wtfdrink/wtfdrink1.jpg",
+        "imageDescription": "<a href='http://whatthefuckshouldidrinktonight.com' target='_blank'class='lengthy-url'>WhatTheFuckShouldIDrinkTonight.com</a> was what the URL for the site initially was. However, I figured that was probably too offensive, way too long, and too difficult for people to remember.<br><br>In order to solve these issues, I bought <a href='http://wtfdrink.com' target='_blank'>wtfdrink.com</a>, set it up to direct users towards the long URL, and re-branded the site as <a href='http://wtfdrink.com' target='_blank'>wtfdrink.com</a>."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "left-image border push-down-text",
+        "imageLocation": "images/sites/wtfdrink/wtfdrink3.jpg",
+        "imageDescription": "If you're under 21, or drinking alcohol isn't your thing, don't fret, there's a <a href='http://whatthefuckshouldidrinktonight.com/non-alcoholic.php' target='_blank'>non-alcoholic section</a> of the site that's just for you. Admittedly, the list of non-alcoholic drinks isn't nearly as long as the list of alcoholic drinks, however the non-alcoholic drinks and their accompanying links are just as, if not more, fun than the alcoholic ones."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image border pull-up-text hyphenate",
+        "imageLocation": "images/sites/wtfdrink/wtfdrink5.jpg",
+        "imageDescription": "Love wtfdrink? Love attempting to speak Spanish? Would you love a combination of the two? Well have I got news for you.<br><br><a href='http://whatthefuckshouldIdrinkestanoche.com' target='_blank'class='massive-url'>WhatTheFuckShouldIDrinkEstaNoche.com</a> was my attempt to take wtfdrink. international. It's the Spanish variant of the site and was all custom translated by me, using all the Spanish I can remember from high school. If only Señor Duffy could see me now, he'd be so proud."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "left-image border push-down-text",
+        "imageLocation": "images/sites/wtfdrink/wtfdrink6.jpg",
+        "imageDescription": "If you're not really in the mood to <i>make</i> a drink, but you still know that you <i>want</i> to drink, try going to <a href='http://simple.wtfdrink.com' target='_blank'>simple.wtfdrink.com</a> for help on deciding exactly what kind of liquor you should drink.<br><br>There are only five different options, so unless you're crazy indecisive, you shouldn't need to spend very long on this domain."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image border push-down-text",
+        "imageLocation": "images/sites/wtfdrink/wtfdrink7.jpg",
+        "imageDescription": "If the site <i>still</i> doesn't make sense to you, and you still can't figure out what's the point, check out the <a href='http://whatthefuckshouldidrinktonight.com/about.html' target='_blank' >about</a> page and maybe some of your questions will be answered.<br><br>If things don't make sense after that, you can always check it out in <a href='http://whatthefuckshouldidrinkestanoche.com/about.html' target='_blank'>spanish</a>, but if at that point you still don't get it, you probably never will."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "left-image border hyphenate pull-up-text",
+        "imageLocation": "images/sites/wtfdrink/wtfdrink8.jpg",
+        "imageDescription": "I can't take all the credit for coming up with the idea on my own. About the time I thought of wtfdrink.com, there were also a number similar copycat sites floating around the Internet.<br><br><a href='http://whatthefuckshouldimakefordinner.com' target='_blank'>Whatthefuckshouldimakefordinner.com</a> was the first site however I can remember, and was the site that made me think of wtfdrink.com. Because of that, I like to give them a little shoutout on each one of the pages, as well as right here in my portfolio."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image border push-down-text",
+        "imageLocation": "images/sites/wtfdrink/wtfdrink-FB.jpg",
+        "imageDescription": "As mentioned earlier, the site utilizes (or at least used to utilize) Facebook's OpenGraph API in order to post what drinks you were making to your Facebook page.<br><br>However, this was back in the early days of the OpenGraph API, when Facebook couldn't help but change something every week. I'm sure everything is more stable now, so I'll eventually make an effort to resolve everything."
+      }
+    ]
+  },
+  "cpsolutions": {
+    "marqueeImageLocation": "images/marquee/cpsolutions.jpg",
+    "marqueeImageHasLightbox": true,
+    "galleryTitle": "CP Solutions Consulting",
+    "galleryUrl": null,
+    "galleryUrlAppearance": null,
+    "galleryStatus": "mock-up",
+    "galleryDescription": "CP Solutions Consulting was a mock-up I did for my sister's consulting firm while she considered establishing a web presence. She ended up not needing a website, but I was particularly proud of the work I had done and I decided the mock was worthy of being shown.",
+    "additionalGalleries": [
+      {
+        "hasLightbox": true,
+        "additionalClasses": "right-image border double-push-down-text",
+        "imageLocation": "images/sites/cpsolutions/cpsolutions-mock.jpg",
+        "imageDescription": "I used Adobe Photoshop to produce the mock-up. I've worked with the program for at ten years now and I'm pretty comfortable with it.<br><br>It's great for a number of different things and in my mind, it's the best application for producing visually intense items like high-fidelity mock-ups."
+      },
+      {
+        "hasLightbox": true,
+        "additionalClasses": "left-image border push-down-text",
+        "imageLocation": "images/sites/cpsolutions/cpsolutions-page.jpg",
+        "imageDescription": "After we agreed that the mocks looked alright, I set out to build a rapid prototype of the home page, in order to show my sister exactly how the site would look online.<br><br>The resulting page ended up looking pretty good. It really is unfortunate that this site was never able to come to fruition. Maybe one day..."
+      }
+    ]
+  }
+}

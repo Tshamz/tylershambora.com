@@ -1,0 +1,62 @@
+/*=============================================================================
+    CUSTOM NORMALIZE BASED OFF HTML5 NORMALIZE
+=============================================================================*/
+
+html,body,div,span,h1,h2,h3,p,em,img,strong,b,i,ul,li,form,label,tr,th,article,figcaption,figure,header,nav,section{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+html,button,input,select,textarea{font-family:sans-serif;font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle;line-height:normal;text-transform:none;}
+button,input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+textarea{overflow:auto;vertical-align:top;resize:none;}
+article,figcaption,figure,header,nav,section{display:block}
+ul{list-style:none;list-style-image: none;}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none;color:#000;outline:0;}
+a:focus{outline:0}
+a:active,a:hover{outline:0}
+b,strong{font-weight:bold}
+input,select{vertical-align:middle}
+label{display:block}
+img{border:0}
+
+/*=============================================================================
+    BASE STYLES
+=============================================================================*/
+
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+html {
+  background-color: #FFF;
+  background-image: url(../images/paper.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  color: $Color-Dark-Grey;
+  font-family: $Font-DIN-Regular;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  @include background-size(cover);
+}
+
+img {
+  max-width: 100%;
+}
+
+.hyphenate {
+   -ms-word-break: break-all;
+       word-break: break-word;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+// I pay for a fonts.net plan that includes "no badge"
+// Except, without this rule, there's a badge...
+#mti_wfs_colophon {
+  display: none !important;
+}

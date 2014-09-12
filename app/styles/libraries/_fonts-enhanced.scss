@@ -1,0 +1,25 @@
+/*=============================================================================
+    FONTS-ENHANCED
+=============================================================================*/
+
+h1,
+h2,
+h3,
+p {
+  text-rendering: optimizeLegibility;
+}
+
+h2 {
+  font: 3.75rem/1 $Font-DIN-Heavy;
+  text-transform: uppercase;
+}
+
+h3 {
+  font: 1.25rem/1 $Font-Source-Sans-Pro;
+  text-transform: uppercase;
+}
+
+em {
+  color: $Color-Light-Grey;
+  font: 0.8rem $Font-Georgia;
+}

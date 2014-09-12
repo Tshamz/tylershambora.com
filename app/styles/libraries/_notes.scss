@@ -1,0 +1,70 @@
+/*
+
+===============================================================================
+    NOTES
+===============================================================================
+
+1.  IDs should only be used:
+      a. When it follows the spec (e.g. only one instance on page)
+      b. To describe unsemantic markup, when appropriate (see above)
+      c. On elements that serve as containers for a section (e.g. #no-support)
+      d. As hooks for JavaScript (e.g. #unsupported-features)
+      e. To target a specific instance of a class (#resume .marquee-image)
+
+2.  I'm not a very good speller
+
+3.  Selectors begin with a descriptive ID or class for easy debugging purposes
+
+4.  Use of !important is frowned upon, but at times necessary
+
+5.  All measurements are in REM or %
+
+6.  An exception to the that last rule is on tiny measurements (e.g. border)
+
+7.  Use data:uris on small, plain images
+
+8.  Readability is favored over performance
+
+9. I try not to target elements using tag selectors as much as possible
+
+10. Exceptions to that last rule will be preceded with a descriptive ID or class
+
+11. Exceptions are tags that are pretty semantic (e.g. img, p, nav)
+
+12. I try not to add classes just for the sake of styling as much as possible
+
+13. When rules 10 and 12 conflict, I try to choose what's best
+
+14. Occasionally, I like to use joined class selectors (.a.b) for readability
+
+15. Nesting beyond 3 levels is frowned upon, and even beyond 2 is ill advised
+
+16. Decimals are preceded with a 0 (e.g. 0.85 not .85)
+
+17. Hex codes are in all uppercase (e.g. #1A2B3C not #1a2b3C)
+
+n.  This is a living document
+
+--- SCSS & CSS STYLING/FORMATTING ---
+
+CSS
+---------
+h2,
+.class-name,
+#id-name {
+  property: attribute;  /comment/
+}
+
+SCSS
+----------
+#.selector/.selector {
+  @extends
+  property: attribute;
+  @includes
+  @media
+  &.adjoined-selector/:pseudo-selector
+  >.child-selector
+  .nested-selector
+}
+
+*/

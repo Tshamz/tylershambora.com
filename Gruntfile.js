@@ -1,128 +1,287 @@
+// (sorta) Generated (around) 2014-07-30 (partially) using generator-angular 0.9.5
+'use strict';
+
+// # Globbing
+// One level down: 'test/spec/{,*/}*.js'
+// All subfolders: 'test/spec/**/*.js'
+
 module.exports = function(grunt) {
 
-  // Load Grunt tasks declared in the package.json file
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  // Load grunt tasks automatically
+  require('load-grunt-tasks')(grunt);
+
+  // Time how long tasks take. Can help when optimizing build times
+  require('time-grunt')(grunt);
+
+  // Configurable paths for the application
+  var appConfig = {
+    app: 'app',
+    dist: 'dist'
+  };
 
   // Configure Grunt
   grunt.initConfig({
-    express: {
-      all: {
+
+    // Project settings
+    config: appConfig,
+
+    // Watches files for changes and runs tasks based on the changed files
+    watch: {
+      livereload: {
         options: {
-          port: 8000,
-          hostname: "0.0.0.0",
-          bases: ["app"], // Replace with the directory you want the files served from
-                          // Make sure you don't use `.` or `..` in the path as Express
-                          // is likely to return 403 Forbidden responses if you do
-                          // http://stackoverflow.com/questions/14594121/express-res-sendfile-throwing-forbidden-error
-          livereload: true
-        }
-      }
-    },
-
-    concat: {
-      options: {
-        separator: '\n\n'
-      },
-      all: {
-        src: ['app/js/modules/**/*-module.js', 'app/js/modules/main.js'],
-        dest: 'app/js/main.js'
-      }
-    },
-
-    uglify: {
-      all: {
-        files: grunt.file.expandMapping(["app/js/main.js", "app/js/feature-test.js"], "", {
-          ext: '.min.js',
-          extDot: 'last'
-        })
-      }
-    },
-
-    sass: {
-      dev: {
-        options: {
-          style: "expanded"
+          livereload: '<%= connect.options.livereload %>'
         },
-        files: {
-          "app/css/style.css": "app/css/scss/style.scss",
-          "app/css/enhanced.css": "app/css/scss/enhanced.scss"
+        files: [
+          '<%= config.app %>/*.{html,pdf,php,manifest}',
+          '<%= config.app %>/fonts/*',
+          '<%= config.app %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= config.app %>/scripts/{*.js,*.json,vendor/*.js}',
+          '.tmp/styles/{,*/}*.css'
+        ]
+      },
+      gruntfile: {
+        files: ['Gruntfile.js']
+      },
+      sass: {
+        files: ['<%= config.app %>/styles/{,*/}*.scss'],
+        tasks: ['sass', 'autoprefixer']
+      },
+      scripts: {
+        files: ['<%= config.app %>/scripts/{,*/}*.{js,json}'],
+        tasks: ['concat']
+      }
+    },
+
+    // The actual grunt server settings
+    connect: {
+      options: {
+        port: 1337,
+        livereload: 35729,
+        hostname: 'localhost'
+      },
+      livereload: {
+        options: {
+          open: true,
+          middleware: function(connect) {
+            return [
+              connect.static('.tmp'),
+              connect.static(appConfig.app)
+            ];
+          }
+          //base: []
         }
       },
       dist: {
         options: {
-          style: "compressed"
+          open: true,
+          base: '<%= config.dist %>'
+        }
+      }
+    },
+
+    // Empties folders to start fresh
+    clean: {
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= config.dist %>/**/*',
+            '!<%= config.dist %>/.git*'
+          ]
+        }]
+      },
+      server: '.tmp'
+    },
+
+    // Compiles Sass to CSS and generates necessary files if requested
+    sass: {
+      all: {
+        options: {
+          style: 'expanded'
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/styles',
+          src: ['{,*/}*.scss'],
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      }
+    },
+
+    // Add vendor prefixed styles
+    autoprefixer: {
+      options: {
+        browsers: ['last 1 version']
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/styles',
+          src: ['*.css'],
+          dest: '.tmp/styles'
+        }]
+      }
+    },
+
+    // Renames files for browser caching purposes
+    filerev: {
+      dist: {
+        src: [
+          '<%= config.dist %>/scripts/*.js',
+          '<%= config.dist %>/styles/*.css',
+          '<%= config.dist %>/fonts/*',
+          '<%= config.dist %>/images/{*,icons/*,}.{png,jpg,jpeg,gif,webp,svg}'
+        ]
+      }
+    },
+
+    // Reads HTML for usemin blocks to enable smart builds that automatically
+    // concat, minify and revision files. Creates configurations in memory so
+    // additional tasks can operate on them
+    useminPrepare: {
+      html: '<%= config.app %>/index.html',
+      options: {
+        flow: {
+          html: {
+            steps: {
+              js: ['concat', 'uglifyjs'],
+              css: ['cssmin']
+            },
+            post: {}
+          }
+        }
+      }
+    },
+
+    // Performs rewrites based on filerev and the useminPrepare configuration
+    usemin: {
+      css: ['<%= config.dist %>/styles/*.css'],
+      html: ['<%= config.dist %>/*.html'],
+      options: {
+        assetsDirs: [
+          '<%= config.dist %>',
+          '<%= config.dist %>/images',
+          '<%= config.dist %>/scripts',
+          '<%= config.dist %>/styles'
+        ]
+      }
+    },
+
+    uglify: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/scripts',
+          src: ['*.js'],
+          dest: '.tmp/uglify'
+        }]
+      }
+    },
+
+    jsonmin: {
+      dist: {
+        options: {
+          stripWhitespace: true,
+          stripComments: true
         },
         files: {
-          "app/css/style.min.css": "app/css/scss/style.scss",
-          "app/css/enhanced.min.css": "app/css/scss/enhanced.scss"
+          '.tmp/uglify/gallery-info.json' : '<%= config.app %>/scripts/gallery-info.json'
         }
       }
     },
 
     imagemin: {
-      dynamic: {
-        options: {
-          optimizationLevel: 7
-        },
+      dist: {
         files: [{
           expand: true,
-          cwd: 'app/img',
-          src: ['**/*.{png,jpg}'],
-          dest: 'app/dist/img/'
+          cwd: '<%= config.app %>/images',
+          src: ['**/*.{png,jpg,jpeg,gif}'],
+          dest: '<%= config.dist %>/images'
+        }]
+      },
+      upgrade: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/images',
+          src: ['**/*.{png,jpg,jpeg,gif}'],
+          dest: '<%= config.app %>/images'
         }]
       }
     },
 
-    watch: {
-      all: {
-        files: ["app/index.html", "app/cache.manifest", "app/img/**/*.{png|jpg}", "app/img/*.{png|jpg}"],
-        options: {
-          livereload: true
-        },
+    // Copies remaining files to places other tasks can use
+    copy: {
+      dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= config.app %>',
+          src: [
+            '*.{html,php,pdf,manifest}',
+            'fonts/*'
+          ],
+          dest: '<%= config.dist %>',
+        }]
       },
       scripts: {
-        files: ["app/js/main.js", "!app/js/main.min.js", "app/js/modules/**/*.js"],
-        tasks: ["concat", "uglify"]
-      },
-      sass: {
-        files: ["app/css/scss/*.scss"],
-        tasks: ["sass"]
+        files: [{
+          expand: true,
+          cwd: '.tmp/uglify',
+          src: ['*.{js,json}'],
+          dest: '<%= config.dist %>/scripts'
+        }]
       }
     },
 
-    copy: {
-      main: {
-        files: [
-          {expand: true, cwd: 'app/', src: ['*.{html,pdf,php,manifest}'], dest: 'app/dist/'},
-          {expand: true, cwd: 'app/css/', src: ['*.css'], dest: 'app/dist/css/'},
-          {expand: true, cwd: 'app/js/', src: ['*.{js,json}'], dest: 'app/dist/js/'},
-          {expand: true, cwd: 'app/font/', src: ['*'], dest: 'app/dist/font/'}
-        ]
-      }
+    // Run some tasks in parallel to speed up the build process
+    concurrent: {
+      server: [
+        'sass',
+      ],
+      test: [
+      ],
+      dist: [
+        'uglify:dist',
+        'jsonmin:dist',
+        'sass',
+        'imagemin:dist'
+      ]
     },
 
-    open: {
-      all: {
-        path: 'http://localhost:<%= express.all.options.port%>'
-      }
-    }
   });
 
-  grunt.registerTask('server', [
-    'express',
-    'open',
-    'watch'
-  ]);
+  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
+    if (target === 'dist') {
+      return grunt.task.run(['build', 'connect:dist:keepalive']);
+    }
+
+    grunt.task.run([
+      'clean:server',
+      'concurrent:server',
+      'autoprefixer',
+      'connect:livereload',
+      'watch'
+    ]);
+  });
 
   grunt.registerTask('build', [
-    'concat',
-    'uglify',
-    'sass',
-    'copy'
+    'clean:dist',
+    'concurrent:dist',
+    'autoprefixer',
+    'copy:dist',
+    'useminPrepare',
+    'concat:generated',
+    'cssmin:generated',
+    'uglify:generated',
+    'filerev',
+    'usemin',
+    'copy:scripts',
+    'clean:server'
   ]);
 
-  grunt.registerTask('minimg', [
-    'imagemin'
+  grunt.registerTask('default', [
+    'build'
   ]);
-
 };

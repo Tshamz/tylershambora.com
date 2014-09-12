@@ -1,0 +1,27 @@
+/*=============================================================================
+    BASE STYLES - ENHANCED
+=============================================================================*/
+
+@include animation-keyframes(super-rainbow) {
+  0% {
+    background-color: $Color-Rainbow-Transparent;
+  }
+  16.66% {
+    background-color: $Color-Rainbow-Blue;
+  }
+  33.33% {
+    background-color: $Color-Rainbow-Green;
+  }
+  50% {
+    background-color: $Color-Rainbow-Yellow;
+  }
+  66.66% {
+    background-color: $Color-Rainbow-Orange;
+  }
+  83.33% {
+    background-color: $Color-Rainbow-Red;
+  }
+  100% {
+    background-color: $Color-Rainbow-Transparent;
+  }
+}

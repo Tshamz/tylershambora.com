@@ -1,0 +1,72 @@
+/*=============================================================================
+    NO-SUPPORT
+=============================================================================*/
+
+#no-support {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.no-support-inner {
+  position: relative;
+  max-width: 50rem;
+  width: 90%;
+  background-color: $Color-White;
+  margin: 4rem auto 0;
+  padding: 1.5rem 0.75rem;
+}
+
+.no-support-text {
+  display: inline-block;
+  margin: 0 2.25rem;
+  > i {
+    font-size: 1.1rem;
+  }
+  p:first-child,
+  p:last-child {
+    margin: 1.25rem 0;
+  }
+  @media only screen and (max-width: 42.5rem) {
+    margin: 0 1rem;
+  }
+}
+
+.no-support-header {
+  font-size: 3.25rem;
+  text-align: center;
+  margin-bottom: .5rem;
+  @media only screen and (max-width: 42.5rem) {
+    font-size: 2.55rem;
+  }
+}
+
+.unsupported-features-lead-in {
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+#unsupported-features {
+  list-style-type: disc;
+  margin-left: 2rem;
+  > li {
+    font-size: 1.25rem;
+    font-weight: 900;
+    margin-bottom: .5rem;
+  }
+}
+
+.no-support-downloads {
+  display: inline-block;
+  > .download {
+    float: left;
+    width: 25%;
+    background-color: #FFF;
+    text-align: center;
+    padding: 1rem;
+  }
+}

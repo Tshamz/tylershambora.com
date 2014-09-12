@@ -1,0 +1,106 @@
+@mixin animation-keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+@mixin animation($properties) {
+  -webkit-animation: $properties;
+  -moz-animation: $properties;
+  -o-animation: $properties;
+  animation: $properties;
+}
+
+@mixin appearance($type) {
+  -webkit-appearance: $type;
+  -moz-appearance: $type;
+  appearance: $type;
+}
+
+@mixin background-origin($box-prefix) {
+  -webkit-background-origin: $box-prefix;
+  -moz-background-origin: $box-prefix;
+  -ms-background-origin: $box-prefix + "-box";
+  -o-background-origin: $box-prefix + "-box";
+  background-origin: $box-prefix + "-box";
+}
+
+@mixin background-size($size) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+
+@mixin box-shadow($properties) {
+  -webkit-box-shadow: $properties;
+  -moz-box-shadow: $properties;
+  box-shadow: $properties;
+}
+
+@mixin box-sizing($box-style) {
+  -webkit-box-sizing: $box-style;
+  -moz-box-sizing: $box-style;
+  box-sizing: $box-style;
+}
+
+@mixin flex-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex-align-items($property) {
+  -webkit-align-items: $property;
+  -moz-align-items: $property;
+  -ms-align-items: $property;
+  align-items: $property;
+}
+
+@mixin flex-basis($size) {
+  -webkit-flex-basis: $size;
+  -moz-flex-basis: $size;
+  -ms-flex-basis: $size;
+  flex-basis: $size;
+}
+
+@mixin flex-flow($properties) {
+  -webkit-flex-flow: $properties;
+  -moz-flex-flow: $properties;
+  -ms-flex-flow: $properties;
+  flex-flow: $properties;
+}
+
+@mixin flex-justify-content($property) {
+  -webkit-justify-content: $property;
+  -moz-justify-content: $property;
+  -ms-justify-content: $property;
+  justify-content: $property;
+}
+
+@mixin transform($properties) {
+  -webkit-transform: $properties;
+  -moz-transform: $properties;
+  -ms-transform: $properties;
+  -o-transform: $properties;
+  transform: $properties;
+}
+
+@mixin transition($properties...) {
+  -webkit-transition: $properties;
+  -moz-transition: $properties;
+  -ms-transition: $properties;
+  -o-transition: $properties;
+  transition: $properties;
+}

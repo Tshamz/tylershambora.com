@@ -1,0 +1,46 @@
+/*=============================================================================
+    ABOUT - ENHANCED
+=============================================================================*/
+
+#about {
+  display: inline-block;
+}
+
+.about-image-container {
+  float: left;
+  width: 42%;
+  margin-top: 2rem;
+  @media only screen and (min-width: 56.5rem) {
+    margin-top: 1.25rem;
+  }
+  @media only screen and (min-width: 65rem) {
+    margin-top: 0.5rem;
+  }
+}
+
+.about-image {
+  max-height: 380px;
+}
+
+.about-body-container {
+  float: right;
+  width: 55%;
+  margin-left: 2.5%%;
+}
+
+.about-header {
+  margin-top: 0;
+}
+
+.about-body {
+  word-spacing: -2px;
+}
+
+.about-specialties-header {
+  margin-top: 0.75rem;
+}
+
+.about-specialties {
+  list-style: disc;
+  padding-left: 2.5rem;
+}

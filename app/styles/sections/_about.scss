@@ -1,0 +1,29 @@
+/*=============================================================================
+    ABOUT
+=============================================================================*/
+
+.about-image {
+  display: block;
+  margin: 0 auto;
+}
+
+.about-header {
+  margin: 1rem 0 0.5rem;
+  text-align: center;
+}
+
+.about-body {
+  text-align: justify;
+  word-spacing: -2px;
+}
+
+.about-specialties-header {
+  text-align: left;
+  margin-top: 1.5rem;
+}
+
+.about-specialties {
+  list-style: disc;
+  padding-left: 2.5rem;
+  text-align: left;
+}
