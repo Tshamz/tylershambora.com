@@ -8,6 +8,8 @@ Check out [tylershambora.com](http://tylershambora.com) for an up to date, live 
 
 No full page reloads, loads new content in via ajax, most of the animations are done using CSS3 transitions/animations, stylesheets are written using SCSS, fully responsive and built mobile-first, modular javascript, uses Grunt to: work locally with livereload, concatenate and minify CSS & JavaScript, optimize images, and create a ready to go dist directory.
 
+Repository doesn't include "dist/" directory with all the renamed, minimized, concatenated files. Also not included are the compiled .css files. You'll only find .scss partials here.
+
 ## Goals/TODO ##
 
 *  ~~Would like to minify CSS & JS~~
