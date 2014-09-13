@@ -1,6 +1,6 @@
 .DS_Store
 .sass-cache/
-node_modules
-app/graveyard
-app/dist/
+node_modules/
+app/graveyard/
 app/img/
+dist/
