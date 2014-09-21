@@ -2,7 +2,7 @@
   "laura": {
     "marqueeImageLocation": "images/marquee/laura.jpg",
     "marqueeImageHasLightbox": false,
-    "galleryTitle": "HeyLaura",
+    "galleryTitle": "Hey<wbr>Laura",
     "galleryUrl": "http://tylershambora.com/dev/laura/",
     "galleryUrlAppearance": "www.heylaura.com",
     "galleryStatus": "online",
@@ -54,7 +54,7 @@
   "sns": {
     "marqueeImageLocation": "images/marquee/sns.jpg",
     "marqueeImageHasLightbox": true,
-    "galleryTitle": "Speaker Noise Society",
+    "galleryTitle": "Speaker<wbr>Noise<wbr>Society",
     "galleryUrl": null,
     "galleryUrlAppearance": null,
     "galleryStatus": "offline",
@@ -71,7 +71,7 @@
   "petershambora": {
     "marqueeImageLocation": "images/marquee/petershambora.jpg",
     "marqueeImageHasLightbox": false,
-    "galleryTitle": "Peter Shambora.com",
+    "galleryTitle": "Peter<wbr>Shambora<wbr>.com",
     "galleryUrl": "http://petershambora.com",
     "galleryUrlAppearance": "www.petershambora.com",
     "galleryStatus": "online",
@@ -88,7 +88,7 @@
   "fb": {
     "marqueeImageLocation": "images/marquee/fb.jpg",
     "marqueeImageHasLightbox": false,
-    "galleryTitle": "Fresh B33ts",
+    "galleryTitle": "Fresh<wbr>B33t$",
     "galleryUrl": "http://freshb33ts.com",
     "galleryUrlAppearance": "www.freshb33ts.com",
     "galleryStatus": "online",
@@ -105,7 +105,7 @@
   "papn": {
     "marqueeImageLocation": "images/marquee/papn.jpg",
     "marqueeImageHasLightbox": true,
-    "galleryTitle": "Palo Alto Party Network",
+    "galleryTitle": "Palo<wbr>Alto<wbr>Party<wbr>Network",
     "galleryUrl": null,
     "galleryUrlAppearance": null,
     "galleryStatus": "offline",
@@ -128,9 +128,9 @@
   "csh": {
     "marqueeImageLocation": "images/marquee/csh.jpg",
     "marqueeImageHasLightbox": false,
-    "galleryTitle": "Casa Street Hooligans",
+    "galleryTitle": "Casa<wbr>Street<wbr>Hooligans",
     "galleryUrl": "http://casastreethooligans.com",
-    "galleryUrlAppearance": "www.casastreethooligans.com",
+    "galleryUrlAppearance": "casastreethooligans.com",
     "galleryStatus": "online",
     "galleryDescription": "Casa Street Hooligans was another site I built as an excuse to practice writing markup. It's based on a carousel tutorial I found and tried to rebuild. Despite being one of my earlier sites, to this day I'm still pretty pleased with the results.",
     "additionalGalleries": [
@@ -210,7 +210,7 @@
   "cpsolutions": {
     "marqueeImageLocation": "images/marquee/cpsolutions.jpg",
     "marqueeImageHasLightbox": true,
-    "galleryTitle": "CP Solutions Consulting",
+    "galleryTitle": "CP<wbr>Solutions",
     "galleryUrl": null,
     "galleryUrlAppearance": null,
     "galleryStatus": "mock-up",
