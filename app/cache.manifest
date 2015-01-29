@@ -1,35 +1,29 @@
 CACHE MANIFEST
 
-# LAST UPDATED: JUNE 30TH, 2014 @ 08:05:00am
+# LAST UPDATED: JANUARY 28, 2015 @ 07:32:29am
 # AUTHOR: TYLER SHAMBORA
-# OMFG
-# R
-# U
-# KISSING
-# ME
-# ???
 
 NETWORK:
 *
 CACHE:
-#index.html
-#subPagesDocument.html
-#js/main.js
-#js/main.min.js
-#js/feature-test.min.js
-#js/jquery.min.js
-#js/modernizr.min.js
-#css/style.css
-#css/enhanced.css
-#img/logo-icon-small.png
-#img/me-in-a-frame.png
-#img/icons/palo-alto-party-network-icon.png
-#img/icons/casa-street-hooligans-icon.png
-#img/icons/fresh-b33ts-icon.png
-#img/icons/sns-icon.png
-#img/icons/peter-shambora-icon.png
-#img/icons/wtf-drink-icon.png
-#img/icons/hey-laura-icon.png
-#img/icons/resizely-icon.png
-#font/Akzidenz-Grotesk-BQ-Condensed.woff
-#font/Akzidenz-Grotesk-BQ-Condensed.ttf#
+index.html
+subPagesDocument.html
+js/main.js
+js/main.min.js
+js/feature-test.min.js
+js/jquery.min.js
+js/modernizr.min.js
+css/style.css
+css/enhanced.css
+img/logo-icon-small.png
+img/me-in-a-frame.png
+img/icons/palo-alto-party-network-icon.png
+img/icons/casa-street-hooligans-icon.png
+img/icons/fresh-b33ts-icon.png
+img/icons/sns-icon.png
+img/icons/peter-shambora-icon.png
+img/icons/wtf-drink-icon.png
+img/icons/hey-laura-icon.png
+img/icons/resizely-icon.png
+font/Akzidenz-Grotesk-BQ-Condensed.woff
+font/Akzidenz-Grotesk-BQ-Condensed.ttf#
