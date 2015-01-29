@@ -8,13 +8,16 @@ Check out [tylershambora.com](http://tylershambora.com) for an up to date, live 
 
 No full page reloads, loads new content in via ajax, most of the animations are done using CSS3 transitions/animations, stylesheets are written using SCSS, fully responsive and built mobile-first, modular javascript, uses Grunt to: work locally with livereload, concatenate and minify CSS & JavaScript, optimize images, and create a ready to go dist directory.
 
-**NOTE:** This repository is for review purposes only, it's not meant to be cloned. This means it doesn't include a "dist/" directory where you would find:
+**NOTE:** This repository is for review purposes only, it's not meant to be cloned. This means it doesn't include:
+* A package.json file
+* A Gruntfile
 * compressed image files
 * compressed font files
 * compiled & minified .css files (main.css, enhanced.css)
 * concatenated & minified .js modules (main.js)
 * concatenated & minified .js vendor files (jquery.js, modernizr.js ~> vendor.js)
 * minified versions of feature-test.js, gallery-info.json
+
 
 ## Goals/TODO ##
 
