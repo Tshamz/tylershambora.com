@@ -1,6 +1,6 @@
-# tylershambora.com #
+...this project needs a little love
 
-About friggin' time...
+# tylershambora.com #
 
 Check out [tylershambora.com](http://tylershambora.com) for an up to date, live version of the site.
 
